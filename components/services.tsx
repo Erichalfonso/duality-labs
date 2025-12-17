@@ -43,16 +43,43 @@ export default function Services() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-20 border-b border-border bg-bg relative z-10">
-      <div className="max-w-[1000px] mx-auto px-6">
+    <section ref={sectionRef} className="relative py-20 border-b border-border overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-bg to-gradient-to" />
+
+      <div className="max-w-[1000px] mx-auto px-6 relative z-10">
         <div className="font-mono text-xs uppercase tracking-widest text-text-secondary mb-8 reveal">
           What we do
         </div>
-        <div className="grid md:grid-cols-2 gap-12 md:gap-x-16">
+
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((service, i) => (
-            <div key={i} className="reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
-              <h3 className="text-lg font-medium mb-2 tracking-tight">{service.title}</h3>
-              <p className="text-[15px] text-text-secondary leading-relaxed">{service.description}</p>
+            <div
+              key={i}
+              className="reveal group"
+              style={{ transitionDelay: `${i * 0.1}s` }}
+            >
+              {/* Card with gradient background */}
+              <div className="relative h-full p-8 rounded-lg border border-card-border bg-card-bg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                <div className="relative z-10">
+                  {/* Number badge */}
+                  <div className="w-10 h-10 rounded-md bg-accent-light flex items-center justify-center mb-4">
+                    <span className="font-mono text-sm font-medium text-accent">
+                      0{i + 1}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg font-medium mb-3 tracking-tight">
+                    {service.title}
+                  </h3>
+                  <p className="text-[15px] text-text-secondary leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

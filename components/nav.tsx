@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Nav() {
   return (
-    <nav className="sticky top-0 py-6 border-b border-border bg-bg/80 backdrop-blur-sm z-50">
+    <nav className="sticky top-0 py-6 border-b border-border bg-gradient-to-b from-bg via-bg to-bg/95 backdrop-blur-sm z-50">
       <div className="max-w-[1000px] mx-auto px-6 flex justify-between items-center">
         <Link 
           href="/" 

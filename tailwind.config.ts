@@ -16,6 +16,15 @@ const config: Config = {
         accent: '#0D9488', // Teal - technical, differentiated
         'accent-light': '#CCFBF1',
         border: '#E7E5E4',
+        // Gradient colors
+        'gradient-from': '#F8FAF9',
+        'gradient-via': '#F5F7F6',
+        'gradient-to': '#FAFAF9',
+        'gradient-accent-from': '#14B8A6',
+        'gradient-accent-to': '#0D9488',
+        // Card colors
+        'card-bg': '#FFFFFF',
+        'card-border': '#E7E5E4',
       },
       fontFamily: {
         sans: ['Syne', 'system-ui', '-apple-system', 'sans-serif'],

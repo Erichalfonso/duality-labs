@@ -1,7 +1,8 @@
 export default function Footer() {
   return (
-    <footer className="py-8 border-t border-border">
-      <div className="max-w-[1000px] mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <footer className="relative py-8 border-t border-border overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-gradient-from to-bg" />
+      <div className="max-w-[1000px] mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 relative z-10">
         <span className="font-mono text-xs text-text-secondary">
           © 2025 Duality Labs
         </span>

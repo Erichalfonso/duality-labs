@@ -39,24 +39,36 @@ export default function Process() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-20 border-b border-border bg-bg relative z-10">
-      <div className="max-w-[1000px] mx-auto px-6">
+    <section ref={sectionRef} className="relative py-20 border-b border-border overflow-hidden">
+      {/* Gradient background - inverted from services */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gradient-to to-bg" />
+
+      <div className="max-w-[1000px] mx-auto px-6 relative z-10">
         <div className="font-mono text-xs uppercase tracking-widest text-text-secondary mb-8 reveal">
           How we work
         </div>
-        <div className="flex flex-col gap-6">
+
+        <div className="flex flex-col gap-4">
           {process.map((item, i) => (
-            <div 
-              key={i} 
-              className="flex gap-6 items-baseline reveal"
+            <div
+              key={i}
+              className="reveal group"
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
-              <span className="font-mono text-xs text-text-secondary w-6 shrink-0">
-                0{i + 1}
-              </span>
-              <div>
-                <h3 className="text-[17px] font-medium mb-1">{item.title}</h3>
-                <p className="text-[15px] text-text-secondary">{item.description}</p>
+              <div className="relative flex gap-6 items-start p-6 rounded-lg border border-card-border bg-card-bg hover:shadow-md transition-all duration-300">
+                {/* Gradient accent bar on left */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-accent to-accent/30 rounded-l-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                <span className="font-mono text-xs text-text-secondary w-8 shrink-0 pt-1">
+                  0{i + 1}
+                </span>
+
+                <div className="flex-1">
+                  <h3 className="text-[17px] font-medium mb-2">{item.title}</h3>
+                  <p className="text-[15px] text-text-secondary leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
