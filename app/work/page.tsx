@@ -1,0 +1,55 @@
+import Nav from '@/components/nav'
+import PageHeader from '@/components/page-header'
+import Footer from '@/components/footer'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Work - Duality Labs',
+  description: 'Selected projects and client work from Duality Labs.',
+}
+
+export default function WorkPage() {
+  return (
+    <>
+      <Nav />
+      <main>
+        <PageHeader
+          tag="Portfolio"
+          title="Selected work"
+          description="Case studies and projects showcasing our approach to building AI-powered systems and internal tools."
+        />
+
+        <section className="relative py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-bg to-gradient-to" />
+
+          <div className="max-w-[1000px] mx-auto px-6 relative z-10">
+            {/* Placeholder for portfolio items */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {[1, 2, 3, 4].map((i) => (
+                <div
+                  key={i}
+                  className="relative h-64 p-8 rounded-lg border border-card-border bg-card-bg flex items-center justify-center"
+                >
+                  <div className="text-center">
+                    <div className="w-12 h-12 rounded-md bg-accent-light mx-auto mb-4 flex items-center justify-center">
+                      <span className="font-mono text-sm font-medium text-accent">
+                        {String(i).padStart(2, '0')}
+                      </span>
+                    </div>
+                    <p className="text-sm text-text-secondary font-mono">
+                      Project placeholder
+                    </p>
+                    <p className="text-xs text-text-secondary mt-2">
+                      Add your case study content here
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  )
+}

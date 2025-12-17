@@ -1,0 +1,62 @@
+---
+title: "Building AI agents that actually ship value"
+description: "Five lessons from deploying production AI automation systems for real businesses."
+date: "2025-01-20"
+author: "Duality Labs Team"
+tags: ["ai", "automation", "engineering"]
+published: true
+---
+
+# Building AI agents that actually ship value
+
+Over the past year, we've built and deployed AI automation systems for companies ranging from seed-stage startups to established businesses. Here's what we've learned about making AI agents that actually work in production.
+
+## 1. Start with the outcome, not the technology
+
+The most successful AI projects we've shipped started with a clear business outcome:
+
+- "Reduce time spent processing support tickets by 70%"
+- "Automatically extract data from 500+ invoice formats"
+- "Generate first-draft responses to RFPs in under 5 minutes"
+
+The technology stack came second. We picked tools based on what would reliably achieve the outcome.
+
+## 2. Human-in-the-loop isn't a cop-out
+
+Full automation sounds impressive, but the most valuable systems we've built include strategic human checkpoints. They:
+
+- Catch edge cases early
+- Build trust with users
+- Provide training data for improving the system
+- Handle truly novel situations gracefully
+
+## 3. Observability from day one
+
+AI systems fail in interesting ways. You need logging for every decision:
+
+```typescript
+// Example: Log every AI decision
+await logDecision({
+  input: userRequest,
+  output: agentResponse,
+  confidence: 0.87,
+  model: "gpt-4",
+  latency: 1240,
+})
+```
+
+This lets you spot patterns, debug failures, and improve the system over time.
+
+## 4. Test with real data immediately
+
+Synthetic test cases are useful, but they don't capture the chaos of real-world data. We push to test with actual customer data within the first week of development.
+
+## 5. Ship small, iterate fast
+
+The best AI systems we've built started as narrow solutions to specific problems, then expanded. A document extraction tool might start with one document type, validate it works, then add more.
+
+---
+
+## Next steps
+
+If you're considering AI automation for your business, we'd love to chat about your use case. [Book a call](/#contact) to explore what's possible.
