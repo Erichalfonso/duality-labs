@@ -1,23 +1,41 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import {
+  AIAutomationIllustration,
+  DashboardIllustration,
+  MVPIllustration,
+  IntegrationIllustration,
+} from './service-illustrations'
 
 const services = [
   {
-    title: 'AI automation & agents',
-    description: 'Custom AI systems that handle repetitive work, process documents, and make decisions at scale.',
+    title: 'Workflow Automation',
+    subtitle: 'Automate repetitive tasks',
+    description: 'We help you streamline internal operations by automating manual workflows like data entry, reporting, and approval chains — saving time and cutting down errors.',
+    features: ['Internal Task Bots', '100+ Automations', 'Smart Workflows'],
+    illustration: AIAutomationIllustration,
   },
   {
-    title: 'Internal tools & dashboards',
-    description: 'Operational software tailored to how your team actually works. No off-the-shelf compromises.',
+    title: 'AI Assistant',
+    subtitle: 'Delegate Daily Tasks',
+    description: 'From managing calendars to drafting emails and summarizing meetings, our AI assistants work around the clock to keep your business running smarter and faster.',
+    features: ['Summaries', 'Scheduling', 'Many more'],
+    illustration: DashboardIllustration,
   },
   {
-    title: 'MVPs for founders',
-    description: 'Ship your first version fast. We scope it right, build it clean, and hand it off ready to scale.',
+    title: 'Sales & Marketing',
+    subtitle: 'Accelerate Sales Growth',
+    description: 'AI tools for lead generation, personalized outreach, and automated content creation that scales your sales efforts and builds stronger brand presence.',
+    features: ['Lead Generation', 'Content Creation', 'Social Posts'],
+    illustration: MVPIllustration,
   },
   {
-    title: 'Systems integration',
-    description: 'Connect your tools, unify your data, and automate the workflows in between.',
+    title: 'Custom Projects',
+    subtitle: 'Build Smarter Systems',
+    description: 'Whether you\'re starting from scratch or enhancing an existing system, we offer strategic consulting and develop custom AI projects aligned with your unique goals.',
+    features: ['Strategy', 'Custom AI', 'Consulting'],
+    illustration: IntegrationIllustration,
   },
 ]
 
@@ -43,47 +61,84 @@ export default function Services() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative py-20 border-b border-border overflow-hidden">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-bg to-gradient-to" />
-
-      <div className="max-w-[1000px] mx-auto px-6 relative z-10">
-        <div className="font-mono text-xs uppercase tracking-widest text-text-secondary mb-8 reveal">
-          What we do
+    <section ref={sectionRef} id="services" className="relative">
+      {/* Header section */}
+      <div className="py-20 border-b border-border">
+        <div className="max-w-[1200px] mx-auto px-6 text-center">
+          <div className="font-mono text-xs uppercase tracking-widest text-text-secondary mb-4 reveal">
+            What we offer
+          </div>
+          <h2 className="text-4xl md:text-5xl font-medium mb-6 reveal">
+            AI Solutions That Take Your<br />Business to the Next Level
+          </h2>
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto reveal">
+            We design, develop, and implement automation tools that help you work smarter, not harder
+          </p>
         </div>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {services.map((service, i) => (
-            <div
-              key={i}
-              className="reveal group"
-              style={{ transitionDelay: `${i * 0.1}s` }}
-            >
-              {/* Card with gradient background */}
-              <div className="relative h-full p-8 rounded-lg border border-card-border bg-card-bg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      {/* Service sections - each gets full space */}
+      {services.map((service, i) => {
+        const Illustration = service.illustration
+        const isEven = i % 2 === 0
 
-                <div className="relative z-10">
-                  {/* Number badge */}
-                  <div className="w-10 h-10 rounded-md bg-accent-light flex items-center justify-center mb-4">
-                    <span className="font-mono text-sm font-medium text-accent">
-                      0{i + 1}
-                    </span>
+        return (
+          <div
+            key={i}
+            className="relative py-24 border-b border-border overflow-hidden reveal"
+            style={{ transitionDelay: `${i * 0.1}s` }}
+          >
+            {/* Subtle gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-bg to-gradient-to" />
+
+            <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+              <div className={`grid lg:grid-cols-2 gap-16 items-center ${isEven ? '' : 'lg:grid-flow-dense'}`}>
+                {/* Illustration side */}
+                <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <Illustration />
+                </div>
+
+                {/* Content side */}
+                <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'} space-y-6`}>
+                  <div>
+                    <div className="inline-block px-3 py-1 bg-accent-light rounded-full mb-4">
+                      <span className="font-mono text-xs font-medium text-accent">
+                        0{i + 1}
+                      </span>
+                    </div>
+
+                    <h3 className="text-3xl md:text-4xl font-medium mb-3 tracking-tight">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-xl text-accent font-medium mb-4">
+                      {service.subtitle}
+                    </p>
+
+                    <p className="text-base text-text-secondary leading-relaxed">
+                      {service.description}
+                    </p>
                   </div>
 
-                  <h3 className="text-lg font-medium mb-3 tracking-tight">
-                    {service.title}
-                  </h3>
-                  <p className="text-[15px] text-text-secondary leading-relaxed">
-                    {service.description}
-                  </p>
+                  {/* Feature tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {service.features.map((feature, idx) => (
+                      <div
+                        key={idx}
+                        className="px-4 py-2 bg-bg-secondary border border-border rounded-lg"
+                      >
+                        <span className="text-sm font-medium text-text-secondary">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        )
+      })}
     </section>
   )
 }

@@ -10,25 +10,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#FAFAF9',
-        'bg-secondary': '#F5F5F4',
-        text: '#1C1917',
-        'text-secondary': '#57534E',
-        accent: '#0D9488', // Teal - technical, differentiated
-        'accent-light': '#CCFBF1',
-        border: '#E7E5E4',
-        // Gradient colors
-        'gradient-from': '#F8FAF9',
-        'gradient-via': '#F5F7F6',
-        'gradient-to': '#FAFAF9',
-        'gradient-accent-from': '#14B8A6',
-        'gradient-accent-to': '#0D9488',
+        bg: '#FFFFFF',
+        'bg-secondary': '#FAFAFA',
+        text: '#0A0A0A',
+        'text-secondary': '#737373',
+        accent: '#0066FF', // Bold electric blue
+        'accent-light': '#E6F0FF',
+        border: '#E5E5E5',
+        // Gradient colors - very subtle
+        'gradient-from': '#FFFFFF',
+        'gradient-via': '#FEFEFE',
+        'gradient-to': '#FAFAFA',
+        'gradient-accent-from': '#0066FF',
+        'gradient-accent-to': '#0052CC',
         // Card colors
         'card-bg': '#FFFFFF',
-        'card-border': '#E7E5E4',
+        'card-border': '#E5E5E5',
       },
       fontFamily: {
-        sans: ['Syne', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
     },

@@ -21,7 +21,7 @@ export default function Hero() {
             <div className="flex gap-4 fade-in fade-in-delay-2">
               <a
                 href="#contact"
-                className="font-mono text-sm font-medium text-white bg-accent px-6 py-3 rounded-md hover:bg-teal-700 transition-all hover:-translate-y-0.5"
+                className="font-mono text-sm font-medium text-white bg-accent px-6 py-3 rounded-md hover:bg-gradient-accent-to transition-all hover:-translate-y-0.5"
               >
                 Get started
               </a>
