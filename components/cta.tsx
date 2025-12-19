@@ -45,7 +45,9 @@ export default function CTA() {
 
           {/* Enhanced button with gradient */}
           <a
-            href="#" // Replace with your Calendly link
+            href="https://calendly.com/erichalfonso2000/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-mono text-sm font-medium text-white bg-gradient-to-r from-gradient-accent-from to-gradient-accent-to px-8 py-4 rounded-md hover:shadow-lg hover:shadow-accent/20 transition-all hover:-translate-y-0.5"
           >
             Book an intro
