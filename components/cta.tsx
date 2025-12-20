@@ -24,22 +24,22 @@ export default function CTA() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="contact" className="relative py-24 overflow-hidden">
+    <section ref={sectionRef} id="contact" className="relative py-16 sm:py-20 md:py-24 overflow-hidden">
       {/* Dramatic gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-light via-bg-secondary to-gradient-to" />
 
       {/* Radial gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-t from-bg/20 to-transparent" />
 
-      <div className="max-w-[1000px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1000px] mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center max-w-[520px] mx-auto reveal">
           {/* Decorative gradient line */}
-          <div className="w-12 h-1 bg-gradient-to-r from-accent to-transparent mx-auto mb-6" />
+          <div className="w-12 h-1 bg-gradient-to-r from-accent to-transparent mx-auto mb-4 sm:mb-6" />
 
-          <h2 className="text-[32px] font-medium mb-4 tracking-tight">
+          <h2 className="text-2xl sm:text-[28px] md:text-[32px] font-medium mb-3 sm:mb-4 tracking-tight px-4">
             Ready to build?
           </h2>
-          <p className="text-base text-text-secondary mb-8 leading-relaxed">
+          <p className="text-sm sm:text-base text-text-secondary mb-6 sm:mb-8 leading-relaxed px-4">
             15 minutes. No pitch deck. Just a conversation about what you're trying to solve.
           </p>
 
@@ -48,7 +48,7 @@ export default function CTA() {
             href="https://calendly.com/erichalfonso2000/15min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-mono text-sm font-medium text-white bg-gradient-to-r from-gradient-accent-from to-gradient-accent-to px-8 py-4 rounded-md hover:shadow-lg hover:shadow-accent/20 transition-all hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 font-mono text-sm font-medium text-white bg-gradient-to-r from-gradient-accent-from to-gradient-accent-to px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:shadow-lg hover:shadow-accent/20 transition-all hover:-translate-y-0.5"
           >
             Book an intro
             <svg

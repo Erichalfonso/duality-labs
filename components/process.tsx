@@ -81,44 +81,46 @@ export default function Process() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative py-24 border-b border-border overflow-hidden">
+    <section ref={sectionRef} className="relative py-12 sm:py-16 md:py-20 lg:py-24 border-b border-border overflow-hidden">
       {/* Gradient background - same as other sections */}
       <div className="absolute inset-0 bg-gradient-to-b from-bg to-gradient-to" />
 
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 reveal">
-          <div className="font-mono text-xs uppercase tracking-widest text-text-secondary mb-4">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16 reveal">
+          <div className="font-mono text-xs uppercase tracking-widest text-text-secondary mb-3 sm:mb-4">
             How we work
           </div>
-          <h2 className="text-4xl md:text-5xl font-medium mb-6">
-            The Key Benefits of AI<br />for Your Business Growth
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-6 px-4">
+            The Key Benefits of AI<br className="hidden sm:inline" />{' '}
+            <span className="sm:hidden">for Your Business Growth</span>
+            <span className="hidden sm:inline">for Your Business Growth</span>
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto px-4">
             Discover how AI automation enhances efficiency, reduces costs, and drives
             business growth with smarter, faster processes.
           </p>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {process.map((item, i) => (
             <div
               key={i}
               className="reveal group"
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
-              <div className="relative h-full p-8 rounded-xl border border-card-border bg-card-bg shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative h-full p-6 sm:p-8 rounded-xl border border-card-border bg-card-bg shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
                 {/* Icon */}
-                <div className="w-12 h-12 mb-6 text-accent">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 mb-4 sm:mb-6 text-accent">
                   {item.icon}
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-medium mb-3">
+                <h3 className="text-lg sm:text-xl font-medium mb-2 sm:mb-3">
                   {item.title}
                 </h3>
-                <p className="text-[15px] text-text-secondary leading-relaxed">
+                <p className="text-sm sm:text-[15px] text-text-secondary leading-relaxed">
                   {item.description}
                 </p>
 
