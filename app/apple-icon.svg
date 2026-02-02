@@ -1,8 +1,13 @@
 <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="180" height="180" rx="40" fill="#FAFAF9"/>
-  <g transform="translate(90, 90)">
-    <!-- Psi symbol as paths for consistent rendering -->
-    <path d="M0 -55 L0 55" stroke="#0A0A0A" stroke-width="14" stroke-linecap="round"/>
-    <path d="M-40 -35 Q-40 10 0 22 Q40 10 40 -35" stroke="#0A0A0A" stroke-width="14" stroke-linecap="round" fill="none"/>
-  </g>
+  <rect width="180" height="180" rx="36" fill="#FAFAF9"/>
+  <text
+    x="90"
+    y="90"
+    text-anchor="middle"
+    dominant-baseline="central"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="120"
+    font-weight="700"
+    fill="#171717"
+  >Ψ</text>
 </svg>
