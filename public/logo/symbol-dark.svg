@@ -1,7 +1,13 @@
 <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Duality Labs - Symbol Only (Dark on Light) -->
-  <g transform="translate(60, 60)">
-    <path d="M0 -45 L0 45" stroke="#0A0A0A" stroke-width="10" stroke-linecap="round"/>
-    <path d="M-32 -28 Q-32 8 0 18 Q32 8 32 -28" stroke="#0A0A0A" stroke-width="10" stroke-linecap="round" fill="none"/>
-  </g>
+  <!-- Duality Labs - Symbol Only (Dark, for light backgrounds) -->
+  <text
+    x="60"
+    y="60"
+    text-anchor="middle"
+    dominant-baseline="central"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="100"
+    font-weight="700"
+    fill="#171717"
+  >Ψ</text>
 </svg>

@@ -1,12 +1,18 @@
-<svg width="160" height="140" viewBox="0 0 160 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Duality Labs - Vertical/Stacked Logo (Dark on Light) -->
+<svg width="180" height="160" viewBox="0 0 180 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Duality Labs - Vertical/Stacked Logo (Dark, for light backgrounds) -->
 
   <!-- Psi Symbol -->
-  <g transform="translate(80, 50)">
-    <path d="M0 -35 L0 35" stroke="#0A0A0A" stroke-width="8" stroke-linecap="round"/>
-    <path d="M-25 -22 Q-25 6 0 14 Q25 6 25 -22" stroke="#0A0A0A" stroke-width="8" stroke-linecap="round" fill="none"/>
-  </g>
+  <text
+    x="90"
+    y="60"
+    text-anchor="middle"
+    dominant-baseline="central"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="80"
+    font-weight="700"
+    fill="#171717"
+  >Ψ</text>
 
   <!-- Wordmark -->
-  <text x="80" y="120" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" letter-spacing="0.12em" fill="#0A0A0A">DUALITY LABS</text>
+  <text x="90" y="135" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" letter-spacing="0.12em" fill="#171717">DUALITY LABS</text>
 </svg>
