@@ -1,0 +1,36 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Duality Labs - Open Graph Image (1200x630) -->
+
+  <!-- Background with subtle gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="100%" style="stop-color:#FAFAFA"/>
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0066FF"/>
+      <stop offset="100%" style="stop-color:#0052CC"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Accent line at top -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accentGradient)"/>
+
+  <!-- Psi Symbol -->
+  <g transform="translate(600, 260)">
+    <path d="M0 -90 L0 90" stroke="#0A0A0A" stroke-width="20" stroke-linecap="round"/>
+    <path d="M-65 -56 Q-65 16 0 36 Q65 16 65 -56" stroke="#0A0A0A" stroke-width="20" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Company Name -->
+  <text x="600" y="440" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="600" letter-spacing="0.15em" fill="#0A0A0A">DUALITY LABS</text>
+
+  <!-- Tagline -->
+  <text x="600" y="490" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="400" fill="#737373">AI-Powered Solutions for Modern Business</text>
+
+  <!-- Subtle corner accents -->
+  <circle cx="80" cy="80" r="60" fill="#0066FF" opacity="0.05"/>
+  <circle cx="1120" cy="550" r="80" fill="#0066FF" opacity="0.05"/>
+</svg>
