@@ -1,0 +1,55 @@
+<svg width="2550" height="3300" viewBox="0 0 2550 3300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Letterhead Template (8.5" x 11" at 300dpi) -->
+
+  <rect width="2550" height="3300" fill="#FFFFFF"/>
+
+  <!-- Header accent line -->
+  <rect x="0" y="0" width="2550" height="12" fill="#0066FF"/>
+
+  <!-- Header Section -->
+  <g id="header" transform="translate(200, 100)">
+    <!-- Logo Symbol -->
+    <text
+      x="0"
+      y="80"
+      dominant-baseline="central"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="80"
+      font-weight="700"
+      fill="#171717"
+    >Ψ</text>
+
+    <!-- Company Name -->
+    <text x="100" y="60" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="600" letter-spacing="0.1em" fill="#171717">DUALITY LABS</text>
+
+    <!-- Tagline -->
+    <text x="100" y="100" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400" fill="#737373">AI-Powered Solutions for Modern Business</text>
+  </g>
+
+  <!-- Header line separator -->
+  <rect x="200" y="240" width="2150" height="1" fill="#E5E5E5"/>
+
+  <!-- Content Area placeholder -->
+  <text x="200" y="400" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#737373">[Your content here]</text>
+
+  <!-- Footer Section -->
+  <g id="footer" transform="translate(200, 3100)">
+    <rect x="0" y="0" width="2150" height="1" fill="#E5E5E5"/>
+
+    <!-- Contact info -->
+    <text x="0" y="60" font-family="JetBrains Mono, monospace" font-size="12" fill="#737373">dualitylabs.com</text>
+    <text x="400" y="60" font-family="JetBrains Mono, monospace" font-size="12" fill="#737373">hello@dualitylabs.com</text>
+    <text x="900" y="60" font-family="JetBrains Mono, monospace" font-size="12" fill="#737373">+1 (555) 000-0000</text>
+
+    <!-- Psi accent -->
+    <text
+      x="2100"
+      y="60"
+      text-anchor="end"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="24"
+      font-weight="700"
+      fill="#0066FF"
+    >Ψ</text>
+  </g>
+</svg>

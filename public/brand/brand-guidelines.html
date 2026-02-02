@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duality Labs - Brand Guidelines</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #FFFFFF;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    header {
+      border-top: 6px solid #0066FF;
+      padding-top: 60px;
+      margin-bottom: 80px;
+      text-align: center;
+    }
+
+    .logo-symbol {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 120px;
+      font-weight: 700;
+      color: #171717;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      margin-top: 20px;
+    }
+
+    .subtitle {
+      color: #737373;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #0066FF;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #E5E5E5;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #737373;
+      margin-bottom: 20px;
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .color-card {
+      border: 1px solid #E5E5E5;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .color-swatch {
+      height: 100px;
+    }
+
+    .color-info {
+      padding: 15px;
+    }
+
+    .color-name {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .color-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #737373;
+    }
+
+    .font-display {
+      margin: 30px 0;
+      padding: 30px;
+      background: #FAFAFA;
+      border-radius: 8px;
+    }
+
+    .font-name {
+      font-size: 14px;
+      color: #737373;
+      margin-bottom: 10px;
+    }
+
+    .font-sample-inter {
+      font-family: 'Inter', sans-serif;
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .font-sample-jetbrains {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 24px;
+    }
+
+    .font-sample-georgia {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .logo-variations {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .logo-card {
+      padding: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 150px;
+    }
+
+    .logo-card.light {
+      background: #FAFAFA;
+      border: 1px solid #E5E5E5;
+    }
+
+    .logo-card.dark {
+      background: #171717;
+    }
+
+    .logo-card .symbol {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 64px;
+      font-weight: 700;
+    }
+
+    .logo-card .wordmark {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      margin-left: 15px;
+    }
+
+    .logo-card.light .symbol,
+    .logo-card.light .wordmark {
+      color: #171717;
+    }
+
+    .logo-card.dark .symbol,
+    .logo-card.dark .wordmark {
+      color: #FFFFFF;
+    }
+
+    .spacing-info {
+      background: #FAFAFA;
+      padding: 30px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    .spacing-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      border: 2px dashed #E5E5E5;
+      margin-top: 20px;
+    }
+
+    .clear-space {
+      border: 2px dashed #0066FF;
+      padding: 30px;
+      position: relative;
+    }
+
+    .clear-space::before {
+      content: 'Clear Space';
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      color: #0066FF;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .dont-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .dont-list li {
+      padding: 10px 0 10px 30px;
+      position: relative;
+      color: #737373;
+    }
+
+    .dont-list li::before {
+      content: '×';
+      position: absolute;
+      left: 0;
+      color: #ef4444;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .file-list {
+      margin-top: 20px;
+    }
+
+    .file-item {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background: #FAFAFA;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .file-icon {
+      width: 40px;
+      height: 40px;
+      background: #0066FF;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      margin-right: 15px;
+    }
+
+    .file-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+    }
+
+    .file-desc {
+      font-size: 12px;
+      color: #737373;
+      margin-top: 3px;
+    }
+
+    footer {
+      margin-top: 100px;
+      padding-top: 40px;
+      border-top: 1px solid #E5E5E5;
+      text-align: center;
+      color: #737373;
+      font-size: 13px;
+    }
+
+    footer .psi {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 24px;
+      color: #0066FF;
+      margin-bottom: 15px;
+    }
+
+    @media print {
+      .container {
+        max-width: 100%;
+        padding: 40px;
+      }
+
+      section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-symbol">Ψ</div>
+      <h1>DUALITY LABS</h1>
+      <p class="subtitle">Brand Guidelines</p>
+    </header>
+
+    <!-- Logo Section -->
+    <section>
+      <h2>Logo</h2>
+      <h3>Primary Mark</h3>
+      <p>The Duality Labs logo consists of the Greek letter Psi (Ψ) rendered in Georgia serif typeface. This symbol represents the duality of mind and technology, human creativity and artificial intelligence working together.</p>
+
+      <div class="logo-variations">
+        <div class="logo-card light">
+          <span class="symbol">Ψ</span>
+          <span class="wordmark">DUALITY LABS</span>
+        </div>
+        <div class="logo-card dark">
+          <span class="symbol">Ψ</span>
+          <span class="wordmark">DUALITY LABS</span>
+        </div>
+      </div>
+
+      <div class="spacing-info">
+        <h3>Clear Space</h3>
+        <p>Maintain clear space around the logo equal to the height of the Psi symbol's vertical stroke. This ensures the logo remains legible and impactful.</p>
+        <div class="spacing-visual">
+          <div class="clear-space">
+            <span style="font-family: Georgia, serif; font-size: 48px; font-weight: 700;">Ψ</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 40px;">Logo Misuse</h3>
+      <p>To maintain brand consistency, avoid the following:</p>
+      <ul class="dont-list">
+        <li>Don't rotate or skew the logo</li>
+        <li>Don't change the logo colors outside brand palette</li>
+        <li>Don't add effects like shadows or gradients to the symbol</li>
+        <li>Don't stretch or distort the proportions</li>
+        <li>Don't use low contrast color combinations</li>
+        <li>Don't place the logo on busy backgrounds</li>
+      </ul>
+    </section>
+
+    <!-- Color Section -->
+    <section>
+      <h2>Color Palette</h2>
+      <h3>Primary Colors</h3>
+      <p>Our color palette is clean and professional, with electric blue as the primary accent color providing energy and modernity.</p>
+
+      <div class="color-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background: #0066FF;"></div>
+          <div class="color-info">
+            <div class="color-name">Accent Blue</div>
+            <div class="color-value">#0066FF</div>
+            <div class="color-value">RGB: 0, 102, 255</div>
+          </div>
+        </div>
+
+        <div class="color-card">
+          <div class="color-swatch" style="background: #171717;"></div>
+          <div class="color-info">
+            <div class="color-name">Primary Text</div>
+            <div class="color-value">#171717</div>
+            <div class="color-value">RGB: 23, 23, 23</div>
+          </div>
+        </div>
+
+        <div class="color-card">
+          <div class="color-swatch" style="background: #FFFFFF; border: 1px solid #E5E5E5;"></div>
+          <div class="color-info">
+            <div class="color-name">Background</div>
+            <div class="color-value">#FFFFFF</div>
+            <div class="color-value">RGB: 255, 255, 255</div>
+          </div>
+        </div>
+
+        <div class="color-card">
+          <div class="color-swatch" style="background: #FAFAF9;"></div>
+          <div class="color-info">
+            <div class="color-name">Secondary BG</div>
+            <div class="color-value">#FAFAF9</div>
+            <div class="color-value">RGB: 250, 250, 249</div>
+          </div>
+        </div>
+
+        <div class="color-card">
+          <div class="color-swatch" style="background: #737373;"></div>
+          <div class="color-info">
+            <div class="color-name">Secondary Text</div>
+            <div class="color-value">#737373</div>
+            <div class="color-value">RGB: 115, 115, 115</div>
+          </div>
+        </div>
+
+        <div class="color-card">
+          <div class="color-swatch" style="background: #E5E5E5;"></div>
+          <div class="color-info">
+            <div class="color-name">Border</div>
+            <div class="color-value">#E5E5E5</div>
+            <div class="color-value">RGB: 229, 229, 229</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography Section -->
+    <section>
+      <h2>Typography</h2>
+
+      <div class="font-display">
+        <div class="font-name">Logo Symbol — Georgia, Bold</div>
+        <div class="font-sample-georgia">Ψ</div>
+      </div>
+
+      <div class="font-display">
+        <div class="font-name">Primary — Inter (Headings, Body, UI)</div>
+        <div class="font-sample-inter">The quick brown fox jumps over the lazy dog</div>
+        <p style="margin-top: 15px; margin-bottom: 0;">Weights: 400 (Regular), 500 (Medium), 600 (Semibold), 700 (Bold)</p>
+      </div>
+
+      <div class="font-display">
+        <div class="font-name">Monospace — JetBrains Mono (Code, Technical)</div>
+        <div class="font-sample-jetbrains">const duality = "labs";</div>
+        <p style="margin-top: 15px; margin-bottom: 0;">Weights: 400 (Regular), 500 (Medium)</p>
+      </div>
+    </section>
+
+    <!-- Assets Section -->
+    <section>
+      <h2>Brand Assets</h2>
+      <p>All brand assets are available in the <code style="font-family: 'JetBrains Mono', monospace; background: #FAFAFA; padding: 2px 6px; border-radius: 4px;">/public/brand/</code> directory.</p>
+
+      <h3 style="margin-top: 30px;">Logo Files</h3>
+      <div class="file-list">
+        <div class="file-item">
+          <div class="file-icon">SVG</div>
+          <div>
+            <div class="file-name">symbol-dark.svg / symbol-light.svg / symbol-accent.svg</div>
+            <div class="file-desc">Psi symbol only in dark, light, and accent blue versions</div>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-icon">SVG</div>
+          <div>
+            <div class="file-name">logo-horizontal-dark.svg / logo-horizontal-light.svg</div>
+            <div class="file-desc">Symbol + wordmark side by side</div>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-icon">SVG</div>
+          <div>
+            <div class="file-name">logo-vertical-dark.svg / logo-vertical-light.svg</div>
+            <div class="file-desc">Symbol stacked above wordmark</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 30px;">Social Media</h3>
+      <div class="file-list">
+        <div class="file-item">
+          <div class="file-icon">SVG</div>
+          <div>
+            <div class="file-name">profile-picture.svg</div>
+            <div class="file-desc">400x400 square profile image</div>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-icon">SVG</div>
+          <div>
+            <div class="file-name">linkedin-banner.svg</div>
+            <div class="file-desc">1584x396 LinkedIn cover image</div>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-icon">SVG</div>
+          <div>
+            <div class="file-name">twitter-header.svg</div>
+            <div class="file-desc">1500x500 Twitter/X header image</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 30px;">Templates</h3>
+      <div class="file-list">
+        <div class="file-item">
+          <div class="file-icon">SVG</div>
+          <div>
+            <div class="file-name">business-card.svg</div>
+            <div class="file-desc">Front and back business card design</div>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-icon">SVG</div>
+          <div>
+            <div class="file-name">letterhead.svg</div>
+            <div class="file-desc">8.5" x 11" letterhead template</div>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-icon">SVG</div>
+          <div>
+            <div class="file-name">invoice.svg</div>
+            <div class="file-desc">Professional invoice template</div>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-icon">HTML</div>
+          <div>
+            <div class="file-name">email-signature.html</div>
+            <div class="file-desc">Email signature template</div>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-icon">SVG</div>
+          <div>
+            <div class="file-name">presentation-slide.svg / presentation-content.svg</div>
+            <div class="file-desc">16:9 presentation slide templates</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="psi">Ψ</div>
+      <p>Duality Labs Brand Guidelines</p>
+      <p style="margin-top: 5px;">dualitylabs.com</p>
+    </footer>
+  </div>
+</body>
+</html>

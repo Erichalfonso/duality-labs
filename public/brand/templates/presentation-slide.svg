@@ -1,0 +1,42 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Presentation Slide Template (16:9) - Title Slide -->
+
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- Accent line at top -->
+  <rect x="0" y="0" width="1920" height="6" fill="#0066FF"/>
+
+  <!-- Center Content -->
+  <g transform="translate(960, 400)">
+    <!-- Psi Symbol -->
+    <text
+      x="0"
+      y="0"
+      text-anchor="middle"
+      dominant-baseline="central"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="180"
+      font-weight="700"
+      fill="#171717"
+    >Ψ</text>
+  </g>
+
+  <!-- Title -->
+  <text x="960" y="600" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="600" fill="#171717">[Presentation Title]</text>
+
+  <!-- Subtitle -->
+  <text x="960" y="670" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400" fill="#737373">[Subtitle or Description]</text>
+
+  <!-- Company Name -->
+  <text x="960" y="800" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" letter-spacing="0.15em" fill="#0066FF">DUALITY LABS</text>
+
+  <!-- Footer -->
+  <g transform="translate(0, 1020)">
+    <text x="80" y="30" font-family="JetBrains Mono, monospace" font-size="12" fill="#737373">dualitylabs.com</text>
+    <text x="1840" y="30" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700" fill="#0066FF">Ψ</text>
+  </g>
+
+  <!-- Subtle corner accents -->
+  <circle cx="100" cy="100" r="80" fill="#0066FF" opacity="0.03"/>
+  <circle cx="1820" cy="980" r="100" fill="#0066FF" opacity="0.03"/>
+</svg>

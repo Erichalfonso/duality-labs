@@ -1,0 +1,64 @@
+<svg width="1050" height="600" viewBox="0 0 1050 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Business Card Template (3.5" x 2" at 300dpi) -->
+
+  <!-- Front Side -->
+  <g id="front">
+    <rect x="0" y="0" width="525" height="600" fill="#FAFAF9"/>
+
+    <!-- Accent line at top -->
+    <rect x="0" y="0" width="525" height="8" fill="#0066FF"/>
+
+    <!-- Logo Symbol -->
+    <text
+      x="262"
+      y="220"
+      text-anchor="middle"
+      dominant-baseline="central"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="120"
+      font-weight="700"
+      fill="#171717"
+    >Ψ</text>
+
+    <!-- Company Name -->
+    <text x="262" y="340" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" letter-spacing="0.12em" fill="#171717">DUALITY LABS</text>
+
+    <!-- Tagline -->
+    <text x="262" y="380" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#737373">AI-Powered Solutions</text>
+
+    <!-- Website -->
+    <text x="262" y="540" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="400" fill="#0066FF">dualitylabs.com</text>
+  </g>
+
+  <!-- Back Side -->
+  <g id="back" transform="translate(525, 0)">
+    <rect x="0" y="0" width="525" height="600" fill="#171717"/>
+
+    <!-- Accent line at top -->
+    <rect x="0" y="0" width="525" height="8" fill="#0066FF"/>
+
+    <!-- Name placeholder -->
+    <text x="50" y="200" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600" fill="#FFFFFF">[Your Name]</text>
+
+    <!-- Title placeholder -->
+    <text x="50" y="235" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400" fill="#737373">[Your Title]</text>
+
+    <!-- Contact Info -->
+    <text x="50" y="340" font-family="JetBrains Mono, monospace" font-size="11" fill="#FFFFFF">email@dualitylabs.com</text>
+    <text x="50" y="370" font-family="JetBrains Mono, monospace" font-size="11" fill="#FFFFFF">+1 (555) 000-0000</text>
+    <text x="50" y="400" font-family="JetBrains Mono, monospace" font-size="11" fill="#FFFFFF">dualitylabs.com</text>
+
+    <!-- Psi watermark -->
+    <text
+      x="420"
+      y="500"
+      text-anchor="middle"
+      dominant-baseline="central"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="80"
+      font-weight="700"
+      fill="#FFFFFF"
+      opacity="0.1"
+    >Ψ</text>
+  </g>
+</svg>

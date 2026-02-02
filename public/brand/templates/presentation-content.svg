@@ -1,0 +1,55 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Presentation Slide Template (16:9) - Content Slide -->
+
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- Accent line at top -->
+  <rect x="0" y="0" width="1920" height="6" fill="#0066FF"/>
+
+  <!-- Header -->
+  <g transform="translate(80, 60)">
+    <!-- Logo Symbol -->
+    <text
+      x="0"
+      y="30"
+      dominant-baseline="central"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="40"
+      font-weight="700"
+      fill="#171717"
+    >Ψ</text>
+
+    <!-- Company Name -->
+    <text x="50" y="30" dominant-baseline="central" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" letter-spacing="0.1em" fill="#171717">DUALITY LABS</text>
+  </g>
+
+  <!-- Slide Title -->
+  <text x="80" y="200" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="600" fill="#171717">[Slide Title]</text>
+
+  <!-- Content Area -->
+  <g transform="translate(80, 280)">
+    <!-- Bullet 1 -->
+    <circle cx="15" cy="35" r="6" fill="#0066FF"/>
+    <text x="40" y="42" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#171717">[First point goes here]</text>
+
+    <!-- Bullet 2 -->
+    <circle cx="15" cy="95" r="6" fill="#0066FF"/>
+    <text x="40" y="102" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#171717">[Second point goes here]</text>
+
+    <!-- Bullet 3 -->
+    <circle cx="15" cy="155" r="6" fill="#0066FF"/>
+    <text x="40" y="162" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#171717">[Third point goes here]</text>
+
+    <!-- Bullet 4 -->
+    <circle cx="15" cy="215" r="6" fill="#0066FF"/>
+    <text x="40" y="222" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#171717">[Fourth point goes here]</text>
+  </g>
+
+  <!-- Footer -->
+  <g transform="translate(0, 1020)">
+    <rect x="0" y="0" width="1920" height="1" fill="#E5E5E5"/>
+    <text x="80" y="35" font-family="JetBrains Mono, monospace" font-size="12" fill="#737373">dualitylabs.com</text>
+    <text x="960" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">[Presentation Title]</text>
+    <text x="1840" y="35" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" fill="#737373">[Slide #]</text>
+  </g>
+</svg>

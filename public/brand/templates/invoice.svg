@@ -1,0 +1,129 @@
+<svg width="2550" height="3300" viewBox="0 0 2550 3300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Invoice Template (8.5" x 11" at 300dpi) -->
+
+  <rect width="2550" height="3300" fill="#FFFFFF"/>
+
+  <!-- Header accent line -->
+  <rect x="0" y="0" width="2550" height="12" fill="#0066FF"/>
+
+  <!-- Header Section -->
+  <g id="header" transform="translate(200, 100)">
+    <!-- Logo Symbol -->
+    <text
+      x="0"
+      y="80"
+      dominant-baseline="central"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="80"
+      font-weight="700"
+      fill="#171717"
+    >Ψ</text>
+
+    <!-- Company Name -->
+    <text x="100" y="60" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="600" letter-spacing="0.1em" fill="#171717">DUALITY LABS</text>
+
+    <!-- Company Address -->
+    <text x="100" y="100" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">[Your Address Line 1]</text>
+    <text x="100" y="120" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">[City, State ZIP]</text>
+  </g>
+
+  <!-- Invoice Title -->
+  <text x="2350" y="180" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="700" fill="#171717">INVOICE</text>
+
+  <!-- Invoice Details -->
+  <g transform="translate(1800, 220)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">Invoice Number:</text>
+    <text x="350" y="0" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" fill="#171717">[INV-0001]</text>
+
+    <text x="0" y="30" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">Date:</text>
+    <text x="350" y="30" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" fill="#171717">[MM/DD/YYYY]</text>
+
+    <text x="0" y="60" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">Due Date:</text>
+    <text x="350" y="60" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" fill="#171717">[MM/DD/YYYY]</text>
+  </g>
+
+  <!-- Header line separator -->
+  <rect x="200" y="340" width="2150" height="1" fill="#E5E5E5"/>
+
+  <!-- Bill To Section -->
+  <g transform="translate(200, 400)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#0066FF">BILL TO</text>
+    <text x="0" y="35" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#171717">[Client Name]</text>
+    <text x="0" y="60" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">[Client Address]</text>
+    <text x="0" y="80" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">[City, State ZIP]</text>
+    <text x="0" y="100" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">[client@email.com]</text>
+  </g>
+
+  <!-- Table Header -->
+  <g transform="translate(200, 600)">
+    <rect x="0" y="0" width="2150" height="50" fill="#FAFAFA"/>
+    <text x="20" y="32" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#171717">DESCRIPTION</text>
+    <text x="1200" y="32" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#171717">QTY</text>
+    <text x="1500" y="32" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#171717">RATE</text>
+    <text x="2130" y="32" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#171717">AMOUNT</text>
+  </g>
+
+  <!-- Table Row 1 -->
+  <g transform="translate(200, 650)">
+    <rect x="0" y="50" width="2150" height="1" fill="#E5E5E5"/>
+    <text x="20" y="35" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#171717">[Service/Product Description]</text>
+    <text x="1200" y="35" font-family="JetBrains Mono, monospace" font-size="13" fill="#171717">[1]</text>
+    <text x="1500" y="35" font-family="JetBrains Mono, monospace" font-size="13" fill="#171717">$[0.00]</text>
+    <text x="2130" y="35" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" fill="#171717">$[0.00]</text>
+  </g>
+
+  <!-- Table Row 2 -->
+  <g transform="translate(200, 700)">
+    <rect x="0" y="50" width="2150" height="1" fill="#E5E5E5"/>
+    <text x="20" y="35" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#171717">[Service/Product Description]</text>
+    <text x="1200" y="35" font-family="JetBrains Mono, monospace" font-size="13" fill="#171717">[1]</text>
+    <text x="1500" y="35" font-family="JetBrains Mono, monospace" font-size="13" fill="#171717">$[0.00]</text>
+    <text x="2130" y="35" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" fill="#171717">$[0.00]</text>
+  </g>
+
+  <!-- Totals Section -->
+  <g transform="translate(1600, 900)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#737373">Subtotal</text>
+    <text x="550" y="0" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" fill="#171717">$[0.00]</text>
+
+    <text x="0" y="35" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#737373">Tax (0%)</text>
+    <text x="550" y="35" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" fill="#171717">$[0.00]</text>
+
+    <rect x="0" y="55" width="550" height="2" fill="#171717"/>
+
+    <text x="0" y="90" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#171717">TOTAL</text>
+    <text x="550" y="90" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="16" font-weight="700" fill="#0066FF">$[0.00]</text>
+  </g>
+
+  <!-- Payment Info -->
+  <g transform="translate(200, 1100)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#0066FF">PAYMENT INFORMATION</text>
+    <text x="0" y="35" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">Bank: [Bank Name]</text>
+    <text x="0" y="55" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">Account: [Account Number]</text>
+    <text x="0" y="75" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">Routing: [Routing Number]</text>
+  </g>
+
+  <!-- Notes -->
+  <g transform="translate(200, 1300)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#0066FF">NOTES</text>
+    <text x="0" y="35" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#737373">Thank you for your business!</text>
+  </g>
+
+  <!-- Footer -->
+  <g id="footer" transform="translate(200, 3100)">
+    <rect x="0" y="0" width="2150" height="1" fill="#E5E5E5"/>
+    <text x="0" y="60" font-family="JetBrains Mono, monospace" font-size="12" fill="#737373">dualitylabs.com</text>
+    <text x="400" y="60" font-family="JetBrains Mono, monospace" font-size="12" fill="#737373">hello@dualitylabs.com</text>
+    <text x="900" y="60" font-family="JetBrains Mono, monospace" font-size="12" fill="#737373">+1 (555) 000-0000</text>
+
+    <text
+      x="2100"
+      y="60"
+      text-anchor="end"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="24"
+      font-weight="700"
+      fill="#0066FF"
+    >Ψ</text>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Favicon 16x16 -->
+  <rect width="16" height="16" rx="3" fill="#FAFAF9"/>
+  <text
+    x="8"
+    y="8"
+    text-anchor="middle"
+    dominant-baseline="central"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="12"
+    font-weight="700"
+    fill="#171717"
+  >Ψ</text>
+</svg>
