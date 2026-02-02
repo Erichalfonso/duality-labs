@@ -8,7 +8,9 @@ export default function Footer() {
         </span>
         <div className="flex gap-4 sm:gap-6">
           <a
-            href="#"
+            href="https://www.linkedin.com/company/dualitylabs-ai/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-mono text-xs text-text-secondary hover:text-text transition-colors"
           >
             LinkedIn
