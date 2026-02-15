@@ -10,6 +10,7 @@ export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const links = [
+    { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
     { href: '/blog', label: 'Blog' },
     { href: '/about', label: 'About' },
@@ -69,8 +70,9 @@ export default function Nav() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           {links.map((link) => {
-            const isActive = pathname === link.href ||
-                            (link.href === '/services' && pathname === '/')
+            const isActive = link.href === '/'
+                            ? pathname === '/'
+                            : pathname.startsWith(link.href)
 
             return (
               <Link
@@ -119,7 +121,9 @@ export default function Nav() {
         <div className="lg:hidden border-t border-border bg-bg">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-4 flex flex-col gap-4">
             {links.map((link) => {
-              const isActive = pathname === link.href ||
+              const isActive = link.href === '/'
+                            ? pathname === '/'
+                            : pathname.startsWith(link.href) ||
                               (link.href.includes('#') && pathname === '/')
 
               return (
