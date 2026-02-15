@@ -2,60 +2,48 @@
 
 import { useEffect, useRef } from 'react'
 
-const process = [
+const steps = [
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-    title: 'US-Led Product Ownership',
-    description: 'Direct access to senior product thinking with clear communication and strategic guidance from experienced US-based leads.',
+    number: '01',
+    title: 'Intro Call',
+    description:
+      'A quick conversation to learn about your business, your goals, and where you think AI and automation could make the biggest impact. We explain how we work and see if there is a fit.',
+    duration: '15 min',
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
-    title: 'Distributed Engineering',
-    description: 'Vetted, senior engineers working asynchronously across time zones to deliver high-quality solutions efficiently.',
+    number: '02',
+    title: 'Business Audit',
+    description:
+      'We take a deep dive into your current systems, workflows, and tech stack. This is where we identify the highest-value opportunities for automation and AI integration.',
+    duration: '60 min',
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: 'Fixed-Scope Outcomes',
-    description: "Clear deliverables and timelines ensure you know exactly what you're getting with predictable results.",
+    number: '03',
+    title: 'Custom Proposal',
+    description:
+      'Based on the audit, we deliver a clear scope with defined deliverables, timeline, and pricing. No surprises — you know exactly what you are getting before we write a single line of code.',
+    duration: '3-5 days',
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: 'Rapid Iteration',
-    description: 'Fast feedback cycles and agile methodology ensure quick turnaround times without sacrificing quality.',
+    number: '04',
+    title: 'Build & Iterate',
+    description:
+      'Our engineering team builds your solution in focused sprints with regular check-ins. You see real progress every week and can steer the direction as we go.',
+    duration: 'Ongoing',
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
-    title: 'Data-Driven Decisions',
-    description: 'Analytics and metrics guide every decision, ensuring measurable impact and continuous improvement.',
+    number: '05',
+    title: 'Launch',
+    description:
+      'We deploy your solution into production, handle the migration, and make sure everything runs smoothly from day one.',
+    duration: 'Launch day',
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
-      </svg>
-    ),
-    title: 'Full Transparency',
-    description: 'Complete visibility into progress, challenges, and solutions with regular updates and open communication.',
+    number: '06',
+    title: 'Ongoing Support',
+    description:
+      'After launch, we stick around. Monitoring, optimization, and continued development as your business evolves and new opportunities emerge.',
+    duration: 'Continuous',
   },
 ]
 
@@ -81,54 +69,64 @@ export default function Process() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative py-12 sm:py-16 md:py-20 lg:py-24 border-b border-border overflow-hidden">
-      {/* Gradient background - same as other sections */}
+    <section
+      ref={sectionRef}
+      className="relative py-12 sm:py-16 md:py-20 lg:py-24 border-b border-border overflow-hidden"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-bg to-gradient-to" />
 
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-[900px] mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-10 sm:mb-12 md:mb-16 reveal">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 reveal">
           <div className="font-mono text-xs uppercase tracking-widest text-text-secondary mb-3 sm:mb-4">
             How we work
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-6 px-4">
-            The Key Benefits of AI<br className="hidden sm:inline" />{' '}
-            <span className="sm:hidden">for Your Business Growth</span>
-            <span className="hidden sm:inline">for Your Business Growth</span>
+            From first call to launch<br className="hidden sm:inline" /> and beyond.
           </h2>
           <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto px-4">
-            Discover how AI automation enhances efficiency, reduces costs, and drives
-            business growth with smarter, faster processes.
+            A clear, structured process so you always know what happens next.
           </p>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {process.map((item, i) => (
-            <div
-              key={i}
-              className="reveal group"
-              style={{ transitionDelay: `${i * 0.1}s` }}
-            >
-              <div className="relative h-full p-6 sm:p-8 rounded-xl border border-card-border bg-card-bg shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
-                {/* Icon */}
-                <div className="w-10 h-10 sm:w-12 sm:h-12 mb-4 sm:mb-6 text-accent">
-                  {item.icon}
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical line */}
+          <div className="absolute left-[23px] sm:left-[27px] top-0 bottom-0 w-px bg-border" />
+
+          <div className="space-y-8 sm:space-y-10">
+            {steps.map((step, i) => (
+              <div
+                key={i}
+                className="reveal relative flex gap-5 sm:gap-8"
+                style={{ transitionDelay: `${i * 0.1}s` }}
+              >
+                {/* Step number circle */}
+                <div className="relative z-10 flex-shrink-0">
+                  <div className="w-[48px] h-[48px] sm:w-[56px] sm:h-[56px] rounded-full bg-card-bg border-2 border-accent/20 flex items-center justify-center">
+                    <span className="font-mono text-xs sm:text-sm font-semibold text-accent">
+                      {step.number}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg sm:text-xl font-medium mb-2 sm:mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-sm sm:text-[15px] text-text-secondary leading-relaxed">
-                  {item.description}
-                </p>
-
-                {/* Hover glow effect */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                <div className="flex-1 pb-2 pt-1">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-2">
+                    <h3 className="text-lg sm:text-xl font-medium">
+                      {step.title}
+                    </h3>
+                    <span className="font-mono text-[11px] text-text-secondary bg-black/[0.04] px-2 py-0.5 rounded w-fit">
+                      {step.duration}
+                    </span>
+                  </div>
+                  <p className="text-sm sm:text-[15px] text-text-secondary leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
