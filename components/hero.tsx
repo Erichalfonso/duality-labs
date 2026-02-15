@@ -28,7 +28,7 @@ export default function Hero() {
                 Book intro call
               </a>
               <a
-                href="#services"
+                href="/services"
                 className="font-mono text-sm text-text-secondary border border-border px-6 py-3 rounded-md hover:border-text hover:text-text transition-all text-center"
               >
                 Learn more

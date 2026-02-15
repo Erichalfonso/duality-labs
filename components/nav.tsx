@@ -10,7 +10,7 @@ export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const links = [
-    { href: '/#services', label: 'Services', scroll: true },
+    { href: '/services', label: 'Services' },
     { href: '/blog', label: 'Blog' },
     { href: '/about', label: 'About' },
   ]
