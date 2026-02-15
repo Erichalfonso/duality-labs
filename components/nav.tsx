@@ -76,7 +76,7 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                scroll={link.scroll}
+
                 className={`font-mono text-[13px] transition-colors ${
                   isActive
                     ? 'text-accent'
@@ -126,7 +126,7 @@ export default function Nav() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  scroll={link.scroll}
+  
                   className={`font-mono text-sm py-2 transition-colors ${
                     isActive
                       ? 'text-accent'
