@@ -70,7 +70,7 @@ export default function Nav() {
         <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           {links.map((link) => {
             const isActive = pathname === link.href ||
-                            (link.href.includes('#') && pathname === '/')
+                            (link.href === '/services' && pathname === '/')
 
             return (
               <Link
