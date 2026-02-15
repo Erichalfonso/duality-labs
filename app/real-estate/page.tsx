@@ -175,7 +175,7 @@ export default function RealEstatePage() {
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           <div className="max-w-[700px] mx-auto text-center">
             <a
-              href="https://calendly.com/erichalfonso2000/15min"
+              href="https://calendly.com/dualitylabs/new-meeting"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 md:gap-3 font-mono text-base md:text-lg font-semibold text-white bg-gradient-to-r from-accent to-teal-600 px-8 md:px-12 py-4 md:py-6 rounded-xl hover:shadow-2xl hover:shadow-accent/30 transition-all hover:-translate-y-1 w-full sm:w-auto"

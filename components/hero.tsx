@@ -20,7 +20,7 @@ export default function Hero() {
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 fade-in fade-in-delay-2">
               <a
-                href="https://calendly.com/erichalfonso2000/15min"
+                href="https://calendly.com/dualitylabs/new-meeting"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-mono text-sm font-medium text-white bg-accent px-6 py-3 rounded-md hover:bg-gradient-accent-to transition-all hover:-translate-y-0.5 text-center"
