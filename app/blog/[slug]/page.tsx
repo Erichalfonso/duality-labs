@@ -3,6 +3,7 @@ import Nav from '@/components/nav'
 import BlogPostLayout from '@/components/blog-post-layout'
 import Footer from '@/components/footer'
 import { getAllSlugs, getPostBySlug } from '@/lib/blog'
+import { markdownToHtml } from '@/lib/mdx'
 import type { Metadata } from 'next'
 
 interface BlogPostPageProps {
@@ -52,15 +53,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
-  // Dynamically import the MDX content
-  const MDXContent = (await import(`@/content/posts/${slug}.mdx`)).default
+  const html = await markdownToHtml(post.content)
 
   return (
     <>
       <Nav />
       <main>
         <BlogPostLayout post={post}>
-          <MDXContent />
+          <div
+            className="prose prose-lg max-w-none prose-headings:font-medium prose-headings:tracking-tight prose-h2:text-3xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-2xl prose-h3:mt-6 prose-h3:mb-3 prose-p:text-text-secondary prose-p:leading-relaxed prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-text prose-li:text-text-secondary prose-blockquote:border-accent prose-blockquote:text-text-secondary prose-hr:border-border prose-table:text-sm prose-th:text-text prose-td:text-text-secondary"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
         </BlogPostLayout>
       </main>
       <Footer />

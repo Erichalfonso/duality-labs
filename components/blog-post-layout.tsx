@@ -58,9 +58,7 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
 
       {/* Content */}
       <div className="max-w-[800px] mx-auto px-6 py-16">
-        <div className="prose prose-lg max-w-none">
-          {children}
-        </div>
+        {children}
       </div>
     </article>
   )
