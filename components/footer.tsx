@@ -16,12 +16,6 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
-            href="#"
-            className="font-mono text-xs text-text-secondary hover:text-text transition-colors"
-          >
-            Twitter
-          </a>
-          <a
             href="mailto:hello@dualitylabs.com"
             className="font-mono text-xs text-text-secondary hover:text-text transition-colors"
           >
