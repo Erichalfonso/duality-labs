@@ -16,7 +16,7 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
-            href="mailto:hello@dualitylabs.com"
+            href="mailto:ops@dualitylabs.ai"
             className="font-mono text-xs text-text-secondary hover:text-text transition-colors"
           >
             Email

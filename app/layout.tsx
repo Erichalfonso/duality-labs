@@ -57,7 +57,7 @@ const jsonLd = {
   ],
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'hello@dualitylabs.com',
+    email: 'ops@dualitylabs.ai',
     contactType: 'sales',
   },
 }
