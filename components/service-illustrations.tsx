@@ -824,206 +824,162 @@ export function MLPipelineIllustration() {
 }
 
 export function IntegrationIllustration() {
-  const [dataFlow, setDataFlow] = useState(0)
-  const [activeConnections, setActiveConnections] = useState<number[]>([])
-  const [apiCalls, setApiCalls] = useState(0)
+  const [activeStage, setActiveStage] = useState(0)
+  const [rowsProcessed, setRowsProcessed] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setDataFlow((prev) => {
-        const next = (prev + 1) % 8
-        // Activate multiple connections simultaneously
-        const connections = []
-        if (next % 2 === 0) connections.push(next)
-        if (next > 0) connections.push(next - 1)
-        setActiveConnections(connections)
-        setApiCalls((c) => c + 1)
-        return next
-      })
-    }, 1200)
+      setActiveStage((prev) => (prev + 1) % 4)
+      setRowsProcessed((prev) => prev + 1)
+    }, 1800)
 
     return () => clearInterval(interval)
   }, [])
 
-  const systems = [
-    { name: 'CRM', fullName: 'Customer Data', icon: '👥', status: 'active', records: '12.4K' },
-    { name: 'Database', fullName: 'PostgreSQL', icon: '🗄️', status: 'active', records: '847K' },
-    { name: 'API', fullName: 'REST API', icon: '⚡', status: 'active', records: '2.1M' },
-    { name: 'Analytics', fullName: 'Data Lake', icon: '📊', status: 'active', records: '95K' },
-    { name: 'Email', fullName: 'SMTP Server', icon: '✉️', status: 'active', records: '340K' },
+  const stages = [
+    { name: 'Ingest', label: 'Sources', icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+      </svg>
+    )},
+    { name: 'Transform', label: 'Clean & Map', icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+      </svg>
+    )},
+    { name: 'Store', label: 'Data Lake', icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+      </svg>
+    )},
+    { name: 'Serve', label: 'Dashboards', icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    )},
   ]
 
   return (
     <div className="relative w-full h-64 md:h-80 bg-gradient-to-br from-[#0A0A0A] to-[#1a1a1a] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-      {/* Network background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <svg width="100%" height="100%">
-          <defs>
-            <pattern id="network" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <circle cx="20" cy="20" r="1" fill="rgba(20, 184, 166, 0.3)" />
-              <line x1="20" y1="20" x2="40" y2="20" stroke="rgba(20, 184, 166, 0.1)" strokeWidth="0.5" />
-              <line x1="20" y1="20" x2="20" y2="40" stroke="rgba(20, 184, 166, 0.1)" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#network)" />
-        </svg>
+      {/* Subtle dot grid background */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(rgba(0, 102, 255, 0.15) 1px, transparent 1px)',
+          backgroundSize: '24px 24px'
+        }}></div>
       </div>
 
       {/* Glow effect */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-accent/5 to-transparent opacity-50"></div>
 
-      <div className="p-6 h-full relative z-10 flex flex-col">
+      <div className="p-4 sm:p-6 h-full relative z-10 flex flex-col">
         {/* Header with metrics */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse-slow"></div>
-              <span className="text-white/60 text-xs font-mono">System Integration Hub</span>
-            </div>
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse-slow"></div>
+            <span className="text-white/60 text-xs font-mono">Data Pipeline</span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <div className="text-right">
-              <div className="text-[9px] text-white/40 font-mono">API CALLS</div>
-              <div className="text-xs text-accent font-bold">{apiCalls * 127}/min</div>
+              <div className="text-[9px] text-white/40 font-mono">ROWS/MIN</div>
+              <div className="text-xs text-accent font-bold">{(rowsProcessed * 842).toLocaleString()}</div>
             </div>
             <div className="text-right">
-              <div className="text-[9px] text-white/40 font-mono">LATENCY</div>
-              <div className="text-xs text-green-400 font-bold">{Math.max(12, 45 - dataFlow * 4)}ms</div>
+              <div className="text-[9px] text-white/40 font-mono">UPTIME</div>
+              <div className="text-xs text-green-400 font-bold">99.97%</div>
             </div>
           </div>
         </div>
 
-        {/* Integration network visualization */}
-        <div className="flex-1 relative">
-          {/* Center hub */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-            <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/5 backdrop-blur-sm rounded-xl border-2 border-accent/40 flex items-center justify-center shadow-lg shadow-accent/20">
-                <div className="text-2xl">🔄</div>
-              </div>
-              {/* Pulse rings */}
-              <div className="absolute inset-0 border-2 border-accent/30 rounded-xl animate-ping"></div>
-              <div className="absolute inset-0 border border-accent/20 rounded-xl animate-pulse-slow"></div>
+        {/* Pipeline stages — horizontal flow */}
+        <div className="flex-1 flex items-center">
+          <div className="w-full grid grid-cols-4 gap-2 sm:gap-3">
+            {stages.map((stage, i) => {
+              const isActive = activeStage === i
+              const isDone = (activeStage > i) || (activeStage === 0 && i !== 0 && rowsProcessed > 0)
 
-              {/* Data flow indicator */}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                <div className="bg-white/10 backdrop-blur-sm px-2 py-0.5 rounded border border-white/20">
-                  <span className="text-[8px] text-accent font-mono font-bold">SYNC</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* System nodes in a circle */}
-          {systems.map((system, i) => {
-            const angle = (i * 2 * Math.PI) / systems.length - Math.PI / 2
-            const radius = 85
-            const x = Math.cos(angle) * radius
-            const y = Math.sin(angle) * radius
-            const isActive = activeConnections.includes(i)
-
-            return (
-              <div
-                key={i}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                style={{
-                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                }}
-              >
-                {/* Connection line to center */}
-                <svg
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-                  style={{ width: '200px', height: '200px', zIndex: 1 }}
-                >
-                  <line
-                    x1="100"
-                    y1="100"
-                    x2={100 - x}
-                    y2={100 - y}
-                    stroke={isActive ? 'rgba(20, 184, 166, 0.4)' : 'rgba(255, 255, 255, 0.1)'}
-                    strokeWidth={isActive ? '2' : '1'}
-                    className="transition-all duration-500"
-                  />
-
-                  {/* Data packets */}
-                  {isActive && (
-                    <>
-                      <circle
-                        cx={100 - x * (dataFlow % 2 === 0 ? 0.3 : 0.7)}
-                        cy={100 - y * (dataFlow % 2 === 0 ? 0.3 : 0.7)}
-                        r="3"
-                        fill="rgba(20, 184, 166, 0.8)"
-                        className="animate-pulse-slow"
-                      />
-                      <circle
-                        cx={100 - x * (dataFlow % 2 === 0 ? 0.7 : 0.3)}
-                        cy={100 - y * (dataFlow % 2 === 0 ? 0.7 : 0.3)}
-                        r="2"
-                        fill="rgba(20, 184, 166, 0.6)"
-                      />
-                    </>
+              return (
+                <div key={i} className="relative flex flex-col items-center">
+                  {/* Arrow connector (between stages) */}
+                  {i > 0 && (
+                    <div className="absolute -left-1.5 sm:-left-2 top-1/2 -translate-y-1/2 z-0">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4" viewBox="0 0 16 16" fill="none">
+                        <path
+                          d="M2 8h12M10 4l4 4-4 4"
+                          stroke={isDone || isActive ? 'rgba(0, 102, 255, 0.6)' : 'rgba(255, 255, 255, 0.15)'}
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="transition-all duration-500"
+                        />
+                      </svg>
+                    </div>
                   )}
-                </svg>
 
-                {/* System card */}
-                <div
-                  className={`relative bg-white/5 backdrop-blur-sm rounded-lg border p-2 transition-all duration-500 min-w-[70px] ${
-                    isActive
-                      ? 'border-accent/60 bg-accent/10 shadow-lg shadow-accent/20 scale-110'
-                      : 'border-white/20'
-                  }`}
-                  style={{ zIndex: 10 }}
-                >
-                  <div className="flex flex-col items-center gap-1">
-                    {/* Icon */}
-                    <div className={`text-lg transition-all duration-300 ${isActive ? 'scale-110' : ''}`}>
-                      {system.icon}
+                  {/* Stage card */}
+                  <div
+                    className={`relative w-full bg-white/5 backdrop-blur-sm rounded-lg border p-2 sm:p-3 transition-all duration-500 ${
+                      isActive
+                        ? 'border-accent/60 bg-accent/10 shadow-lg shadow-accent/20 scale-105'
+                        : isDone
+                        ? 'border-green-500/30 bg-green-500/5'
+                        : 'border-white/10'
+                    }`}
+                  >
+                    <div className="flex flex-col items-center gap-1.5 sm:gap-2">
+                      {/* Icon */}
+                      <div className={`transition-all duration-300 ${
+                        isActive ? 'text-accent' : isDone ? 'text-green-400' : 'text-white/40'
+                      }`}>
+                        {stage.icon}
+                      </div>
+
+                      {/* Name */}
+                      <div className="text-[9px] sm:text-[10px] font-mono font-medium text-white/80 text-center">
+                        {stage.name}
+                      </div>
+
+                      {/* Sub-label */}
+                      <div className="text-[7px] sm:text-[8px] font-mono text-white/30 text-center">
+                        {stage.label}
+                      </div>
+
+                      {/* Status dot */}
+                      <div className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                        isActive ? 'bg-accent animate-pulse-slow' : isDone ? 'bg-green-400' : 'bg-white/20'
+                      }`}></div>
                     </div>
 
-                    {/* Name */}
-                    <div className="text-[9px] font-mono font-medium text-white/80 text-center">
-                      {system.name}
-                    </div>
-
-                    {/* Status indicator */}
-                    <div className="flex items-center gap-1">
-                      <div className={`w-1 h-1 rounded-full ${isActive ? 'bg-accent' : 'bg-green-400'} ${isActive ? 'animate-pulse-slow' : ''}`}></div>
-                      <span className="text-[7px] text-white/40 font-mono">{system.records}</span>
-                    </div>
-
-                    {/* Activity pulse */}
+                    {/* Active pulse ring */}
                     {isActive && (
                       <div className="absolute -top-1 -right-1 w-2 h-2 bg-accent rounded-full animate-ping"></div>
                     )}
                   </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
 
-        {/* Activity log */}
-        <div className="mt-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 p-2">
+        {/* Bottom status bar — automated jobs */}
+        <div className="mt-3 sm:mt-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 p-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-1 h-1 rounded-full bg-accent animate-pulse-slow"></div>
-              <span className="text-[9px] text-white/40 font-mono">LIVE ACTIVITY</span>
+              <span className="text-[9px] text-white/40 font-mono">SCHEDULED JOBS</span>
             </div>
-            <div className="flex items-center gap-2">
-              {systems.slice(0, 3).map((system, i) => (
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              {['ETL sync', 'Report gen', 'Cleanup'].map((job, i) => (
                 <div
                   key={i}
                   className={`flex items-center gap-1 px-1.5 py-0.5 rounded border transition-all duration-300 ${
-                    activeConnections.includes(i)
+                    activeStage === i + 1
                       ? 'border-accent/40 bg-accent/10'
                       : 'border-white/10 bg-white/5'
                   }`}
                 >
-                  <span className="text-[8px]">{system.icon}</span>
-                  <svg className={`w-2 h-2 ${activeConnections.includes(i) ? 'text-accent' : 'text-white/20'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                  <span className="text-[8px]">🔄</span>
+                  <div className={`w-1 h-1 rounded-full ${activeStage === i + 1 ? 'bg-accent' : 'bg-green-400'}`}></div>
+                  <span className="text-[7px] sm:text-[8px] text-white/50 font-mono">{job}</span>
                 </div>
               ))}
             </div>
