@@ -7,28 +7,28 @@ const steps = [
     number: '01',
     title: 'Intro Call',
     description:
-      'A quick conversation to learn about your business, your goals, and where you think AI and automation could make the biggest impact. We explain how we work and see if there is a fit.',
+      'A quick conversation to learn about your business, your goals, and what you need built or fixed. We explain how we work and see if there is a fit.',
     duration: '15 min',
   },
   {
     number: '02',
-    title: 'Business Audit',
+    title: 'Technical Discovery',
     description:
-      'We take a deep dive into your current systems, workflows, and tech stack. This is where we identify the highest-value opportunities for automation and AI integration.',
+      'We dig into your architecture, requirements, and constraints. This is where we map out the system design and identify the highest-impact engineering work.',
     duration: '60 min',
   },
   {
     number: '03',
-    title: 'Custom Proposal',
+    title: 'Architecture & Scope',
     description:
-      'Based on the audit, we deliver a clear scope with defined deliverables, timeline, and pricing. No surprises — you know exactly what you are getting before we write a single line of code.',
+      'We deliver a clear technical spec with architecture decisions, defined deliverables, timeline, and pricing. No surprises — you know exactly what you are getting before we write a single line of code.',
     duration: '3-5 days',
   },
   {
     number: '04',
     title: 'Build & Iterate',
     description:
-      'Our engineering team builds your solution in focused sprints with regular check-ins. You see real progress every week and can steer the direction as we go.',
+      'Our team ships working software in focused sprints with regular check-ins. You see real progress every week and can steer the direction as we go.',
     duration: 'Ongoing',
   },
   {
@@ -42,7 +42,7 @@ const steps = [
     number: '06',
     title: 'Ongoing Support',
     description:
-      'After launch, we stick around. Monitoring, optimization, and continued development as your business evolves and new opportunities emerge.',
+      'After launch, we stick around. Monitoring, optimization, and continued development as your system scales and requirements change.',
     duration: 'Continuous',
   },
 ]

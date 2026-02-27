@@ -10,11 +10,11 @@ interface TerminalLine {
 }
 
 const terminalSequence: TerminalLine[] = [
-  { id: 1, type: 'comment', content: '# Building your internal tools', delay: 0 },
-  { id: 2, type: 'command', content: 'npm run build-automation', delay: 800 },
-  { id: 3, type: 'output', content: 'Analyzing workflow patterns...', delay: 1200 },
-  { id: 4, type: 'output', content: 'Generating AI agents...', delay: 1800 },
-  { id: 5, type: 'success', content: '✓ System deployed successfully', delay: 2400 },
+  { id: 1, type: 'comment', content: '# Deploying production systems', delay: 0 },
+  { id: 2, type: 'command', content: 'npx deploy --env production', delay: 800 },
+  { id: 3, type: 'output', content: 'Building ML pipeline...', delay: 1200 },
+  { id: 4, type: 'output', content: 'Migrating data infrastructure...', delay: 1800 },
+  { id: 5, type: 'success', content: '✓ All systems live', delay: 2400 },
   { id: 6, type: 'command', content: 'git commit -m "shipped"', delay: 3200 },
 ]
 
