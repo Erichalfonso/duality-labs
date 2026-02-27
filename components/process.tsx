@@ -7,7 +7,7 @@ const steps = [
     number: '01',
     title: 'Intro Call',
     description:
-      'A quick conversation to learn about your business, your goals, and where you think AI and automation could make the biggest impact. We explain how we work and see if there is a fit.',
+      'A quick conversation to learn about your business, your goals, and what you need built or fixed. We explain how we work and see if there is a fit.',
     duration: '15 min',
   },
   {
@@ -28,7 +28,7 @@ const steps = [
     number: '04',
     title: 'Build & Iterate',
     description:
-      'Our engineering team builds your solution in focused sprints with regular check-ins. You see real progress every week and can steer the direction as we go.',
+      'Our team ships working software in focused sprints with regular check-ins. You see real progress every week and can steer the direction as we go.',
     duration: 'Ongoing',
   },
   {
@@ -42,7 +42,7 @@ const steps = [
     number: '06',
     title: 'Ongoing Support',
     description:
-      'After launch, we stick around. Monitoring, optimization, and continued development as your business evolves and new opportunities emerge.',
+      'After launch, we stick around. Monitoring, optimization, and continued development as your system scales and requirements change.',
     duration: 'Continuous',
   },
 ]
