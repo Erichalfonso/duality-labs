@@ -12,16 +12,16 @@ const steps = [
   },
   {
     number: '02',
-    title: 'Business Audit',
+    title: 'Technical Discovery',
     description:
-      'We take a deep dive into your current systems, workflows, and tech stack. This is where we identify the highest-value opportunities for automation and AI integration.',
+      'We dig into your architecture, requirements, and constraints. This is where we map out the system design and identify the highest-impact engineering work.',
     duration: '60 min',
   },
   {
     number: '03',
-    title: 'Custom Proposal',
+    title: 'Architecture & Scope',
     description:
-      'Based on the audit, we deliver a clear scope with defined deliverables, timeline, and pricing. No surprises — you know exactly what you are getting before we write a single line of code.',
+      'We deliver a clear technical spec with architecture decisions, defined deliverables, timeline, and pricing. No surprises — you know exactly what you are getting before we write a single line of code.',
     duration: '3-5 days',
   },
   {
