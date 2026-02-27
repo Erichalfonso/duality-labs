@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Services - Duality Labs',
-  description: 'AI automation, workflow optimization, and custom software solutions for growing businesses.',
+  description: 'Custom software engineering, AI & machine learning systems, and data infrastructure for growing businesses.',
 }
 
 export default function ServicesPage() {

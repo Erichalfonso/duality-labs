@@ -615,6 +615,214 @@ export function MVPIllustration() {
   )
 }
 
+export function MLPipelineIllustration() {
+  const [epoch, setEpoch] = useState(0)
+  const [stage, setStage] = useState(0)
+  const [lossHistory, setLossHistory] = useState([0.92, 0.85, 0.71, 0.58, 0.42, 0.31, 0.22, 0.15])
+  const [accuracyHistory, setAccuracyHistory] = useState([0.12, 0.28, 0.41, 0.55, 0.68, 0.78, 0.86, 0.92])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setEpoch((prev) => {
+        const next = (prev + 1) % 5
+        setStage(next)
+        return next
+      })
+
+      setLossHistory((prev) => {
+        const newVal = Math.max(0.05, prev[prev.length - 1] - Math.random() * 0.08)
+        return [...prev.slice(1), newVal]
+      })
+
+      setAccuracyHistory((prev) => {
+        const newVal = Math.min(0.99, prev[prev.length - 1] + Math.random() * 0.03)
+        return [...prev.slice(1), newVal]
+      })
+    }, 2200)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const stages = [
+    { name: 'Data Preprocessing', status: stage > 0 ? 'done' : stage === 0 ? 'active' : 'pending' },
+    { name: 'Model Training', status: stage > 1 ? 'done' : stage === 1 ? 'active' : 'pending' },
+    { name: 'Evaluation', status: stage > 2 ? 'done' : stage === 2 ? 'active' : 'pending' },
+    { name: 'Fine-Tuning', status: stage > 3 ? 'done' : stage === 3 ? 'active' : 'pending' },
+    { name: 'Deployment', status: stage === 4 ? 'active' : 'pending' },
+  ]
+
+  const metrics = [
+    { label: 'LOSS', value: lossHistory[lossHistory.length - 1].toFixed(3), color: 'text-red-400' },
+    { label: 'ACCURACY', value: `${(accuracyHistory[accuracyHistory.length - 1] * 100).toFixed(1)}%`, color: 'text-green-400' },
+    { label: 'EPOCH', value: `${(epoch + 1) * 50}`, color: 'text-accent' },
+  ]
+
+  return (
+    <div className="relative w-full h-64 md:h-80 bg-gradient-to-br from-[#0A0A0A] to-[#1a1a1a] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+      {/* Animated grid background */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'linear-gradient(rgba(0, 102, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 102, 255, 0.1) 1px, transparent 1px)',
+          backgroundSize: '20px 20px'
+        }}></div>
+      </div>
+
+      {/* Glow effect */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-accent/5 to-transparent opacity-50"></div>
+
+      <div className="p-5 relative z-10 h-full flex flex-col">
+        {/* Header with metrics */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-accent animate-pulse-slow"></div>
+            <span className="text-white/60 text-xs font-mono">ML Training Pipeline</span>
+          </div>
+          <div className="flex items-center gap-3">
+            {metrics.map((metric, i) => (
+              <div key={i} className="text-right">
+                <div className="text-[9px] text-white/40 font-mono">{metric.label}</div>
+                <div className={`text-xs font-bold ${metric.color}`}>{metric.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Pipeline stages */}
+        <div className="flex items-center gap-1 mb-4">
+          {stages.map((s, i) => (
+            <div key={i} className="flex-1 flex items-center gap-1">
+              <div
+                className={`flex-1 h-7 rounded-md border flex items-center justify-center transition-all duration-500 ${
+                  s.status === 'done' ? 'border-green-500/40 bg-green-500/10' :
+                  s.status === 'active' ? 'border-accent/60 bg-accent/10 shadow-lg shadow-accent/10' :
+                  'border-white/10 bg-white/5'
+                }`}
+              >
+                {s.status === 'done' ? (
+                  <svg className="w-3 h-3 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                  </svg>
+                ) : s.status === 'active' ? (
+                  <div className="w-3 h-3 border-2 border-accent border-t-transparent rounded-full animate-spin-slow"></div>
+                ) : (
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                )}
+              </div>
+              {i < stages.length - 1 && (
+                <svg className={`w-3 h-3 flex-shrink-0 ${s.status === 'done' ? 'text-green-400/60' : 'text-white/20'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Stage labels */}
+        <div className="flex gap-1 mb-4">
+          {stages.map((s, i) => (
+            <div key={i} className="flex-1 text-center">
+              <span className={`text-[8px] font-mono ${
+                s.status === 'done' ? 'text-green-400/60' :
+                s.status === 'active' ? 'text-accent' :
+                'text-white/30'
+              }`}>
+                {s.name}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Loss and accuracy charts */}
+        <div className="flex-1 grid grid-cols-2 gap-3">
+          {/* Loss chart */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 p-3">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[9px] text-white/40 font-mono">TRAINING LOSS</span>
+              <span className="text-[9px] text-red-400 font-mono">{lossHistory[lossHistory.length - 1].toFixed(3)}</span>
+            </div>
+            <div className="h-full relative">
+              <svg className="w-full h-12" preserveAspectRatio="none" viewBox="0 0 100 40">
+                {/* Grid lines */}
+                {[0, 1, 2, 3].map((i) => (
+                  <line key={i} x1="0" y1={i * 13} x2="100" y2={i * 13} stroke="rgba(255,255,255,0.05)" strokeWidth="0.5" />
+                ))}
+                {/* Loss line */}
+                <polyline
+                  fill="none"
+                  stroke="rgba(248, 113, 113, 0.8)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  points={lossHistory.map((val, idx) => `${(idx / (lossHistory.length - 1)) * 100},${val * 40}`).join(' ')}
+                />
+                {/* Gradient fill under the line */}
+                <linearGradient id="lossGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="rgba(248, 113, 113, 0.3)" />
+                  <stop offset="100%" stopColor="rgba(248, 113, 113, 0)" />
+                </linearGradient>
+                <polygon
+                  fill="url(#lossGradient)"
+                  points={`0,40 ${lossHistory.map((val, idx) => `${(idx / (lossHistory.length - 1)) * 100},${val * 40}`).join(' ')} 100,40`}
+                />
+              </svg>
+            </div>
+          </div>
+
+          {/* Accuracy chart */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 p-3">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[9px] text-white/40 font-mono">ACCURACY</span>
+              <span className="text-[9px] text-green-400 font-mono">{(accuracyHistory[accuracyHistory.length - 1] * 100).toFixed(1)}%</span>
+            </div>
+            <div className="h-full relative">
+              <svg className="w-full h-12" preserveAspectRatio="none" viewBox="0 0 100 40">
+                {/* Grid lines */}
+                {[0, 1, 2, 3].map((i) => (
+                  <line key={i} x1="0" y1={i * 13} x2="100" y2={i * 13} stroke="rgba(255,255,255,0.05)" strokeWidth="0.5" />
+                ))}
+                {/* Accuracy line */}
+                <polyline
+                  fill="none"
+                  stroke="rgba(74, 222, 128, 0.8)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  points={accuracyHistory.map((val, idx) => `${(idx / (accuracyHistory.length - 1)) * 100},${40 - val * 40}`).join(' ')}
+                />
+                {/* Gradient fill under the line */}
+                <linearGradient id="accGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="rgba(74, 222, 128, 0)" />
+                  <stop offset="100%" stopColor="rgba(74, 222, 128, 0.3)" />
+                </linearGradient>
+                <polygon
+                  fill="url(#accGradient)"
+                  points={`0,40 ${accuracyHistory.map((val, idx) => `${(idx / (accuracyHistory.length - 1)) * 100},${40 - val * 40}`).join(' ')} 100,40`}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        {/* Model info bar */}
+        <div className="mt-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 px-3 py-2 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-slow"></div>
+            <span className="text-[9px] text-white/40 font-mono">MODEL: custom-llm-v2</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="text-[9px] text-white/40 font-mono">PARAMS: 7B</span>
+            <span className="text-[9px] text-white/40 font-mono">GPU: 4x A100</span>
+            <div className="flex items-center gap-1">
+              <div className="w-1 h-1 rounded-full bg-green-400"></div>
+              <span className="text-[9px] text-green-400 font-mono">TRAINING</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function IntegrationIllustration() {
   const [dataFlow, setDataFlow] = useState(0)
   const [activeConnections, setActiveConnections] = useState<number[]>([])

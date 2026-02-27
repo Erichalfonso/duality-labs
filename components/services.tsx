@@ -2,39 +2,31 @@
 
 import { useEffect, useRef } from 'react'
 import {
-  AIAutomationIllustration,
-  DashboardIllustration,
   MVPIllustration,
+  MLPipelineIllustration,
   IntegrationIllustration,
 } from './service-illustrations'
 
 const services = [
   {
-    title: 'Workflow Automation',
-    subtitle: 'Automate repetitive tasks',
-    description: 'We help you streamline internal operations by automating manual workflows like data entry, reporting, and approval chains — saving time and cutting down errors.',
-    features: ['Internal Task Bots', '100+ Automations', 'Smart Workflows'],
-    illustration: AIAutomationIllustration,
-  },
-  {
-    title: 'AI Assistant',
-    subtitle: 'Delegate Daily Tasks',
-    description: 'From managing calendars to drafting emails and summarizing meetings, our AI assistants work around the clock to keep your business running smarter and faster.',
-    features: ['Summaries', 'Scheduling', 'Many more'],
-    illustration: DashboardIllustration,
-  },
-  {
-    title: 'Sales & Marketing',
-    subtitle: 'Accelerate Sales Growth',
-    description: 'AI tools for lead generation, personalized outreach, and automated content creation that scales your sales efforts and builds stronger brand presence.',
-    features: ['Lead Generation', 'Content Creation', 'Social Posts'],
+    title: 'Custom Software & Product Engineering',
+    subtitle: 'From concept to production',
+    description: 'We design and build custom web applications, platforms, APIs, and internal tools. Whether you\'re launching a new product or modernizing legacy systems, we deliver production-ready software engineered for scale.',
+    features: ['Web Applications', 'APIs & Platforms', 'Internal Tools', 'Product Development'],
     illustration: MVPIllustration,
   },
   {
-    title: 'Custom Projects',
-    subtitle: 'Build Smarter Systems',
-    description: 'Whether you\'re starting from scratch or enhancing an existing system, we offer strategic consulting and develop custom AI projects aligned with your unique goals.',
-    features: ['Strategy', 'Custom AI', 'Consulting'],
+    title: 'AI & Machine Learning Systems',
+    subtitle: 'Intelligence that works in production',
+    description: 'We build and deploy AI systems that solve real problems — from fine-tuning LLMs and training custom models to building ML pipelines and intelligent agents that integrate into your existing workflows.',
+    features: ['LLM Fine-Tuning', 'ML Pipelines', 'Custom Models', 'AI Agents'],
+    illustration: MLPipelineIllustration,
+  },
+  {
+    title: 'Data Infrastructure & Automation',
+    subtitle: 'Systems that run themselves',
+    description: 'We architect data pipelines, automate complex workflows, and build integrations that connect your systems. Eliminate manual processes and let your infrastructure scale with your business.',
+    features: ['Data Pipelines', 'Workflow Automation', 'System Integrations', 'Reporting & Analytics'],
     illustration: IntegrationIllustration,
   },
 ]
@@ -66,15 +58,15 @@ export default function Services() {
       <div className="py-12 sm:py-16 md:py-20 border-b border-border">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 text-center">
           <div className="font-mono text-xs uppercase tracking-widest text-text-secondary mb-3 sm:mb-4 reveal">
-            What we offer
+            What we build
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-6 reveal px-4">
-            AI Solutions That Take Your<br className="hidden sm:inline" />{' '}
-            <span className="sm:hidden">Business to the Next Level</span>
-            <span className="hidden sm:inline">Business to the Next Level</span>
+            Engineering Solutions That<br className="hidden sm:inline" />{' '}
+            <span className="sm:hidden">Scale With Your Business</span>
+            <span className="hidden sm:inline">Scale With Your Business</span>
           </h2>
           <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto reveal px-4">
-            We design, develop, and implement automation tools that help you work smarter, not harder
+            Custom software, AI systems, and data infrastructure — from strategy through production
           </p>
         </div>
       </div>
