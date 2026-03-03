@@ -5,8 +5,8 @@ import Footer from '@/components/footer'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Services - Duality Labs',
-  description: 'Custom software engineering, AI & machine learning systems, and data infrastructure for growing businesses.',
+  title: 'AI, ML & Custom Software Development Services',
+  description: 'Custom software engineering, AI agent development, LLM fine-tuning, ML pipelines, and data infrastructure services. Miami-based agency serving growing businesses nationwide.',
 }
 
 export default function ServicesPage() {

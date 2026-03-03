@@ -6,8 +6,8 @@ import { getAllPosts } from '@/lib/blog'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Blog - Duality Labs',
-  description: 'Insights on AI, automation, and building software systems.',
+  title: 'Blog — AI, Automation & Software Engineering Insights',
+  description: 'Practical insights on AI automation, LLM fine-tuning, custom software development, and building production ML systems. Written by the Duality Labs team.',
 }
 
 export default function BlogPage() {

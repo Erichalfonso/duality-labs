@@ -5,8 +5,8 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About - Duality Labs',
-  description: 'Meet the team behind Duality Labs. We build custom AI and automation systems for growing businesses.',
+  title: 'About Duality Labs',
+  description: 'Miami-based AI agency founded by CS and economics experts. Duality Labs builds custom AI automation and software systems for growing businesses.',
 }
 
 export default function AboutPage() {

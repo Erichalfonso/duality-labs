@@ -9,13 +9,16 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dualitylabs.ai'),
-  title: 'Duality Labs — Applied AI & Software Systems',
-  description: 'We design and build internal tools, automation, and AI-driven workflows — without the overhead of an in-house team.',
-  keywords: ['AI automation', 'software development', 'internal tools', 'business automation', 'AI workflows', 'custom software', 'AI consulting', 'workflow automation'],
+  title: {
+    default: 'Custom AI & Software Development | Duality Labs — Miami',
+    template: '%s | Duality Labs',
+  },
+  description: 'Duality Labs is a Miami-based AI automation and custom software development agency. We build AI agents, ML pipelines, internal tools, and data infrastructure for growing businesses.',
+  keywords: ['custom AI development Miami', 'AI automation agency', 'custom software development', 'AI agents', 'LLM fine-tuning', 'ML pipelines', 'internal tools', 'business automation', 'AI consulting', 'workflow automation', 'data infrastructure'],
   authors: [{ name: 'Duality Labs' }],
   openGraph: {
-    title: 'Duality Labs — Applied AI & Software Systems',
-    description: 'We design and build internal tools, automation, and AI-driven workflows — without the overhead of an in-house team.',
+    title: 'Custom AI & Software Development | Duality Labs — Miami',
+    description: 'Duality Labs is a Miami-based AI automation and custom software development agency. We build AI agents, ML pipelines, internal tools, and data infrastructure for growing businesses.',
     url: 'https://www.dualitylabs.ai',
     siteName: 'Duality Labs',
     locale: 'en_US',
@@ -23,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Duality Labs — Applied AI & Software Systems',
-    description: 'We design and build internal tools, automation, and AI-driven workflows — without the overhead of an in-house team.',
+    title: 'Custom AI & Software Development | Duality Labs — Miami',
+    description: 'Duality Labs is a Miami-based AI automation and custom software development agency. We build AI agents, ML pipelines, internal tools, and data infrastructure for growing businesses.',
   },
 }
 
