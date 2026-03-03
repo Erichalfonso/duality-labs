@@ -11,10 +11,10 @@ export default function Hero() {
           {/* Left: Text Content */}
           <div className="max-w-[560px]">
             <h1 className="text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] font-medium leading-[1.15] tracking-tight mb-4 sm:mb-6 fade-in">
-              Custom AI & Software Development in Miami
+              We build the software, AI, and data systems your business runs on.
             </h1>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed fade-in fade-in-delay-1 mb-6 sm:mb-8">
-              We design and build AI agents, automation systems, and custom software — without the overhead of an in-house engineering team.
+              Custom applications, machine learning systems, and data infrastructure — engineered from strategy through production.
             </p>
 
             {/* CTA buttons */}

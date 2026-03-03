@@ -65,9 +65,9 @@ export default function Services() {
             What we build
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-6 reveal px-4">
-            AI, ML & Custom Software<br className="hidden sm:inline" />{' '}
-            <span className="sm:hidden">Development Services</span>
-            <span className="hidden sm:inline">Development Services</span>
+            Engineering Solutions That<br className="hidden sm:inline" />{' '}
+            <span className="sm:hidden">Scale With Your Business</span>
+            <span className="hidden sm:inline">Scale With Your Business</span>
           </h2>
           <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto reveal px-4">
             Custom software, AI systems, and data infrastructure — from strategy through production
