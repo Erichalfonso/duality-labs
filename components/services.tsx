@@ -40,7 +40,7 @@ const services = [
     description: 'We design and build high-performance marketing sites, landing pages, and interactive web experiences. Optimized for speed, SEO, and conversion — deployed and maintained on modern infrastructure.',
     features: ['Conversion-Driven UI/UX Design', 'High-Conversion Landing Pages', 'Interactive Web Experiences', 'SEO & Speed Optimization'],
     illustration: WebDevIllustration,
-    href: '/services',
+    href: 'https://duality-webdev-portfolio.vercel.app',
     linkLabel: 'See our work',
   },
 ]
@@ -144,6 +144,7 @@ export default function Services() {
 
                   <Link
                     href={service.href}
+                    {...(service.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                     className="inline-flex items-center gap-2 font-mono text-sm text-accent hover:underline mt-2"
                   >
                     {service.linkLabel || 'Learn more'}
