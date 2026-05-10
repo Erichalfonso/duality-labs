@@ -70,6 +70,51 @@ body {
   background: linear-gradient(135deg, #F8FAF9 0%, #FAFAF9 100%);
 }
 
+/* Logo marquee — infinite horizontal scroll */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Case study card — accent blue glow on hover */
+.case-card {
+  box-shadow: 0 1px 2px rgba(10, 10, 10, 0.03);
+  transition:
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.case-card:hover {
+  box-shadow:
+    0 0 0 1px rgba(0, 102, 255, 0.18),
+    0 18px 40px -10px rgba(0, 102, 255, 0.22),
+    0 8px 20px -6px rgba(0, 102, 255, 0.14),
+    0 2px 6px -2px rgba(10, 10, 10, 0.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-card,
+  .case-card:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
 /* Service illustration animations */
 @keyframes fade-in {
   from {
