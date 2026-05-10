@@ -234,6 +234,36 @@ function AfterFor({ kind }: { kind: MockKind }) {
   return <ReportMock />
 }
 
+/**
+ * Single "after" visual — used as a portfolio thumbnail.
+ * Shows just the polished, shipped state (no before/after split).
+ */
+export function ShippedVisual({
+  kind,
+  afterImg,
+  className = '',
+}: {
+  kind: MockKind
+  afterImg?: string | null
+  className?: string
+}) {
+  return (
+    <div
+      className={`relative aspect-[16/10] rounded-lg border border-border overflow-hidden bg-bg-secondary ${className}`}
+    >
+      {afterImg ? (
+        <img
+          src={afterImg}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      ) : (
+        <AfterFor kind={kind} />
+      )}
+    </div>
+  )
+}
+
 export function BeforeAfterVisual({
   kind,
   beforeImg,

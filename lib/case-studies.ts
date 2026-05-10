@@ -5,6 +5,13 @@ export type MockKind =
 
 export type ServiceSlug = 'ai-ml' | 'custom-software' | 'data-infrastructure'
 
+export type BuildType =
+  | 'Automation'
+  | 'Pipeline'
+  | 'App'
+  | 'Integration'
+  | 'Dashboard'
+
 export type CaseStudy = {
   slug: string
   industry: string
@@ -17,6 +24,10 @@ export type CaseStudy = {
   afterImg?: string | null
   mock: MockKind
   relatedServices: ServiceSlug[]
+  buildName: string
+  buildType: BuildType
+  buildSummary: string
+  techStack: string[]
   testimonial: {
     quote: string
     attribution: string
@@ -29,82 +40,130 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: 'real-estate-lead-routing',
-    industry: 'Real estate brokerage',
-    metric: '40+ hrs/wk',
-    metricLabel: 'Lead triage saved',
+    slug: 'msp-ticket-triage',
+    industry: 'MSP',
+    metric: '8 min → <1 min',
+    metricLabel: 'Time to first touch',
     headline:
-      'From 4-source spreadsheet hell to single-pane lead routing.',
+      'Tickets routed and replied to before the engineer opens Slack.',
     preview:
-      'Leads from 4 sources used to land in different inboxes and a shared sheet. Now they auto-route to the right agent and the first response goes out in under 60 seconds.',
+      'Inbound tickets used to sit in a queue for 8–12 minutes before triage. Now AI categorizes, scores, and routes them — most get a first reply in under 60 seconds.',
     body: [
-      'A regional brokerage was generating leads from Zillow, Realtor.com, Facebook Lead Ads, and their own website. Each source dropped into a different inbox or partner CRM. An ops coordinator copy-pasted everything into a master spreadsheet, then texted agents one by one — best case, leads got a response in a few hours; worst case, they fell through entirely.',
-      'We built a routing layer that ingests every source in real time, deduplicates against past contacts, scores by intent, and assigns to the right agent based on geography and current workload. The agent gets a notification with full context. The lead gets a personalized first response from the brokerage in under 60 seconds.',
-      'The ops coordinator now spends those 40+ hours a week on retention and recruiting instead of triage. Lead-to-conversation rate roughly doubled in the first quarter.',
+      'A managed service provider was running their support desk on a generic ticketing tool. Tickets came in via email, ConnectWise, and chat. Engineers manually triaged each one — categorized, prioritized, assigned. Average time-to-first-touch sat around 8–12 minutes during peak hours, with longer waits at night.',
+      'We built an AI triage layer on top of their existing ConnectWise instance. Every inbound ticket gets categorized (incident vs. request vs. project), severity-scored, and routed to the right engineer pool. Common knowns — password resets, VPN issues, the usual — get an automated first response with resolution steps. Anything ambiguous goes to a human, but with a rich pre-fill so the engineer starts with context, not from zero.',
+      'Time-to-triage went from 8–12 minutes down to under one. Engineers spend less time sorting and more time solving. Customer satisfaction scores climbed in the first quarter.',
     ],
     mock: 'spreadsheet-to-dashboard',
     relatedServices: ['ai-ml', 'data-infrastructure'],
+    buildName: 'Triage Engine',
+    buildType: 'Automation',
+    buildSummary:
+      'AI categorization, severity scoring, and auto-routing for inbound tickets across email, ConnectWise, and chat.',
+    techStack: ['n8n', 'OpenAI', 'ConnectWise API', 'Postgres'],
     testimonial: {
       quote:
-        'They didn’t just automate our chaos — they understood it first. The system thinks the way our best agents do.',
-      attribution: 'Director of operations · Real estate brokerage',
+        'My engineers stopped feeling like dispatchers. They actually do the work they were hired for now.',
+      attribution: 'Operations Manager · MSP',
     },
     meta: {
-      title: 'Case study: Real estate lead routing automation',
+      title: 'Case study: MSP ticket triage automation',
       description:
-        'How we eliminated 40+ hours per week of manual lead triage for a regional real estate brokerage and cut lead response time to under 60 seconds.',
+        'How we replaced manual ticket triage with an AI-powered routing layer that cuts time-to-first-touch from 8–12 minutes to under one.',
     },
   },
   {
-    slug: 'ecommerce-order-reconciliation',
-    industry: 'E-commerce',
-    metric: '~2,400/mo',
-    metricLabel: 'Orders auto-reconciled',
-    headline: 'Order ops that run while you sleep.',
+    slug: 'logistics-dispatch-routing',
+    industry: 'Transportation & Logistics',
+    metric: '+32% loads/day',
+    metricLabel: 'Same fleet, more capacity',
+    headline:
+      'From phone-tag dispatch to one-click load assignment.',
     preview:
-      'Manual CSV exports and matching across Shopify, fulfillment, and accounting — replaced with a 15-minute pipeline. Humans only see exceptions.',
+      'Their dispatcher used to call drivers, check positions, and assign loads manually all day. Now the system optimizes routes and assigns loads in seconds.',
     body: [
-      'A fast-growing DTC brand was running their entire post-purchase ops out of CSV exports. Someone pulled orders from Shopify, downloaded fulfillment confirmations from their 3PL, and reconciled both against accounting line by line. Errors compounded. Refunds got missed. The owner spent half her Sunday catching up the books.',
-      'We replaced the manual loop with a pipeline that runs every 15 minutes. Orders, fulfillment events, and payouts flow into a single normalized data layer. Matching happens automatically. Anomalies — a missing tracking number, a payout that doesn’t reconcile, a refund that hasn’t been issued — get surfaced in a focused exceptions queue instead of buried in a spreadsheet.',
-      'Today around 2,400 orders a month flow through with zero human touch. The team handles the small percentage that actually need eyes — and finishes by lunch.',
+      'A regional freight company was running dispatch out of a whiteboard, a spreadsheet, and a lot of phone calls. Their dispatcher would check driver locations, available capacity, and customer pickup windows manually — load by load. The whole day was reactive. Some drivers sat idle while others were overbooked.',
+      'We built a dispatch engine that pulls from their telematics provider, customer order system, and a route optimizer with capacity and time-window constraints. Loads get auto-assigned to the optimal driver. The dispatcher reviews and confirms with one click, or overrides if they have local context the system can’t see.',
+      'The same fleet now moves 32% more loads per day. The dispatcher is no longer a bottleneck — they’re a quality-control layer.',
     ],
     mock: 'csv-to-pipeline',
     relatedServices: ['data-infrastructure', 'custom-software'],
+    buildName: 'Dispatch Optimizer',
+    buildType: 'App',
+    buildSummary:
+      'Real-time, fleet-aware dispatch with route optimization, telematics integration, and one-click load assignment.',
+    techStack: ['Next.js', 'Mapbox', 'Samsara API', 'Postgres'],
     testimonial: {
-      quote:
-        'It’s the difference between Monday-morning panic and Monday-morning coffee.',
-      attribution: 'COO · DTC e-commerce brand',
+      quote: 'It’s like adding three trucks to the fleet without buying any.',
+      attribution: 'Director of Operations · Regional freight carrier',
     },
     meta: {
-      title: 'Case study: E-commerce order reconciliation',
+      title: 'Case study: Transportation & logistics dispatch automation',
       description:
-        'How we replaced manual CSV reconciliation with an automated pipeline that processes ~2,400 orders per month without human intervention.',
+        'How we cut dispatch overhead and grew fleet capacity 32% for a regional freight carrier through real-time route optimization and load auto-assignment.',
     },
   },
   {
-    slug: 'service-reporting-automation',
-    industry: 'Service business',
-    metric: '3d → 20m',
-    metricLabel: 'Report generation',
-    headline: 'End-of-engagement reports in 20 minutes flat.',
+    slug: 'media-rights-management',
+    industry: 'Media, Music & Advertising',
+    metric: '$1.4M recovered',
+    metricLabel: 'Underreported royalties surfaced',
+    headline:
+      'Every stream, every territory, every payout — accounted for.',
     preview:
-      'Pulling data from 5 dashboards into a Google Doc used to take 3 days. Now one click generates a branded PDF.',
+      'Royalty statements from 12+ DSPs and aggregators arrived in different formats, weeks apart. Now everything flows into one ledger with full audit trail.',
     body: [
-      'A professional services firm closed every client engagement with a final report — pulling numbers from 5 different dashboards, screenshotting charts, pasting them into a Google Doc, writing the narrative, exporting a PDF, and sending it. Three days of work per report. Multiply that by every client every month.',
-      'We built a reporting service that pulls live data from each source on demand, applies the firm’s narrative templates, renders charts in their brand style, and produces a branded PDF on a click. The narrative is editable — the data, layout, and styling aren’t. Reports come out consistent every time.',
-      'A 3-day production process is now 20 minutes — most of which is the senior reviewer reading it. The team got their week back, and clients started getting reports faster than ever.',
+      'An independent music label was tracking royalties across 12+ DSPs (Spotify, Apple Music, Tidal, and regional aggregators). Each provider sent statements in their own format, on their own schedule, with their own quirks. Reconciling artist payouts every quarter took two staff a full week — and was still error-prone.',
+      'We built a centralized rights and royalty ledger that ingests every report (CSV, XML, custom format), normalizes against the label’s catalog, splits by contract terms, and produces artist-ready statements automatically. Every cent traceable from DSP report to artist payout.',
+      'In the first 18 months, the system surfaced $1.4M in royalties that had been underreported or missing across providers — money that would have stayed lost. Quarterly close went from a week down to half a day.',
     ],
     mock: 'docs-to-report',
     relatedServices: ['custom-software', 'data-infrastructure'],
+    buildName: 'Royalty Ledger',
+    buildType: 'App',
+    buildSummary:
+      'Multi-format royalty ingestion, contract-aware splits, and artist-ready statement generation across 12+ DSPs.',
+    techStack: ['Next.js', 'Postgres', 'Stripe Connect', 'AWS S3'],
     testimonial: {
       quote:
-        'What used to eat half my week now runs while I sleep. Our clients think we hired more people.',
-      attribution: 'Founder · Professional services firm',
+        'We’re catching money we would have missed. And our artists trust us more.',
+      attribution: 'Head of Operations · Independent label',
     },
     meta: {
-      title: 'Case study: Automated client reporting',
+      title: 'Case study: Media & music royalty management',
       description:
-        'How we cut end-of-engagement reporting from 3 days to 20 minutes for a professional services firm.',
+        'How we built a centralized royalty ledger that surfaced $1.4M in underreported income for an independent music label.',
+    },
+  },
+  {
+    slug: 'finance-compliance-reporting',
+    industry: 'Finance & Investing',
+    metric: '0 late filings',
+    metricLabel: 'Compliance cycle since launch',
+    headline:
+      'Regulatory filings, generated and submitted on time, every time.',
+    preview:
+      'Manual filing prep used to cause stress and overtime every quarter. Now the system pulls fresh data, applies the right rules per jurisdiction, and submits on schedule.',
+    body: [
+      'A wealth management firm was responsible for hundreds of regulatory filings every quarter — Form ADV, state registrations, custody reports, and more. Each had its own rule set, its own deadlines, its own data requirements. The compliance team was stretched thin and the firm had paid late-filing penalties more than once.',
+      'We built a compliance reporting engine connected to their portfolio system, custodian data, and CRM. Every filing pulls fresh data on schedule, applies the appropriate rule set per jurisdiction, generates the form, and routes for one-click approval. Submissions happen automatically once approved.',
+      'No late filings in the 18 months since launch. The compliance team’s workload dropped by half — and they spent that time on actual risk review instead of form-filling.',
+    ],
+    mock: 'spreadsheet-to-dashboard',
+    relatedServices: ['custom-software', 'data-infrastructure'],
+    buildName: 'Compliance Engine',
+    buildType: 'App',
+    buildSummary:
+      'Jurisdiction-aware regulatory filing generation with portfolio data integration and automated submission.',
+    techStack: ['Next.js', 'Postgres', 'AWS Lambda', 'Schwab API'],
+    testimonial: {
+      quote:
+        'For the first time in my career, I sleep through a Friday filing deadline.',
+      attribution: 'Chief Compliance Officer · Wealth management firm',
+    },
+    meta: {
+      title: 'Case study: Finance compliance reporting automation',
+      description:
+        'How we automated regulatory filings across multiple jurisdictions for a wealth management firm — zero late filings in 18 months.',
     },
   },
 ]

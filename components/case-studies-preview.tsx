@@ -37,20 +37,20 @@ export default function CaseStudiesPreview() {
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 md:mb-14 reveal">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight px-4 leading-[1.05]">
-            Case Studies
+            Where our systems run
           </h2>
           <p className="font-mono text-xs uppercase tracking-widest text-text-secondary mt-3 sm:mt-4">
-            Real Client Wins
+            Industries We've Shipped For
           </p>
         </div>
 
-        {/* Case study cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+        {/* Cards — industry as the hero */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
           {caseStudies.map((c, i) => (
             <Link
               key={c.slug}
               href={`/case-studies/${c.slug}`}
-              className="case-card group reveal relative bg-card-bg border border-border rounded-2xl p-7 sm:p-8 flex flex-col min-h-[300px] sm:min-h-[320px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-accent/40"
+              className="case-card group reveal relative bg-card-bg border border-border rounded-2xl p-7 sm:p-8 flex flex-col min-h-[320px] sm:min-h-[340px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-accent/40"
               style={{ transitionDelay: `${i * 0.06}s` }}
             >
               {/* Corner glow */}
@@ -60,35 +60,30 @@ export default function CaseStudiesPreview() {
               />
 
               <div className="relative z-10 flex flex-col h-full">
-                {/* Industry tag */}
-                <div className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-accent mb-4 sm:mb-5">
+                {/* Industry — big eye-catcher (the WHO) */}
+                <h3 className="text-[26px] sm:text-[28px] lg:text-[30px] font-semibold text-text leading-[1.1] tracking-[-0.02em] mb-4 sm:mb-5 pr-12">
                   {c.industry}
-                </div>
-
-                {/* Metric — the hero of the card */}
-                <div className="font-mono text-[28px] sm:text-[32px] lg:text-[36px] font-semibold text-accent leading-none mb-2 tracking-tight pr-12">
-                  {c.metric}
-                </div>
-                <div className="text-sm text-text-secondary mb-5 sm:mb-6">
-                  {c.metricLabel}
-                </div>
-
-                {/* Headline */}
-                <h3 className="text-lg sm:text-xl font-medium leading-snug mb-3 text-text">
-                  {c.headline}
+                  <span className="text-accent">.</span>
                 </h3>
 
-                {/* Preview */}
-                <p className="text-sm text-text-secondary leading-relaxed mb-6 flex-1">
-                  {c.preview}
+                {/* Headline — what we did, in their language */}
+                <p className="text-[15px] sm:text-base text-text leading-snug font-medium mb-6 sm:mb-7">
+                  {c.headline}
                 </p>
 
-                {/* CTA */}
-                <div className="font-mono text-xs uppercase tracking-wider text-text-secondary group-hover:text-accent transition-colors flex items-center gap-1.5">
-                  <span>Read the case study</span>
-                  <span className="transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
+                <div className="flex-1" />
+
+                {/* Hairline + small supporting metric attribution */}
+                <div className="pt-5 border-t border-border">
+                  <div className="font-mono text-[11px] text-accent mb-1 tabular-nums">
+                    {c.metric} · {c.metricLabel.toLowerCase()}
+                  </div>
+                  <div className="font-mono text-[10px] uppercase tracking-wider text-text-secondary group-hover:text-accent transition-colors flex items-center gap-1.5">
+                    <span>Read the case study</span>
+                    <span className="transition-transform group-hover:translate-x-1">
+                      →
+                    </span>
+                  </div>
                 </div>
               </div>
 

@@ -38,11 +38,11 @@ export default async function CaseStudyPage({ params }: Props) {
           <div className="max-w-[900px] mx-auto px-4 sm:px-6 relative z-10">
             {/* Back link */}
             <Link
-              href="/#specialties"
+              href="/work"
               className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-text-secondary hover:text-accent transition-colors mb-8 sm:mb-10"
             >
               <span>←</span>
-              <span>Back to specialties</span>
+              <span>Back to work</span>
             </Link>
 
             <div className="font-mono text-[11px] uppercase tracking-wider text-accent mb-3 sm:mb-4">
