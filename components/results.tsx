@@ -92,12 +92,14 @@ export default function Results() {
                   <div className="flex-1" />
                 </div>
 
-                {/* Arrow — top right */}
-                <div className="absolute top-7 right-7 sm:top-8 sm:right-8 z-20 w-10 h-10 rounded-full border border-border bg-card-bg/80 backdrop-blur-sm flex items-center justify-center text-text-secondary group-hover:border-accent group-hover:text-accent group-hover:bg-accent/5 transition-all duration-300">
-                  <span className="text-base transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                    ↗
-                  </span>
-                </div>
+                {/* Arrow — top right (only on cards that link to a substantive external destination) */}
+                {isExternal && (
+                  <div className="absolute top-7 right-7 sm:top-8 sm:right-8 z-20 w-10 h-10 rounded-full border border-border bg-card-bg/80 backdrop-blur-sm flex items-center justify-center text-text-secondary group-hover:border-accent group-hover:text-accent group-hover:bg-accent/5 transition-all duration-300">
+                    <span className="text-base transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      ↗
+                    </span>
+                  </div>
+                )}
               </>
             )
 
