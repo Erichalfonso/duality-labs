@@ -4,6 +4,7 @@ import Footer from '@/components/footer'
 import FAQ from '@/components/faq'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import ServiceCaseStudies from '@/components/service-case-studies'
 
 export const metadata: Metadata = {
   title: 'AI & Machine Learning Development Services',
@@ -137,6 +138,9 @@ export default function AIMLPage() {
             </div>
           </div>
         </section>
+
+        {/* Case studies */}
+        <ServiceCaseStudies service="ai-ml" />
 
         {/* Related content */}
         <section className="relative py-12 sm:py-16 border-b border-border overflow-hidden">

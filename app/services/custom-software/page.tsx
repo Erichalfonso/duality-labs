@@ -4,6 +4,7 @@ import Footer from '@/components/footer'
 import FAQ from '@/components/faq'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import ServiceCaseStudies from '@/components/service-case-studies'
 
 export const metadata: Metadata = {
   title: 'Custom Software Development Services — Miami',
@@ -155,6 +156,8 @@ export default function CustomSoftwarePage() {
             </div>
           </div>
         </section>
+
+        <ServiceCaseStudies service="custom-software" />
 
         <FAQ items={faqs} />
         <CTA />
