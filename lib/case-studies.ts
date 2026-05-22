@@ -63,7 +63,7 @@ export const caseStudies: CaseStudy[] = [
       'The agent has logged over 300 autonomous decisions and 190 alerts in production — every bid change, every budget step, every pause, with a full audit trail in Postgres. The advertiser stopped hand-tuning ad sets and started running the configuration: tune the target ROAS, the emergency floor, the bid ceiling, the cycle cadence — the agent runs the playbook between cycles.',
     ],
     mock: 'csv-to-pipeline',
-    relatedServices: ['custom-software', 'data-infrastructure'],
+    relatedServices: ['ai-ml', 'custom-software', 'data-infrastructure'],
     buildName: 'Ad Ops Agent',
     buildType: 'Agent',
     buildSummary:
@@ -219,7 +219,7 @@ export const caseStudies: CaseStudy[] = [
       'Over 300 trades have now run through the agent end-to-end — every alert parsed, sized against policy, and submitted in seconds, with zero manual entry. The trader is off the screen. The discipline is enforced in code, not willpower. And no signal goes unseen because someone was on a call.',
     ],
     mock: 'csv-to-pipeline',
-    relatedServices: ['custom-software', 'data-infrastructure'],
+    relatedServices: ['ai-ml', 'custom-software', 'data-infrastructure'],
     buildName: 'Trading Agent',
     buildType: 'Agent',
     buildSummary:

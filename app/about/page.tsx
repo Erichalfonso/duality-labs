@@ -5,8 +5,31 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Duality Labs',
+  title: 'About Duality Labs — AI Agency, Miami FL',
   description: 'Miami-based AI agency founded by CS and economics experts. Duality Labs builds custom AI automation and software systems for growing businesses.',
+  alternates: {
+    canonical: 'https://www.dualitylabs.ai/about',
+  },
+}
+
+const aboutJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      name: 'Erich Alfonso',
+      jobTitle: 'Co-founder',
+      worksFor: { '@type': 'Organization', name: 'Duality Labs', url: 'https://www.dualitylabs.ai' },
+      knowsAbout: ['AI Development', 'Machine Learning', 'Computer Science', 'Mathematics'],
+    },
+    {
+      '@type': 'Person',
+      name: 'Alejandro Alfonso',
+      jobTitle: 'Co-founder',
+      worksFor: { '@type': 'Organization', name: 'Duality Labs', url: 'https://www.dualitylabs.ai' },
+      knowsAbout: ['Economics', 'Business Strategy', 'AI Strategy'],
+    },
+  ],
 }
 
 export default function AboutPage() {
@@ -14,6 +37,10 @@ export default function AboutPage() {
     <>
       <Nav />
       <main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
+        />
         <PageHeader
           tag="About us"
           title="Two brothers, one mission"

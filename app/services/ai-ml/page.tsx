@@ -9,6 +9,29 @@ import ServiceCaseStudies from '@/components/service-case-studies'
 export const metadata: Metadata = {
   title: 'AI & Machine Learning Development Services',
   description: 'Custom AI agent development, LLM fine-tuning, ML pipeline engineering, and production AI systems. Duality Labs builds AI that works in the real world.',
+  alternates: {
+    canonical: 'https://www.dualitylabs.ai/services/ai-ml',
+  },
+}
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'AI & Machine Learning Development',
+  description: 'Custom AI agent development, LLM fine-tuning, ML pipeline engineering, and production AI systems.',
+  provider: { '@type': 'Organization', name: 'Duality Labs', url: 'https://www.dualitylabs.ai' },
+  areaServed: { '@type': 'Country', name: 'United States' },
+  url: 'https://www.dualitylabs.ai/services/ai-ml',
+}
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.dualitylabs.ai' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.dualitylabs.ai/services' },
+    { '@type': 'ListItem', position: 3, name: 'AI & Machine Learning', item: 'https://www.dualitylabs.ai/services/ai-ml' },
+  ],
 }
 
 const faqs = [
@@ -39,6 +62,14 @@ export default function AIMLPage() {
     <>
       <Nav />
       <main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
         {/* Hero */}
         <section className="relative py-16 sm:py-20 md:py-24 border-b border-border overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-gradient-from via-gradient-via to-gradient-to" />

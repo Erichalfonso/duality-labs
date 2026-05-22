@@ -34,6 +34,9 @@ export async function generateMetadata(
   return {
     title: `${post.title} - Duality Labs`,
     description: post.description,
+    alternates: {
+      canonical: `https://www.dualitylabs.ai/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -62,18 +65,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     description: post.description,
     datePublished: post.date,
     dateModified: post.date,
-    author: {
-      '@type': 'Organization',
-      name: post.author || 'Duality Labs',
-      url: 'https://www.dualitylabs.ai',
-    },
+    author: post.author && post.author !== 'Duality Labs' && post.author !== 'Duality Labs Team'
+      ? { '@type': 'Person', name: post.author }
+      : { '@type': 'Organization', name: 'Duality Labs', url: 'https://www.dualitylabs.ai' },
     publisher: {
       '@type': 'Organization',
       name: 'Duality Labs',
       url: 'https://www.dualitylabs.ai',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.dualitylabs.ai/icon.svg',
+        url: 'https://www.dualitylabs.ai/logo/logo-horizontal-dark.svg',
       },
     },
     mainEntityOfPage: {

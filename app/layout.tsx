@@ -9,6 +9,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dualitylabs.ai'),
+  alternates: {
+    canonical: 'https://www.dualitylabs.ai',
+  },
   title: {
     default: 'Custom AI & Software Development | Duality Labs — Miami',
     template: '%s | Duality Labs',
@@ -33,21 +36,16 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': ['Organization', 'ProfessionalService', 'LocalBusiness'],
   name: 'Duality Labs',
   url: 'https://www.dualitylabs.ai',
-  logo: 'https://www.dualitylabs.ai/icon.svg',
+  logo: 'https://www.dualitylabs.ai/logo/logo-horizontal-dark.svg',
+  image: 'https://www.dualitylabs.ai/logo/logo-horizontal-dark.svg',
   description: 'Custom AI automation and software systems for growing businesses.',
   foundingDate: '2025',
   founders: [
-    {
-      '@type': 'Person',
-      name: 'Erich Alfonso',
-    },
-    {
-      '@type': 'Person',
-      name: 'Alejandro Alfonso',
-    },
+    { '@type': 'Person', name: 'Erich Alfonso' },
+    { '@type': 'Person', name: 'Alejandro Alfonso' },
   ],
   address: {
     '@type': 'PostalAddress',
@@ -55,6 +53,9 @@ const jsonLd = {
     addressRegion: 'FL',
     addressCountry: 'US',
   },
+  areaServed: { '@type': 'Country', name: 'United States' },
+  serviceType: ['AI Development', 'Machine Learning', 'Custom Software Development', 'Data Infrastructure', 'Workflow Automation'],
+  priceRange: '$$',
   sameAs: [
     'https://www.linkedin.com/company/dualitylabs-ai/',
   ],
@@ -80,11 +81,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
-        {/* Structured data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-MEHTN6Q3LD"
@@ -99,7 +95,13 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="bg-bg text-text font-sans">{children}</body>
+      <body className="bg-bg text-text font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   )
 }

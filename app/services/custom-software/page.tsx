@@ -7,8 +7,31 @@ import type { Metadata } from 'next'
 import ServiceCaseStudies from '@/components/service-case-studies'
 
 export const metadata: Metadata = {
-  title: 'Custom Software Development Services — Miami',
+  title: 'Custom Software Development — Miami',
   description: 'Custom web applications, APIs, internal tools, and product engineering. Duality Labs builds production-ready software designed for scale. Based in Miami, serving businesses nationwide.',
+  alternates: {
+    canonical: 'https://www.dualitylabs.ai/services/custom-software',
+  },
+}
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Custom Software Development',
+  description: 'Custom web applications, APIs, internal tools, and product engineering. Duality Labs builds production-ready software designed for scale.',
+  provider: { '@type': 'Organization', name: 'Duality Labs', url: 'https://www.dualitylabs.ai' },
+  areaServed: { '@type': 'Country', name: 'United States' },
+  url: 'https://www.dualitylabs.ai/services/custom-software',
+}
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.dualitylabs.ai' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.dualitylabs.ai/services' },
+    { '@type': 'ListItem', position: 3, name: 'Custom Software', item: 'https://www.dualitylabs.ai/services/custom-software' },
+  ],
 }
 
 const faqs = [
@@ -39,6 +62,14 @@ export default function CustomSoftwarePage() {
     <>
       <Nav />
       <main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
         {/* Hero */}
         <section className="relative py-16 sm:py-20 md:py-24 border-b border-border overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-gradient-from via-gradient-via to-gradient-to" />

@@ -19,6 +19,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: c.meta.title,
     description: c.meta.description,
+    alternates: {
+      canonical: `https://www.dualitylabs.ai/case-studies/${slug}`,
+    },
   }
 }
 
@@ -27,10 +30,53 @@ export default async function CaseStudyPage({ params }: Props) {
   const c = getCaseStudy(slug)
   if (!c) notFound()
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: c.headline,
+    description: c.meta.description,
+    author: {
+      '@type': 'Organization',
+      name: 'Duality Labs',
+      url: 'https://www.dualitylabs.ai',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Duality Labs',
+      url: 'https://www.dualitylabs.ai',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.dualitylabs.ai/logo/logo-horizontal-dark.svg',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.dualitylabs.ai/case-studies/${c.slug}`,
+    },
+  }
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.dualitylabs.ai' },
+      { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://www.dualitylabs.ai/case-studies' },
+      { '@type': 'ListItem', position: 3, name: c.headline, item: `https://www.dualitylabs.ai/case-studies/${c.slug}` },
+    ],
+  }
+
   return (
     <>
       <Nav />
       <main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
         {/* Header */}
         <header className="relative pt-16 sm:pt-20 md:pt-24 pb-10 sm:pb-12 md:pb-14 border-b border-border overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-gradient-from via-gradient-via to-gradient-to" />

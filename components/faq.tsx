@@ -10,19 +10,6 @@ interface FAQItem {
 export default function FAQ({ items, heading = 'Frequently Asked Questions' }: { items: FAQItem[]; heading?: string }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: items.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  }
-
   return (
     <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-bg to-gradient-to" />
@@ -59,11 +46,6 @@ export default function FAQ({ items, heading = 'Frequently Asked Questions' }: {
             </div>
           ))}
         </div>
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
       </div>
     </section>
   )

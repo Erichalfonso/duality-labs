@@ -8,6 +8,9 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Blog — AI, Automation & Software Engineering Insights',
   description: 'Practical insights on AI automation, LLM fine-tuning, custom software development, and building production ML systems. Written by the Duality Labs team.',
+  alternates: {
+    canonical: 'https://www.dualitylabs.ai/blog',
+  },
 }
 
 export default function BlogPage() {

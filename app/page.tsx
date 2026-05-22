@@ -6,6 +6,13 @@ import CaseStudiesPreview from '@/components/case-studies-preview'
 import HowWeWork from '@/components/how-we-work'
 import CTA from '@/components/cta'
 import Footer from '@/components/footer'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.dualitylabs.ai',
+  },
+}
 
 export default function Home() {
   return (

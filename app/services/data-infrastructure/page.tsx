@@ -9,6 +9,29 @@ import ServiceCaseStudies from '@/components/service-case-studies'
 export const metadata: Metadata = {
   title: 'Data Infrastructure & Workflow Automation Services',
   description: 'Data pipeline development, workflow automation, system integrations, and reporting infrastructure. Duality Labs builds data systems that run themselves.',
+  alternates: {
+    canonical: 'https://www.dualitylabs.ai/services/data-infrastructure',
+  },
+}
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Data Infrastructure & Workflow Automation',
+  description: 'Data pipeline development, workflow automation, system integrations, and reporting infrastructure.',
+  provider: { '@type': 'Organization', name: 'Duality Labs', url: 'https://www.dualitylabs.ai' },
+  areaServed: { '@type': 'Country', name: 'United States' },
+  url: 'https://www.dualitylabs.ai/services/data-infrastructure',
+}
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.dualitylabs.ai' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.dualitylabs.ai/services' },
+    { '@type': 'ListItem', position: 3, name: 'Data Infrastructure', item: 'https://www.dualitylabs.ai/services/data-infrastructure' },
+  ],
 }
 
 const faqs = [
@@ -39,6 +62,14 @@ export default function DataInfrastructurePage() {
     <>
       <Nav />
       <main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
         {/* Hero */}
         <section className="relative py-16 sm:py-20 md:py-24 border-b border-border overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-gradient-from via-gradient-via to-gradient-to" />
