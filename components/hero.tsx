@@ -10,6 +10,9 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
           {/* Left: Text Content */}
           <div className="max-w-[560px]">
+            <p className="font-mono text-xs tracking-widest uppercase text-text-secondary mb-4 fade-in">
+              Miami, FL
+            </p>
             <h1 className="text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] font-medium leading-[1.15] tracking-tight mb-4 sm:mb-6 fade-in">
               We build the software, AI, and data systems your business runs on.
             </h1>
