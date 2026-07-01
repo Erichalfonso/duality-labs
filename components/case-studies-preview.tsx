@@ -37,7 +37,7 @@ export default function CaseStudiesPreview() {
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 md:mb-14 reveal">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight px-4 leading-[1.05]">
-            Where our systems run
+            Case Studies
           </h2>
           <p className="font-mono text-xs uppercase tracking-widest text-text-secondary mt-3 sm:mt-4">
             Industries We've Shipped For

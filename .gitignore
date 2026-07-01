@@ -29,6 +29,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# superpowers brainstorm mockups
+.superpowers/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
@@ -37,3 +40,6 @@ next-env.d.ts
 
 # brainstorming visual companion
 .superpowers/
+
+# local scrape + screenshot artifacts
+.firecrawl/

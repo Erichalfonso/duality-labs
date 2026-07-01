@@ -1,6 +1,7 @@
 import Nav from '@/components/nav'
 import Hero from '@/components/hero'
 import Results from '@/components/results'
+import ProductSpotlight from '@/components/product-spotlight'
 import TrustedBy from '@/components/trusted-by'
 import CaseStudiesPreview from '@/components/case-studies-preview'
 import HowWeWork from '@/components/how-we-work'
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero />
         <TrustedBy />
         <Results />
+        <ProductSpotlight />
         <CaseStudiesPreview />
         <HowWeWork />
         <CTA />
