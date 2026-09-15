@@ -37,3 +37,13 @@ next-env.d.ts
 
 # brainstorming visual companion
 .superpowers/
+
+# linkedin credentials
+.linkedin_token
+linkedin_auth.py
+
+# Local tooling, not part of the site
+claude-seo/
+.mcp.json
+.claude/
+.DS_Store

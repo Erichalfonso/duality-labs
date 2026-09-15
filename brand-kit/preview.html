@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Duality Labs — Brand Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --bg-secondary: #FAFAFA;
+    --text: #0A0A0A;
+    --text-secondary: #737373;
+    --accent: #0066FF;
+    --accent-light: #E6F0FF;
+    --border: #E5E5E5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .container { max-width: 1080px; margin: 0 auto; padding: 64px 32px; }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  h1 { font-size: 48px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 8px; }
+  h2 { font-size: 28px; font-weight: 500; letter-spacing: -0.01em; margin: 64px 0 24px; }
+  p.lead { color: var(--text-secondary); font-size: 18px; margin: 0 0 48px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .card.dark { background: #0A0A0A; }
+  .card .preview {
+    display: flex; align-items: center; justify-content: center;
+    height: 180px; padding: 24px;
+  }
+  .card .preview img { max-width: 100%; max-height: 100%; }
+  .card .meta {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border);
+    background: var(--bg-secondary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .card.dark .meta { border-top-color: #1a1a1a; }
+
+  .type-row {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+    margin-bottom: 16px;
+  }
+  .type-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .type-spec { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; font-family: 'JetBrains Mono', monospace; }
+  .sample-inter { font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 500; letter-spacing: -0.02em; }
+  .sample-mono { font-family: 'JetBrains Mono', monospace; font-size: 18px; }
+  .sample-georgia { font-family: Georgia, 'Times New Roman', serif; font-size: 64px; font-weight: 700; }
+
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .swatch { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .swatch .chip { height: 80px; }
+  .swatch .info {
+    padding: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+  }
+  .swatch .info .name { color: var(--text); font-weight: 500; }
+  .swatch .info .hex { color: var(--text-secondary); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="eyebrow">Brand Kit</div>
+  <h1>Duality Labs</h1>
+  <p class="lead">Logo, typography, and color reference. All assets in <code>brand-kit/logos/</code>.</p>
+
+  <h2>Logos</h2>
+  <div class="grid">
+    <div class="card"><div class="preview"><img src="logos/logo-horizontal-dark.svg" alt="Horizontal Dark"></div><div class="meta">logo-horizontal-dark.svg</div></div>
+    <div class="card dark"><div class="preview"><img src="logos/logo-horizontal-light.svg" alt="Horizontal Light"></div><div class="meta">logo-horizontal-light.svg</div></div>
+    <div class="card"><div class="preview"><img src="logos/logo-vertical-dark.svg" alt="Vertical Dark"></div><div class="meta">logo-vertical-dark.svg</div></div>
+    <div class="card dark"><div class="preview"><img src="logos/logo-vertical-light.svg" alt="Vertical Light"></div><div class="meta">logo-vertical-light.svg</div></div>
+    <div class="card"><div class="preview"><img src="logos/symbol-dark.svg" alt="Symbol Dark"></div><div class="meta">symbol-dark.svg</div></div>
+    <div class="card dark"><div class="preview"><img src="logos/symbol-light.svg" alt="Symbol Light"></div><div class="meta">symbol-light.svg</div></div>
+    <div class="card"><div class="preview"><img src="logos/symbol-accent.svg" alt="Symbol Accent"></div><div class="meta">symbol-accent.svg</div></div>
+    <div class="card"><div class="preview"><img src="favicon.svg" alt="Favicon" style="width:64px;height:64px;"></div><div class="meta">favicon.svg (32×32)</div></div>
+  </div>
+
+  <h2>Typography</h2>
+
+  <div class="type-row">
+    <div class="type-label">Sans — Primary</div>
+    <div class="type-spec">Inter · weights 400, 500, 600, 700</div>
+    <div class="sample-inter">The duality of structure and intelligence.</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-label">Mono — Eyebrow & Code</div>
+    <div class="type-spec">JetBrains Mono · uppercase, letter-spacing 0.15em for labels</div>
+    <div class="sample-mono">CUSTOM SOFTWARE / AI SYSTEMS / DATA INFRASTRUCTURE</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-label">Serif — Symbol Only</div>
+    <div class="type-spec">Georgia · weight 700 · used exclusively for the Ψ mark</div>
+    <div class="sample-georgia">Ψ</div>
+  </div>
+
+  <h2>Colors</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#FFFFFF;border-bottom:1px solid var(--border);"></div><div class="info"><div class="name">bg</div><div class="hex">#FFFFFF</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#FAFAFA;border-bottom:1px solid var(--border);"></div><div class="info"><div class="name">bg-secondary</div><div class="hex">#FAFAFA</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#0A0A0A;"></div><div class="info"><div class="name">text</div><div class="hex">#0A0A0A</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#737373;"></div><div class="info"><div class="name">text-secondary</div><div class="hex">#737373</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#0066FF;"></div><div class="info"><div class="name">accent</div><div class="hex">#0066FF</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#E6F0FF;"></div><div class="info"><div class="name">accent-light</div><div class="hex">#E6F0FF</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#0052CC;"></div><div class="info"><div class="name">gradient-accent-to</div><div class="hex">#0052CC</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#E5E5E5;"></div><div class="info"><div class="name">border</div><div class="hex">#E5E5E5</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#171717;"></div><div class="info"><div class="name">logo dark fill</div><div class="hex">#171717</div></div></div>
+  </div>
+</div>
+</body>
+</html>

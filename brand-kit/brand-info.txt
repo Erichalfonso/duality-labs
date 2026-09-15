@@ -1,0 +1,57 @@
+DUALITY LABS — BRAND KIT
+========================
+
+Open preview.html in a browser to see everything visually.
+
+
+SYMBOL
+------
+Ψ (Greek letter Psi), Georgia serif, weight 700.
+
+
+LOGO FILES (in /logos)
+----------------------
+logo-horizontal-dark.svg     Wordmark — for light backgrounds
+logo-horizontal-light.svg    Wordmark — for dark backgrounds
+logo-vertical-dark.svg       Stacked  — for light backgrounds
+logo-vertical-light.svg      Stacked  — for dark backgrounds
+symbol-dark.svg              Ψ only   — for light backgrounds (#171717)
+symbol-light.svg             Ψ only   — for dark backgrounds (#FFFFFF)
+symbol-accent.svg            Ψ only   — electric blue (#0066FF)
+favicon.svg                  32×32 rounded favicon
+
+
+TYPOGRAPHY
+----------
+Sans   — Inter             — body, UI, wordmark
+                             stack: Inter, system-ui, -apple-system, sans-serif
+Mono   — JetBrains Mono    — eyebrow labels, code
+                             stack: JetBrains Mono, monospace
+Serif  — Georgia           — Ψ symbol only
+                             stack: Georgia, "Times New Roman", serif
+
+Wordmark spec:
+  Inter 600, uppercase, letter-spacing 0.1em (horizontal) / 0.12em (vertical)
+
+Common patterns:
+  Headings        → Inter 500, tracking-tight
+  Eyebrow labels  → JetBrains Mono, 12px, uppercase, tracking-widest, accent color
+  Body            → Inter 400
+
+
+COLORS
+------
+bg                    #FFFFFF
+bg-secondary          #FAFAFA
+text                  #0A0A0A
+text-secondary        #737373
+accent                #0066FF   (electric blue — primary brand color)
+accent-light          #E6F0FF
+gradient-accent-from  #0066FF
+gradient-accent-to    #0052CC
+border                #E5E5E5
+
+Logo fills:
+  Dark variant       #171717
+  Light variant      #FFFFFF
+  Accent variant     #0066FF
