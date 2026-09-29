@@ -94,8 +94,49 @@ export default function RootLayout({
             gtag('config', 'G-MEHTN6Q3LD');
           `}
         </Script>
+        {/* Meta Pixel */}
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1085405264352623');
+            fbq('track', 'PageView');
+
+            // Delegated so every booking/email link counts, including ones
+            // rendered by server components that can't take onClick handlers.
+            document.addEventListener('click', function (e) {
+              var a = e.target.closest && e.target.closest('a[href]');
+              if (!a) return;
+              if (a.href.indexOf('calendly.com/') !== -1) {
+                fbq('track', 'Lead', { content_name: 'Calendly' });
+              } else if (a.href.indexOf('mailto:') === 0) {
+                fbq('track', 'Lead', { content_name: 'Email' });
+              }
+            });
+            document.addEventListener('submit', function (e) {
+              if (e.target.closest && e.target.closest('#contact')) {
+                fbq('track', 'Lead', { content_name: 'Contact form' });
+              }
+            });
+          `}
+        </Script>
       </head>
       <body className="bg-bg text-text font-sans">
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=1085405264352623&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
