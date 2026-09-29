@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Facebook Cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  /* 1640x624 = Facebook's recommended cover upload (2x of 820x312 desktop).
+     Mobile crops the sides to roughly the middle 1110px, and the profile
+     picture sits over the bottom-left, so all text stays in the centre band. */
+  :root { --bg:#FFFFFF; --text:#0A0A0A; --muted:#737373; --accent:#0066FF; --grid:rgba(10,10,10,.05); --psi:#E6F0FF; }
+  body.dark { --bg:#0A0A0A; --text:#FFFFFF; --muted:#A3A3A3; --grid:rgba(255,255,255,.06); --psi:rgba(0,102,255,.18); }
+  html, body { margin:0; }
+  body { width:1640px; height:624px; overflow:hidden; background:var(--bg); color:var(--text); font-family:Inter, system-ui, sans-serif; position:relative; }
+  .grid { position:absolute; inset:0; background-image:linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size:48px 48px; -webkit-mask-image:radial-gradient(ellipse at 70% 50%, #000 20%, transparent 75%); }
+  .psi { position:absolute; right:150px; top:50%; transform:translateY(-52%); font-family:Georgia, 'Times New Roman', serif; font-weight:700; font-size:560px; line-height:1; color:var(--psi); }
+  .bar { position:absolute; left:0; right:0; bottom:0; height:8px; background:linear-gradient(90deg, #0066FF, #0052CC); }
+  .content { position:absolute; left:300px; top:50%; transform:translateY(-50%); width:1000px; }
+  .brand { display:flex; align-items:center; gap:16px; margin-bottom:36px; }
+  .brand .mark { font-family:Georgia, serif; font-weight:700; font-size:52px; color:var(--accent); line-height:1; }
+  .brand .word { font-weight:600; font-size:26px; letter-spacing:.1em; }
+  h1 { font-weight:500; font-size:58px; line-height:1.12; letter-spacing:-0.02em; margin:0 0 32px; max-width:980px; }
+  h1 .accent { color:var(--accent); }
+  .eyebrow { font-family:'JetBrains Mono', monospace; font-weight:500; font-size:19px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); }
+  .eyebrow b { color:var(--accent); font-weight:500; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="psi">Ψ</div>
+  <div class="content">
+    <div class="brand"><span class="mark">Ψ</span><span class="word">DUALITY LABS</span></div>
+    <h1>We build the software, <span class="accent">AI</span>, and data systems your business runs on.</h1>
+    <div class="eyebrow"><b>dualitylabs.ai</b> &nbsp;·&nbsp; Miami, FL</div>
+  </div>
+  <div class="bar"></div>
+  <script>if (location.hash === '#dark') document.body.classList.add('dark');</script>
+</body>
+</html>
