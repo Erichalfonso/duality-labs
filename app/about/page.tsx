@@ -135,9 +135,7 @@ export default function AboutPage() {
                   If this sounds like you, we should talk. 15 minutes, no pitch deck — just a conversation about what you are trying to solve.
                 </p>
                 <a
-                  href="https://calendly.com/dualitylabs/new-meeting"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/apply"
                   className="inline-flex items-center gap-2 font-mono text-sm font-medium text-white bg-accent px-6 py-3 rounded-md hover:bg-gradient-accent-to transition-all hover:-translate-y-0.5"
                 >
                   Book an intro call

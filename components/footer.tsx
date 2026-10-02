@@ -48,9 +48,7 @@ export default function Footer() {
                 ops@dualitylabs.ai
               </a>
               <a
-                href="https://calendly.com/dualitylabs/new-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/apply"
                 className="font-mono text-xs text-text-secondary hover:text-text transition-colors"
               >
                 Book a Call
