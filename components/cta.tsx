@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 type Status = 'idle' | 'sending' | 'sent'
 
 const TO_EMAIL = 'ops@dualitylabs.ai'
-const CALENDLY_URL = 'https://calendly.com/dualitylabs/new-meeting'
+const APPLY_URL = '/apply'
 
 export default function CTA() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -86,9 +86,7 @@ export default function CTA() {
           </p>
 
           <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={APPLY_URL}
             className="inline-flex items-center justify-center gap-2 font-mono text-sm font-medium text-white bg-gradient-to-r from-gradient-accent-from to-gradient-accent-to px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:shadow-lg hover:shadow-accent/20 transition-all hover:-translate-y-0.5"
           >
             Book an intro

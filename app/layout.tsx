@@ -108,14 +108,12 @@ export default function RootLayout({
             fbq('init', '1085405264352623');
             fbq('track', 'PageView');
 
-            // Delegated so every booking/email link counts, including ones
-            // rendered by server components that can't take onClick handlers.
+            // Delegated so every email link counts, including ones rendered by
+            // server components that can't take onClick handlers. The /apply
+            // form fires its own Lead and Schedule events.
             document.addEventListener('click', function (e) {
               var a = e.target.closest && e.target.closest('a[href]');
-              if (!a) return;
-              if (a.href.indexOf('calendly.com/') !== -1) {
-                fbq('track', 'Lead', { content_name: 'Calendly' });
-              } else if (a.href.indexOf('mailto:') === 0) {
+              if (a && a.href.indexOf('mailto:') === 0) {
                 fbq('track', 'Lead', { content_name: 'Email' });
               }
             });
