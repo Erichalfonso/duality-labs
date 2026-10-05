@@ -43,3 +43,11 @@ next-env.d.ts
 
 # local scrape + screenshot artifacts
 .firecrawl/
+
+# local tooling and credentials
+.env*
+.linkedin_token
+.mcp.json
+.claude/
+.codex/
+claude-seo/
