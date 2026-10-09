@@ -13,11 +13,11 @@ This guide explains what LLM fine-tuning is, when it makes sense, how the proces
 
 ## What fine-tuning actually means
 
-Pre-trained LLMs are trained on massive datasets of internet text. They learn general language patterns, reasoning abilities, and broad world knowledge. This makes them useful for a wide range of tasks — but they are generalists by nature.
+Pre-trained LLMs are trained on massive datasets of internet text. They learn general language patterns, reasoning abilities, and broad world knowledge. This makes them useful for a wide range of tasks, but they're generalists by nature.
 
-Fine-tuning takes a pre-trained model and trains it further on a smaller, domain-specific dataset. This specializes the model for your particular use case — teaching it your terminology, your formats, your quality standards, and your domain knowledge.
+Fine-tuning takes a pre-trained model and trains it further on a smaller, domain-specific dataset. This specializes the model for your particular use case, teaching it your terminology, your formats, your quality standards, and your domain knowledge.
 
-Think of it like hiring a generalist consultant vs a domain expert. The generalist can work on many types of problems but needs extensive briefing every time. The domain expert already understands your industry, your jargon, and your standards — they can produce high-quality work with minimal instructions.
+Think of it like hiring a generalist consultant vs a domain expert. The generalist can work on many types of problems but needs extensive briefing every time. The domain expert already understands your industry, your jargon, and your standards, so they can produce high-quality work with minimal instructions.
 
 ## When you need fine-tuning
 
@@ -25,13 +25,13 @@ Fine-tuning is not always necessary. For many use cases, prompt engineering (car
 
 Fine-tuning makes sense when:
 
-**You need consistent outputs in a specific format.** If every response needs to follow a precise structure — specific JSON schemas, particular report formats, standardized data extraction templates — fine-tuning teaches the model to reliably produce that format without extensive prompting.
+**You need consistent outputs in a specific format.** If every response needs to follow a precise structure (specific JSON schemas, particular report formats, standardized data extraction templates), fine-tuning teaches the model to reliably produce that format without extensive prompting.
 
 **Prompt engineering has hit its limits.** If you have spent weeks optimizing prompts and the model still does not reliably meet your quality bar, fine-tuning can push accuracy significantly higher. The model learns patterns from examples rather than following verbose instructions.
 
 **You need domain-specific knowledge or terminology.** Medical, legal, financial, and technical fields have specialized language that general models sometimes handle imprecisely. Fine-tuning on domain-specific data improves the model's understanding and production of specialized content.
 
-**You want to reduce costs and latency.** Fine-tuned smaller models can often match or outperform larger general models on specific tasks — at lower cost and faster speed. If you are making thousands of API calls per day for a specific task, fine-tuning a smaller model can reduce costs significantly.
+**You want to reduce costs and latency.** Fine-tuned smaller models can often match or outperform larger general models on specific tasks at lower cost and faster speed. If you are making thousands of API calls per day for a specific task, fine-tuning a smaller model can reduce costs significantly.
 
 **You need consistent brand voice or tone.** If your AI generates customer-facing content, fine-tuning on examples of your brand voice produces more consistent results than prompt-based style instructions.
 
@@ -39,7 +39,7 @@ Fine-tuning makes sense when:
 
 **Your use case works well with prompting.** If you are getting good results with clear prompts, there is no reason to add the complexity and cost of fine-tuning.
 
-**You need the model to access current information.** Fine-tuning teaches patterns, not facts. If you need the model to reference current data — inventory levels, recent transactions, up-to-date documentation — use retrieval-augmented generation (RAG) instead. RAG gives the model access to current data at query time.
+**You need the model to access current information.** Fine-tuning teaches patterns, not facts. If you need the model to reference current data (inventory levels, recent transactions, up-to-date documentation), use retrieval-augmented generation (RAG) instead. RAG gives the model access to current data at query time.
 
 **Your requirements change frequently.** Fine-tuning bakes behavior into the model. If your requirements shift often, prompt-based approaches are more flexible because you can update prompts instantly without retraining.
 
@@ -69,23 +69,23 @@ Data preparation includes:
 
 The actual training process uses the prepared dataset to adjust the model's parameters. The key decisions here are:
 
-- **Base model selection** — Which pre-trained model to start from. Larger models are more capable but more expensive to fine-tune and run.
-- **Hyperparameters** — Learning rate, number of training epochs, and batch size. These control how aggressively the model adapts to your data.
-- **Training infrastructure** — Cloud GPU instances for training. Modern fine-tuning techniques like LoRA make this more efficient than full model training.
+- **Base model selection:** Which pre-trained model to start from. Larger models are more capable but more expensive to fine-tune and run.
+- **Hyperparameters:** Learning rate, number of training epochs, and batch size. These control how aggressively the model adapts to your data.
+- **Training infrastructure:** Cloud GPU instances for training. Modern fine-tuning techniques like LoRA make this more efficient than full model training.
 
-Training typically takes hours, not days — assuming your dataset is prepared and your infrastructure is set up.
+Training typically takes hours, not days, assuming your dataset is prepared and your infrastructure is set up.
 
 ### 3. Evaluation
 
-After training, the fine-tuned model is evaluated against a held-out test set — examples it has never seen during training. This measures real-world performance.
+After training, the fine-tuned model is evaluated against a held-out test set: examples it has never seen during training. This measures real-world performance.
 
 We evaluate on metrics specific to the task:
-- **Accuracy** — How often does the model produce the correct output?
-- **Format compliance** — Does the output match the required structure?
-- **Edge case handling** — How does the model perform on unusual or difficult examples?
-- **Comparison to baseline** — How much better is the fine-tuned model vs the base model with prompting?
+- **Accuracy:** How often does the model produce the correct output?
+- **Format compliance:** Does the output match the required structure?
+- **Edge case handling:** How does the model perform on unusual or difficult examples?
+- **Comparison to baseline:** How much better is the fine-tuned model vs the base model with prompting?
 
-If evaluation results are not satisfactory, we iterate — improving training data, adjusting hyperparameters, or adding more examples for the failure cases.
+If evaluation results are not satisfactory, we iterate by improving training data, adjusting hyperparameters, or adding more examples for the failure cases.
 
 ### 4. Deployment
 
@@ -102,7 +102,7 @@ Based on our experience across multiple fine-tuning projects:
 
 **Accuracy improvement:** Fine-tuning typically improves task-specific accuracy by 10 to 30 percentage points compared to prompting alone. A task that achieves 75% accuracy with prompting might reach 90 to 95% accuracy after fine-tuning.
 
-**Consistency improvement:** Fine-tuned models produce more consistent outputs — fewer format variations, more reliable structure, more predictable behavior. This is often as valuable as the accuracy improvement.
+**Consistency improvement:** Fine-tuned models produce more consistent outputs: fewer format variations, more reliable structure, more predictable behavior. This is often as valuable as the accuracy improvement.
 
 **Cost reduction:** Fine-tuned smaller models can often replace larger models for specific tasks. This can reduce per-request costs by 50 to 90% depending on the models involved.
 
@@ -116,7 +116,7 @@ Based on our experience across multiple fine-tuning projects:
 
 **"Fine-tuning is a one-time process."** Your business evolves, and your model should too. Plan for periodic retraining as you collect new data, encounter new edge cases, and refine your quality standards.
 
-**"Any developer can fine-tune a model."** The actual training step is technically straightforward. The hard parts — data preparation, evaluation design, and production deployment — require experience with ML systems. This is where working with an experienced team pays off.
+**"Any developer can fine-tune a model."** The actual training step is technically straightforward. The hard parts (data preparation, evaluation design, and production deployment) require experience with ML systems. This is where working with an experienced team pays off.
 
 ---
 
@@ -131,6 +131,6 @@ If you are considering LLM fine-tuning for your business, start by answering the
 
 These answers help determine whether fine-tuning is the right approach and how to scope the project.
 
-Duality Labs builds [production AI and ML systems](/services/ai-ml) for growing businesses, including custom fine-tuning projects. If you want to explore whether fine-tuning makes sense for your use case, [book a 15-minute call](https://calendly.com/dualitylabs/new-meeting) — we will give you an honest assessment.
+Duality Labs builds [production AI and ML systems](/services/ai-ml) for growing businesses, including custom fine-tuning projects. If you want to explore whether fine-tuning makes sense for your use case, [book a 15-minute call](https://calendly.com/dualitylabs/new-meeting) and we'll give you an honest assessment.
 
 Learn more about our approach to [building AI agents](/blog/building-ai-agents) and [automating business workflows with AI](/blog/how-to-automate-business-with-ai).
