@@ -11,7 +11,7 @@ const phases = [
   {
     number: '02',
     name: 'Build',
-    body: 'Two-week sprints with weekly demos. You see real progress and steer the direction. Production-grade code from day one — observable, tested, ready to ship.',
+    body: 'Two-week sprints with weekly demos. You see real progress and steer the direction. Production-grade code from day one: observable, tested, ready to ship.',
   },
   {
     number: '03',

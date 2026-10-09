@@ -215,7 +215,7 @@ export default async function CaseStudyPage({ params }: Props) {
                   &ldquo;{c.testimonial.quote}&rdquo;
                 </p>
                 <p className="font-mono text-[11px] uppercase tracking-wider text-text-secondary">
-                  — {c.testimonial.attribution}
+                  {c.testimonial.attribution}
                 </p>
               </div>
             )}

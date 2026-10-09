@@ -105,7 +105,7 @@ export default function ProductSpotlight() {
               <div className="animate-float-slow-delayed absolute left-1/2 -translate-x-[92%] sm:-translate-x-[86%] bottom-6 z-0 hidden sm:block">
                 <PhoneFrame
                   src="/ppol/screen-1.png"
-                  alt="Ppol Rider brand screen — Fast, Safe and Always There"
+                  alt="Ppol Rider brand screen: Fast, Safe and Always There"
                   className="w-[168px] md:w-[188px] opacity-95 rotate-[-6deg]"
                 />
               </div>
@@ -114,7 +114,7 @@ export default function ProductSpotlight() {
               <div className="animate-float-slow relative z-10 translate-x-2 sm:translate-x-8 lg:translate-x-0">
                 <PhoneFrame
                   src="/ppol/screen-4.png"
-                  alt="Ppol Rider app — instant booking with live map and fare estimate"
+                  alt="Ppol Rider app with instant booking with live map and fare estimate"
                   className="w-[236px] sm:w-[262px] md:w-[280px]"
                   priority
                 />

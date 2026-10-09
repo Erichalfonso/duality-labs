@@ -37,11 +37,11 @@ const breadcrumbJsonLd = {
 const faqs = [
   {
     question: 'What is data infrastructure and why does it matter?',
-    answer: 'Data infrastructure refers to the systems that collect, move, store, transform, and serve your business data. Strong data infrastructure means your team has accurate, timely data without manual effort — enabling better decisions, automated workflows, and reliable reporting. Poor data infrastructure means spreadsheets, manual exports, and decisions based on stale information.',
+    answer: 'Data infrastructure refers to the systems that collect, move, store, transform, and serve your business data. Strong data infrastructure means your team has accurate, timely data without manual effort. That means better decisions, automated workflows, and reliable reporting. Poor data infrastructure means spreadsheets, manual exports, and decisions based on stale information.',
   },
   {
     question: 'What kind of workflows can you automate?',
-    answer: 'We automate data-heavy, repetitive workflows — report generation, data entry and extraction, lead routing, invoice processing, customer onboarding sequences, inventory updates, cross-system synchronization, and more. If your team is spending hours on manual data work, there is almost certainly a way to automate it.',
+    answer: 'We automate data-heavy, repetitive workflows: report generation, data entry and extraction, lead routing, invoice processing, customer onboarding sequences, inventory updates, cross-system synchronization, and more. If your team is spending hours on manual data work, there\'s almost certainly a way to automate it.',
   },
   {
     question: 'Can you integrate with our existing tools and systems?',
@@ -49,11 +49,11 @@ const faqs = [
   },
   {
     question: 'How do you handle data quality and reliability?',
-    answer: 'We build data validation, error handling, and alerting into every pipeline. This includes schema validation, duplicate detection, null handling, retry logic for failed operations, and monitoring dashboards so you know immediately if something goes wrong. Reliable data systems require defensive engineering — not just happy-path code.',
+    answer: 'We build data validation, error handling, and alerting into every pipeline. This includes schema validation, duplicate detection, null handling, retry logic for failed operations, and monitoring dashboards so you know immediately if something goes wrong. Reliable data systems require defensive engineering, beyond happy-path code.',
   },
   {
     question: 'Do you build dashboards and reporting tools?',
-    answer: 'Yes. We build custom reporting dashboards, automated report generation systems, and data visualization tools. Whether you need a real-time operational dashboard, automated weekly reports delivered via email, or a self-service analytics portal for your team, we design and build reporting infrastructure that gives you the insights you need without manual effort.',
+    answer: 'Yes. We build custom reporting dashboards, automated report generation systems, and data visualization tools. Need a real-time operational dashboard, automated weekly reports by email, or a self-service analytics portal for your team? We design and build reporting infrastructure that gives you the insights you need without manual effort.',
   },
 ]
 
@@ -103,19 +103,19 @@ export default function DataInfrastructurePage() {
               <div>
                 <h3 className="text-lg sm:text-xl font-medium mb-2">Workflow Automation</h3>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                  Complex business workflows automated end to end — lead routing and follow-up sequences, invoice processing, customer onboarding, report generation and distribution, inventory management, and cross-system data synchronization. We identify the manual, repetitive processes that consume your team's time and replace them with reliable automated systems.
+                  Complex business workflows automated end to end: lead routing and follow-up sequences, invoice processing, customer onboarding, report generation and distribution, inventory management, and cross-system data synchronization. We identify the manual, repetitive processes that consume your team's time and replace them with reliable automated systems.
                 </p>
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-medium mb-2">System Integrations</h3>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                  Your business runs on multiple systems — CRM, accounting, project management, communication tools, databases. We build integrations that keep them synchronized, eliminate duplicate data entry, and ensure your team is always working from a single source of truth. We work with APIs, webhooks, database connections, and file-based integrations.
+                  Your business runs on multiple systems: CRM, accounting, project management, communication tools, databases. We build integrations that keep them synchronized, eliminate duplicate data entry, and ensure your team is always working from a single source of truth. We work with APIs, webhooks, database connections, and file-based integrations.
                 </p>
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-medium mb-2">Reporting & Analytics Infrastructure</h3>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                  Custom dashboards, automated reports, and analytics infrastructure that give your team the data they need without manual effort. We build real-time operational dashboards, scheduled report generation, self-service analytics tools, and KPI tracking systems — all connected directly to your data sources.
+                  Custom dashboards, automated reports, and analytics infrastructure that give your team the data they need without manual effort. We build real-time operational dashboards, scheduled report generation, self-service analytics tools, and KPI tracking systems, all connected directly to your data sources.
                 </p>
               </div>
             </div>
@@ -134,10 +134,10 @@ export default function DataInfrastructurePage() {
                 Most growing businesses hit a point where their data systems become a bottleneck. Reports take hours to compile manually. Teams copy data between spreadsheets. Critical information lives in someone's inbox or a disconnected tool. Decisions are made on incomplete or stale data because getting the right numbers is too slow.
               </p>
               <p>
-                Strong data infrastructure eliminates these problems. It ensures data flows automatically between systems, reports generate themselves, and your team has accurate, real-time information without manual effort. This is also the foundation for AI and machine learning — you cannot build intelligent systems without reliable data.
+                Strong data infrastructure eliminates these problems. It ensures data flows automatically between systems, reports generate themselves, and your team has accurate, real-time information without manual effort. This is also the foundation for AI and machine learning. You can&apos;t build intelligent systems without reliable data.
               </p>
               <p>
-                We have seen data automation projects deliver 10x to 50x ROI within the first quarter — not through complex technology, but by eliminating the hours of manual work your highest-paid people spend on data tasks every week.
+                We&apos;ve seen data automation projects deliver 10x to 50x ROI within the first quarter. The gains come from eliminating the hours of manual work your highest-paid people spend on data tasks every week.
               </p>
             </div>
           </div>
@@ -189,7 +189,7 @@ export default function DataInfrastructurePage() {
               </Link>
               <Link href="/services/custom-software" className="block p-4 rounded-lg border border-border hover:border-accent transition-colors">
                 <span className="text-sm sm:text-base font-medium text-accent">Custom Software & Product Engineering</span>
-                <p className="text-xs sm:text-sm text-text-secondary mt-1">Custom applications that leverage your data infrastructure.</p>
+                <p className="text-xs sm:text-sm text-text-secondary mt-1">Custom applications that build on your data infrastructure.</p>
               </Link>
             </div>
           </div>

@@ -13,7 +13,7 @@ const services = [
   {
     title: 'Custom Software & Product Engineering',
     subtitle: 'From concept to production',
-    description: 'We design and build custom web applications, platforms, APIs, and internal tools. Whether you\'re launching a new product or modernizing legacy systems, we deliver production-ready software engineered for scale.',
+    description: 'We design and build custom web applications, platforms, APIs, and internal tools. Launching a new product or modernizing legacy systems? We deliver production-ready software engineered for scale.',
     features: ['Web Applications', 'APIs & Platforms', 'Internal Tools', 'Product Development'],
     illustration: MVPIllustration,
     href: '/services/custom-software',
@@ -21,7 +21,7 @@ const services = [
   {
     title: 'AI & Machine Learning Systems',
     subtitle: 'Intelligence that works in production',
-    description: 'We build and deploy AI systems that solve real problems — from fine-tuning LLMs and training custom models to building ML pipelines and intelligent agents that integrate into your existing workflows.',
+    description: 'We build and deploy AI systems that solve real problems, from fine-tuning LLMs and training custom models to building ML pipelines and intelligent agents that integrate into your existing workflows.',
     features: ['LLM Fine-Tuning', 'ML Pipelines', 'Custom Models', 'AI Agents'],
     illustration: MLPipelineIllustration,
     href: '/services/ai-ml',
@@ -37,7 +37,7 @@ const services = [
   {
     title: 'Website Development',
     subtitle: 'Fast, beautiful, performance-first',
-    description: 'We design and build high-performance marketing sites, landing pages, and interactive web experiences. Optimized for speed, SEO, and conversion — deployed and maintained on modern infrastructure.',
+    description: 'We design and build high-performance marketing sites, landing pages, and interactive web experiences. Optimized for speed, SEO, and conversion, then deployed and maintained on modern infrastructure.',
     features: ['Conversion-Driven UI/UX Design', 'High-Conversion Landing Pages', 'Interactive Web Experiences', 'SEO & Speed Optimization'],
     illustration: WebDevIllustration,
     href: 'https://duality-webdev-portfolio.vercel.app',
@@ -80,7 +80,7 @@ export default function Services() {
             <span className="hidden sm:inline">Scale With Your Business</span>
           </h2>
           <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto reveal px-4">
-            Custom software, AI systems, and data infrastructure — from strategy through production
+            Custom software, AI systems, and data infrastructure, from strategy through production
           </p>
         </div>
       </div>

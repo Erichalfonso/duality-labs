@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     question: 'How do you ensure AI systems are reliable in production?',
-    answer: 'We build observability into every AI system from day one — logging inputs, outputs, confidence scores, and latency for every decision. We include human-in-the-loop checkpoints where appropriate, implement fallback strategies, and set up monitoring and alerting so issues are caught before they impact your business.',
+    answer: 'We build observability into every AI system from day one, logging inputs, outputs, confidence scores, and latency for every decision. We include human-in-the-loop checkpoints where appropriate, implement fallback strategies, and set up monitoring and alerting so issues are caught before they impact your business.',
   },
 ]
 
@@ -81,7 +81,7 @@ export default function AIMLPage() {
               AI & Machine Learning Systems That Work in Production
             </h1>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
-              We build and deploy AI systems that solve real problems — from fine-tuning LLMs and training custom models to building ML pipelines and intelligent agents that integrate directly into your existing workflows.
+              We build and deploy AI systems that solve real problems, from fine-tuning LLMs and training custom models to building ML pipelines and intelligent agents that integrate directly into your existing workflows.
             </p>
           </div>
         </section>
@@ -97,7 +97,7 @@ export default function AIMLPage() {
               <div>
                 <h3 className="text-lg sm:text-xl font-medium mb-2">Custom AI Agents</h3>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                  Autonomous AI agents that handle complex, multi-step tasks — lead qualification, document processing, customer support triage, data extraction, and more. We build agents with clear decision boundaries, human-in-the-loop checkpoints, and comprehensive logging so every action is traceable and auditable.
+                  Autonomous AI agents that handle complex, multi-step tasks: lead qualification, document processing, customer support triage, data extraction, and more. We build agents with clear decision boundaries, human-in-the-loop checkpoints, and comprehensive logging so every action is traceable and auditable.
                 </p>
               </div>
               <div>
@@ -109,13 +109,13 @@ export default function AIMLPage() {
               <div>
                 <h3 className="text-lg sm:text-xl font-medium mb-2">ML Pipelines & Infrastructure</h3>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                  Production ML is more than a model — it is an entire system. We build end-to-end ML pipelines that handle data ingestion, feature engineering, model training, evaluation, deployment, and monitoring. Whether you need batch prediction, real-time inference, or a hybrid approach, we architect the infrastructure to support it reliably at scale.
+                  Production ML is more than a model. It&apos;s an entire system. We build end-to-end ML pipelines that handle data ingestion, feature engineering, model training, evaluation, deployment, and monitoring. Batch prediction, real-time inference, or a hybrid approach: we architect the infrastructure to support it reliably at scale.
                 </p>
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-medium mb-2">Retrieval-Augmented Generation (RAG)</h3>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                  RAG systems let your AI reference your actual data — documents, knowledge bases, product catalogs, support tickets — when generating responses. We build RAG pipelines with vector databases, semantic search, and reranking to ensure your AI gives answers grounded in real, up-to-date information rather than hallucinated content.
+                  RAG systems let your AI reference your actual data (documents, knowledge bases, product catalogs, support tickets) when generating responses. We build RAG pipelines with vector databases, semantic search, and reranking to ensure your AI gives answers grounded in real, up-to-date information rather than hallucinated content.
                 </p>
               </div>
             </div>
@@ -131,10 +131,10 @@ export default function AIMLPage() {
             </h2>
             <div className="space-y-6 text-sm sm:text-base text-text-secondary leading-relaxed">
               <p>
-                Every AI project starts with a clear business outcome — not a technology choice. We work backward from the result you need to determine the right architecture, model approach, and integration strategy. This keeps projects focused and prevents the common trap of building impressive technology that does not actually move the needle.
+                Every AI project starts with a clear business outcome, not a technology choice. We work backward from the result you need to determine the right architecture, model approach, and integration strategy. This keeps projects focused and prevents the common trap of building impressive technology that doesn&apos;t actually move the needle.
               </p>
               <p>
-                We build incrementally. The first milestone is a working proof-of-concept validated against real data, usually within two to four weeks. From there, we harden for production — adding error handling, observability, edge case coverage, and integration with your existing systems. You see progress continuously, not after months of development.
+                We build incrementally. The first milestone is a working proof-of-concept validated against real data, usually within two to four weeks. From there, we harden for production, adding error handling, observability, edge case coverage, and integration with your existing systems. You see progress continuously, not after months of development.
               </p>
               <p>
                 Observability is built in from day one. Every AI decision is logged with inputs, outputs, confidence scores, and latency. This gives you full visibility into how your AI systems are performing and provides the data needed to continuously improve them over time.

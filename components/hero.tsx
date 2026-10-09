@@ -17,7 +17,7 @@ export default function Hero() {
               We build the software, AI, and data systems your business runs on.
             </h1>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed fade-in fade-in-delay-1 mb-6 sm:mb-8">
-              Custom applications, machine learning systems, and data infrastructure — engineered from strategy through production.
+              Custom applications, machine learning systems, and data infrastructure, engineered from strategy through production.
             </p>
 
             {/* CTA buttons */}

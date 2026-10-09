@@ -42,7 +42,7 @@ export default function RealEstatePage() {
 
             {/* Subheadline */}
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 md:mb-12 leading-relaxed px-2">
-              We respond to your leads in <span className="text-accent font-semibold">under 60 seconds</span>—so they
+              We respond to your leads in <span className="text-accent font-semibold">under 60 seconds</span>, so they
               actually turn into conversations.
             </p>
           </div>
