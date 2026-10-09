@@ -35,12 +35,12 @@ const QUESTIONS: { key: string; label: string; options: string[]; when?: (a: Ans
   },
   {
     key: 'approval',
-    label: 'Would you be involved in approving further automation?',
+    label: 'Would you be involved in approving additional AI agents?',
     options: ['Yes, I make the call', "Yes, I'd decide with others", "I'd bring in the decision-maker", 'No'],
   },
   {
     key: 'budget',
-    label: 'The first agent is free. If it delivers useful results, would you consider paid automation for other tasks?',
+    label: 'The first AI agent is free. If it delivers useful results, would you consider paid AI agents for other tasks?',
     options: [
       'Yes, potentially $2,000–$10,000 over the next six months',
       'Yes, potentially more than $10,000',
@@ -115,7 +115,7 @@ export default function ApplyForm() {
         <h2 className="text-2xl sm:text-[28px] font-medium tracking-tight mb-3">Thanks, {answers.name?.split(' ')[0]}.</h2>
         <p className="text-sm sm:text-base text-text-secondary leading-relaxed max-w-[480px] mx-auto">
           {outcome === 'review'
-            ? <>We review every application by hand. If it&apos;s a fit, we&apos;ll email you at <span className="text-text">{answers.email}</span> with next steps and how pricing works for paid automation.</>
+            ? <>We review every application by hand. If it&apos;s a fit, we&apos;ll email you at <span className="text-text">{answers.email}</span> with next steps and how pricing works for paid AI agents.</>
             : <>We read every submission. We&apos;ll email you at <span className="text-text">{answers.email}</span> if your project is a fit for a free build.</>}
         </p>
       </div>

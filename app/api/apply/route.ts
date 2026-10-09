@@ -9,7 +9,7 @@ const FIELDS = [
   ['clients', 'Clients'],
   ['software', 'Software'],
   ['approval', 'Approval role'],
-  ['budget', 'Paid automation after free agent'],
+  ['budget', 'Paid AI agents after free agent'],
   ['timeline', 'Timeline'],
   ['task', 'Repeated task'],
   ['hours', 'Hours per month'],
