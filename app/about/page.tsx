@@ -5,7 +5,7 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Duality Labs — AI Agency, Miami FL',
+  title: 'About Duality Labs | AI Agency, Miami FL',
   description: 'Miami-based AI agency founded by CS and economics experts. Duality Labs builds custom AI automation and software systems for growing businesses.',
   alternates: {
     canonical: 'https://www.dualitylabs.ai/about',
@@ -44,7 +44,7 @@ export default function AboutPage() {
         <PageHeader
           tag="About us"
           title="Two brothers, one mission"
-          description="We started Duality Labs to help businesses move faster with AI and automation — without needing a full in-house engineering team."
+          description="We started Duality Labs to help businesses move faster with AI and automation, without needing a full in-house engineering team."
         />
 
         <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
@@ -57,10 +57,10 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-xl sm:text-2xl font-medium mb-3 sm:mb-4 tracking-tight">Who we are</h2>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-4">
-                  Duality Labs was co-founded by Erich Alfonso and Alejandro Alfonso out of Miami, Florida. Erich studied Computer Science and Mathematics. Alejandro studied Economics. Together, we bring both the technical depth and the business thinking needed to build systems that actually move the needle — not just technically, but financially.
+                  Duality Labs was co-founded by Erich Alfonso and Alejandro Alfonso out of Miami, Florida. Erich studied Computer Science and Mathematics. Alejandro studied Economics. Together, we bring both the technical depth and the business thinking needed to build systems that actually move the needle, financially as well as technically.
                 </p>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-8">
-                  We stay hands-on from start to finish. Whether it is scoping a project, designing the architecture, or working directly with a client to understand their operations — we are in it at every stage.
+                  We stay hands-on from start to finish. Scoping a project, designing the architecture, working directly with a client to understand their operations: we&apos;re in it at every stage.
                 </p>
 
                 {/* Team photos */}
@@ -100,7 +100,7 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-xl sm:text-2xl font-medium mb-3 sm:mb-4 tracking-tight">Why we started this</h2>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-4">
-                  AI and modern software are evolving faster than most businesses can realistically keep up with. We kept seeing the same pattern: teams stuck doing manual work, juggling disconnected tools, and missing opportunities — not because they lacked ideas, but because they lacked engineering capacity.
+                  AI and modern software are evolving faster than most businesses can realistically keep up with. We kept seeing the same pattern: teams stuck doing manual work, juggling disconnected tools, and missing opportunities. They had the ideas. What they lacked was engineering capacity.
                 </p>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
                   Duality Labs exists to close that gap. We give growing businesses access to custom AI and automation without the cost, risk, or overhead of building a full in-house engineering team. No off-the-shelf products. No cookie-cutter solutions. Just software built specifically for how your business works.
@@ -111,7 +111,7 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-xl sm:text-2xl font-medium mb-3 sm:mb-4 tracking-tight">What actually changes</h2>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-4">
-                  Every business runs differently. That is why we start every engagement with a deep dive into your systems, workflows, and tech stack before writing a single line of code. We want to understand how your team actually operates — not just what tools you use.
+                  Every business runs differently. That&apos;s why we start every engagement with a deep dive into your systems, workflows, and tech stack before writing a single line of code. We want to understand how your team actually operates, beyond what tools you use.
                 </p>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-4">
                   From there, we scope clear deliverables, build in focused sprints, and keep you in the loop the entire way. No black boxes. No six-month timelines before you see results. We ship fast, iterate based on real feedback, and stick around after launch to make sure everything keeps running.
@@ -125,14 +125,14 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-xl sm:text-2xl font-medium mb-3 sm:mb-4 tracking-tight">Who this is for</h2>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                  We work with operations-heavy businesses, agencies, real estate firms, finance teams, logistics companies — anyone who has outgrown their current tools and knows they need something custom but does not have the engineering team to build it. If your team is spending more time managing systems than doing actual work, that is exactly where we come in.
+                  We work with operations-heavy businesses, agencies, real estate firms, finance teams, logistics companies. Anyone who has outgrown their current tools and knows they need something custom but doesn&apos;t have the engineering team to build it. If your team is spending more time managing systems than doing actual work, that&apos;s exactly where we come in.
                 </p>
               </div>
 
               {/* CTA */}
               <div className="pt-4 sm:pt-6 border-t border-border">
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-5">
-                  If this sounds like you, we should talk. 15 minutes, no pitch deck — just a conversation about what you are trying to solve.
+                  If this sounds like you, we should talk. 15 minutes, no pitch deck. Just a conversation about what you&apos;re trying to solve.
                 </p>
                 <a
                   href="/apply"

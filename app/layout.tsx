@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     canonical: 'https://www.dualitylabs.ai',
   },
   title: {
-    default: 'Custom AI & Software Development | Duality Labs — Miami',
+    default: 'Custom AI & Software Development | Duality Labs, Miami',
     template: '%s | Duality Labs',
   },
   description: 'Duality Labs is a Miami-based AI automation and custom software development agency. We build AI agents, ML pipelines, internal tools, and data infrastructure for growing businesses.',
   keywords: ['custom AI development Miami', 'AI automation agency', 'custom software development', 'AI agents', 'LLM fine-tuning', 'ML pipelines', 'internal tools', 'business automation', 'AI consulting', 'workflow automation', 'data infrastructure'],
   authors: [{ name: 'Duality Labs' }],
   openGraph: {
-    title: 'Custom AI & Software Development | Duality Labs — Miami',
+    title: 'Custom AI & Software Development | Duality Labs, Miami',
     description: 'Duality Labs is a Miami-based AI automation and custom software development agency. We build AI agents, ML pipelines, internal tools, and data infrastructure for growing businesses.',
     url: 'https://www.dualitylabs.ai',
     siteName: 'Duality Labs',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Custom AI & Software Development | Duality Labs — Miami',
+    title: 'Custom AI & Software Development | Duality Labs, Miami',
     description: 'Duality Labs is a Miami-based AI automation and custom software development agency. We build AI agents, ML pipelines, internal tools, and data infrastructure for growing businesses.',
   },
 }

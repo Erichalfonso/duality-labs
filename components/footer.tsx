@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
         <div className="pt-6 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-3">
           <span className="font-mono text-xs text-text-secondary">
-            © 2026 Duality Labs — Miami, FL
+            © 2026 Duality Labs · Miami, FL
           </span>
           <span className="font-mono text-xs text-text-secondary">
             Custom AI & Software Development

@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 import ServiceCaseStudies from '@/components/service-case-studies'
 
 export const metadata: Metadata = {
-  title: 'Custom Software Development — Miami',
+  title: 'Custom Software Development | Miami',
   description: 'Custom web applications, APIs, internal tools, and product engineering. Duality Labs builds production-ready software designed for scale. Based in Miami, serving businesses nationwide.',
   alternates: {
     canonical: 'https://www.dualitylabs.ai/services/custom-software',
@@ -37,11 +37,11 @@ const breadcrumbJsonLd = {
 const faqs = [
   {
     question: 'What kind of custom software does Duality Labs build?',
-    answer: 'We build web applications, APIs, internal tools, admin dashboards, customer-facing platforms, and data-driven products. Our stack is modern — React, Next.js, Node.js, Python, PostgreSQL — and every project is engineered for production from day one.',
+    answer: 'We build web applications, APIs, internal tools, admin dashboards, customer-facing platforms, and data-driven products. Our stack is modern (React, Next.js, Node.js, Python, PostgreSQL), and every project is engineered for production from day one.',
   },
   {
     question: 'How is working with Duality Labs different from hiring a freelancer or dev shop?',
-    answer: 'We combine deep technical expertise with business thinking. Both co-founders are hands-on in every project — from scoping and architecture to implementation and deployment. You get senior-level engineering without the overhead of managing a team, and we stay involved after launch to ensure everything keeps running.',
+    answer: 'We combine deep technical expertise with business thinking. Both co-founders are hands-on in every project, from scoping and architecture to implementation and deployment. You get senior-level engineering without the overhead of managing a team, and we stay involved after launch to ensure everything keeps running.',
   },
   {
     question: 'How long does a typical custom software project take?',
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     question: 'Can you work with our existing codebase or tech stack?',
-    answer: 'Yes. We regularly integrate with and extend existing systems. Whether you need features added to an existing application, a legacy system modernized, or a new tool built to integrate with your current stack, we adapt to your environment.',
+    answer: 'Yes. We regularly integrate with and extend existing systems. We add features to existing applications, modernize legacy systems, and build new tools that plug into your current stack. We adapt to your environment.',
   },
   {
     question: 'Do you provide ongoing support after launch?',
@@ -81,7 +81,7 @@ export default function CustomSoftwarePage() {
               Custom Software & Product Engineering
             </h1>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
-              We design and build custom web applications, platforms, APIs, and internal tools. Whether you are launching a new product or modernizing legacy systems, we deliver production-ready software engineered for scale.
+              We design and build custom web applications, platforms, APIs, and internal tools. Launching a new product or modernizing legacy systems? We deliver production-ready software engineered for scale.
             </p>
           </div>
         </section>
@@ -97,25 +97,25 @@ export default function CustomSoftwarePage() {
               <div>
                 <h3 className="text-lg sm:text-xl font-medium mb-2">Web Applications & Platforms</h3>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                  Full-stack web applications built with modern frameworks — React, Next.js, Node.js, Python. From customer-facing platforms and SaaS products to operational dashboards and admin panels, we build applications that are fast, reliable, and designed to scale with your business.
+                  Full-stack web applications built with modern frameworks: React, Next.js, Node.js, Python. From customer-facing platforms and SaaS products to operational dashboards and admin panels, we build applications that are fast, reliable, and designed to scale with your business.
                 </p>
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-medium mb-2">Internal Tools & Admin Systems</h3>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                  Off-the-shelf tools rarely fit how your team actually works. We build custom internal tools — CRMs, reporting dashboards, workflow management systems, data entry platforms — that match your exact processes. The result is less context-switching, fewer workarounds, and more time spent on work that matters.
+                  Off-the-shelf tools rarely fit how your team actually works. We build custom internal tools (CRMs, reporting dashboards, workflow management systems, data entry platforms) that match your exact processes. The result is less context-switching, fewer workarounds, and more time spent on work that matters.
                 </p>
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-medium mb-2">APIs & Backend Services</h3>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                  Robust APIs and backend services that connect your systems, power your products, and handle data reliably at scale. We design REST and GraphQL APIs with proper authentication, rate limiting, error handling, and documentation — built to be consumed by your frontend, mobile apps, or third-party integrations.
+                  Solid APIs and backend services that connect your systems, power your products, and handle data reliably at scale. We design REST and GraphQL APIs with proper authentication, rate limiting, error handling, and documentation, built to be consumed by your frontend, mobile apps, or third-party integrations.
                 </p>
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-medium mb-2">MVP & Product Development</h3>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                  Launching a new product? We help founders and product teams go from concept to working software fast. We scope features ruthlessly, build focused MVPs, and iterate based on real user feedback. The goal is to get a working product in front of users as quickly as possible — then improve it based on what you learn.
+                  Launching a new product? We help founders and product teams go from concept to working software fast. We scope features ruthlessly, build focused MVPs, and iterate based on real user feedback. The goal is to get a working product in front of users as quickly as possible, then improve it based on what you learn.
                 </p>
               </div>
             </div>
@@ -131,10 +131,10 @@ export default function CustomSoftwarePage() {
             </h2>
             <div className="space-y-6 text-sm sm:text-base text-text-secondary leading-relaxed">
               <p>
-                Every project starts with discovery. We dig into your workflows, your existing systems, and the specific problem you are trying to solve. This is not a checkbox exercise — it is how we make sure we are building the right thing, not just building something.
+                Every project starts with discovery. We dig into your workflows, your existing systems, and the specific problem you&apos;re trying to solve. It&apos;s not a checkbox exercise. It&apos;s how we make sure we build the right thing.
               </p>
               <p>
-                From there, we define clear deliverables and a phased roadmap. We build in focused sprints — usually one to two weeks each — with regular demos and feedback sessions. You see working software early and often, not after months of development behind closed doors.
+                From there, we define clear deliverables and a phased roadmap. We build in focused sprints (usually one to two weeks each) with regular demos and feedback sessions. You see working software early and often, not after months of development behind closed doors.
               </p>
               <p>
                 We write clean, well-tested, well-documented code that your team can maintain and extend. When we hand off a project, you get a system that is production-ready, not a prototype that needs months of additional work to actually use.

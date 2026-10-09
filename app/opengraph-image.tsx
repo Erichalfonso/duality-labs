@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'Duality Labs — Applied AI & Software Systems'
+export const alt = 'Duality Labs | Applied AI & Software Systems'
 export const size = {
   width: 1200,
   height: 630,
