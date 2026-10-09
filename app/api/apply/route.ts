@@ -6,17 +6,41 @@ const FROM_EMAIL = 'Duality Labs <apply@dualitylabs.ai>'
 
 const FIELDS = [
   ['business', 'Business'],
-  ['need', 'Wants help with'],
-  ['teamSize', 'Team size'],
+  ['clients', 'Clients'],
+  ['software', 'Software'],
+  ['approval', 'Approval role'],
+  ['budget', 'Paid automation after free agent'],
   ['timeline', 'Timeline'],
-  ['problem', 'Problem'],
+  ['task', 'Repeated task'],
+  ['hours', 'Hours per month'],
   ['name', 'Name'],
   ['email', 'Email'],
   ['company', 'Company'],
+  ['site', 'Website'],
   ['phone', 'Phone'],
 ] as const
 
-const REQUIRED = ['business', 'need', 'teamSize', 'timeline', 'problem', 'name', 'email']
+const REQUIRED = ['business', 'software', 'approval', 'budget', 'timeline', 'task', 'hours', 'name', 'email', 'company']
+
+type Outcome = 'qualified' | 'review' | 'unqualified'
+
+function route(budget: string, approval: string, timeline: string): Outcome {
+  if (budget.startsWith('No') || approval === 'No' || timeline === 'Just exploring') return 'unqualified'
+  if (budget.startsWith('Possibly')) return 'review'
+  return 'qualified'
+}
+
+const SUBJECTS: Record<Outcome, string> = {
+  qualified: 'New application',
+  review: 'Review: needs to see results',
+  unqualified: 'Not qualified',
+}
+
+const SUMMARIES: Record<Outcome, string> = {
+  qualified: 'Qualified: shown the booking calendar.',
+  review: 'Needs review: wants to see results and pricing first. Shown the thank-you screen.',
+  unqualified: 'Not qualified: shown the thank-you screen.',
+}
 
 export async function POST(request: Request) {
   const data = await request.json().catch(() => null)
@@ -25,16 +49,16 @@ export async function POST(request: Request) {
   }
 
   // Honeypot: real visitors never see this field, bots fill it in.
-  if (data.website) return NextResponse.json({ ok: true })
+  if (data.fax) return NextResponse.json({ ok: true })
 
   const value = (key: string) => String(data[key] ?? '').trim().slice(0, 2000)
   if (REQUIRED.some((key) => !value(key)) || !/^\S+@\S+\.\S+$/.test(value('email'))) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
   }
 
-  const qualified = value('timeline') !== 'Just exploring'
+  const outcome = route(value('budget'), value('approval'), value('timeline'))
   const text = [
-    qualified ? 'Qualified: shown the booking calendar.' : 'Not yet qualified: shown the thank-you screen.',
+    SUMMARIES[outcome],
     '',
     ...FIELDS.map(([key, label]) => `${label}: ${value(key) || '—'}`),
   ].join('\n')
@@ -49,7 +73,7 @@ export async function POST(request: Request) {
       from: FROM_EMAIL,
       to: TO_EMAIL,
       reply_to: value('email'),
-      subject: `${qualified ? 'New application' : 'New inquiry (exploring)'}: ${value('name')}${value('company') ? `, ${value('company')}` : ''}`,
+      subject: `${SUBJECTS[outcome]}: ${value('name')}, ${value('company')}`,
       text,
     }),
   })
@@ -59,5 +83,5 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Could not send' }, { status: 502 })
   }
 
-  return NextResponse.json({ ok: true, qualified })
+  return NextResponse.json({ ok: true, outcome, qualified: outcome === 'qualified' })
 }
