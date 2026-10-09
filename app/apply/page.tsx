@@ -5,8 +5,8 @@ import ApplyForm from '@/components/apply-form'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Book an Intro Call',
-  description: 'Tell us about your business and what you want to build, then pick a time for a call with Duality Labs.',
+  title: 'Apply for a Free Agent Build',
+  description: 'Apply for a free AI agent build from Duality Labs. Tell us about your business and the task you want automated.',
   alternates: {
     canonical: 'https://www.dualitylabs.ai/apply',
   },
@@ -18,9 +18,9 @@ export default function ApplyPage() {
       <Nav />
       <main>
         <PageHeader
-          tag="Book an intro call"
-          title="Tell us what you're building"
-          description="A few quick questions so we come to the call prepared. Takes about a minute."
+          tag="Apply"
+          title="Apply for a free agent build"
+          description="We take on a limited number of free builds each month, chosen by fit. A few quick questions, about two minutes."
         />
 
         <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
