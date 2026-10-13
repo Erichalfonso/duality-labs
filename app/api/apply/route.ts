@@ -20,7 +20,7 @@ const FIELDS = [
   ['phone', 'Phone'],
 ] as const
 
-const REQUIRED = ['business', 'software', 'approval', 'budget', 'timeline', 'task', 'hours', 'name', 'email', 'company']
+const REQUIRED = ['budget', 'task', 'name', 'email', 'company']
 
 type Outcome = 'qualified' | 'review' | 'unqualified'
 
