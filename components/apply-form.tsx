@@ -11,51 +11,15 @@ declare global {
 const CALENDLY_URL = 'https://calendly.com/dualitylabs/new-meeting'
 
 type Answers = Record<string, string>
-type Stage = 'questions' | 'details' | 'sending' | 'booking' | 'thanks'
+type Stage = 'form' | 'sending' | 'booking' | 'thanks'
 type Outcome = 'qualified' | 'review' | 'unqualified'
 
-const FIRMS = ['Bookkeeping or accounting firm', 'CPA firm']
-
-const QUESTIONS: { key: string; label: string; options: string[]; when?: (a: Answers) => boolean }[] = [
-  {
-    key: 'business',
-    label: 'What best describes your business?',
-    options: [...FIRMS, 'In-house finance team', 'Real estate', 'Healthcare', 'E-commerce', 'Professional services', 'Other'],
-  },
-  {
-    key: 'clients',
-    label: 'How many clients do you serve?',
-    options: ['Under 10', '10–50', '50–150', '150+'],
-    when: (a) => FIRMS.includes(a.business),
-  },
-  {
-    key: 'software',
-    label: 'What accounting software do you use?',
-    options: ['QuickBooks', 'Xero', 'Sage or NetSuite', 'Other'],
-  },
-  {
-    key: 'approval',
-    label: 'Would you be involved in approving additional AI agents?',
-    options: ['Yes, I make the call', "Yes, I'd decide with others", "I'd bring in the decision-maker", 'No'],
-  },
-  {
-    key: 'budget',
-    label: 'The first AI agent is free. If it delivers useful results, would you consider paid AI agents for other tasks?',
-    options: [
-      'Yes, potentially $2,000–$10,000 over the next six months',
-      'Yes, potentially more than $10,000',
-      "Possibly, I'd need to see the results and pricing",
-      "No, I'm only interested in the free agent",
-    ],
-  },
-  {
-    key: 'timeline',
-    label: 'When would you want to start?',
-    options: ['This month', '1–3 months', 'Just exploring'],
-  },
+const BUDGET_OPTIONS = [
+  'Yes, potentially $2,000–$10,000 over the next six months',
+  'Yes, potentially more than $10,000',
+  "Possibly, I'd need to see the results and pricing",
+  "No, I'm only interested in the free agent",
 ]
-
-const HOURS = ['Under 5', '5–20', '20–50', '50+']
 
 const inputClass =
   'w-full bg-card-bg border border-border rounded-md px-4 py-3 text-[15px] text-text placeholder:text-text-secondary focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors'
@@ -63,29 +27,23 @@ const inputClass =
 const labelClass = 'font-mono text-[10px] uppercase tracking-widest text-text-secondary mb-2 block'
 
 export default function ApplyForm() {
-  const [step, setStep] = useState(0)
   const [answers, setAnswers] = useState<Answers>({})
-  const [stage, setStage] = useState<Stage>('questions')
+  const [stage, setStage] = useState<Stage>('form')
   const [outcome, setOutcome] = useState<Outcome>('qualified')
   const [error, setError] = useState('')
+  const [started, setStarted] = useState(false)
 
-  const visible = QUESTIONS.filter((q) => !q.when || q.when(answers))
-
-  const choose = (key: string, option: string) => {
-    const next = { ...answers, [key]: option }
-    setAnswers(next)
-    // Recount after this answer, since it can show or hide the next question.
-    const nextVisible = QUESTIONS.filter((q) => !q.when || q.when(next))
-    if (step < nextVisible.length - 1) setStep(step + 1)
-    else setStage('details')
+  // Fires once so Meta shows how many visitors begin the form versus finish it.
+  const onStart = () => {
+    if (started) return
+    setStarted(true)
+    window.fbq?.('trackCustom', 'ApplyStart')
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setError('')
-    const form = Object.fromEntries(new FormData(e.currentTarget)) as Answers
-    const payload = { ...answers, ...form }
-    if (!FIRMS.includes(payload.business)) delete payload.clients
+    const payload = Object.fromEntries(new FormData(e.currentTarget)) as Answers
     setAnswers(payload)
     setStage('sending')
 
@@ -97,7 +55,7 @@ export default function ApplyForm() {
 
     if (!res?.ok) {
       setError('Something went wrong sending your answers. Please try again, or email ops@dualitylabs.ai.')
-      setStage('details')
+      setStage('form')
       return
     }
 
@@ -122,78 +80,37 @@ export default function ApplyForm() {
     )
   }
 
-  if (stage === 'questions') {
-    const q = visible[step]
-    return (
-      <div className="bg-card-bg/80 border border-border rounded-2xl p-6 sm:p-8">
-        <div className="flex items-center justify-between mb-6">
-          <span className="font-mono text-[11px] uppercase tracking-widest text-text-secondary">
-            Question {step + 1} of {visible.length + 1}
-          </span>
-          {step > 0 && (
-            <button onClick={() => setStep(step - 1)} className="font-mono text-[11px] uppercase tracking-widest text-text-secondary hover:text-text">
-              ← Back
-            </button>
-          )}
-        </div>
-        <h2 className="text-xl sm:text-2xl font-medium tracking-tight mb-6">{q.label}</h2>
-        <div className="grid gap-3">
-          {q.options.map((option) => (
-            <button
-              key={option}
-              onClick={() => choose(q.key, option)}
-              className={`text-left px-5 py-4 rounded-lg border text-[15px] transition-colors hover:border-accent hover:bg-accent-light ${
-                answers[q.key] === option ? 'border-accent bg-accent-light' : 'border-border bg-bg'
-              }`}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="bg-card-bg/80 border border-border rounded-2xl p-6 sm:p-8 space-y-5">
-      <div className="flex items-center justify-between">
-        <span className="font-mono text-[11px] uppercase tracking-widest text-text-secondary">
-          Question {visible.length + 1} of {visible.length + 1}
-        </span>
-        <button
-          type="button"
-          onClick={() => { setStage('questions'); setStep(visible.length - 1) }}
-          className="font-mono text-[11px] uppercase tracking-widest text-text-secondary hover:text-text"
-        >
-          ← Back
-        </button>
-      </div>
-
+    <form onSubmit={handleSubmit} onFocus={onStart} className="bg-card-bg/80 border border-border rounded-2xl p-6 sm:p-8 space-y-5">
       <div>
-        <label htmlFor="ap-task" className={labelClass}>What&apos;s one task your team repeats every week or month?</label>
+        <label htmlFor="ap-task" className={labelClass}>What task do you want an AI agent for?</label>
         <textarea
           id="ap-task"
           name="task"
           required
-          rows={3}
+          rows={2}
           defaultValue={answers.task}
           placeholder="e.g. Chasing clients for missing receipts before month-end."
           className={`${inputClass} resize-none leading-relaxed`}
         />
       </div>
 
-      <div>
-        <label htmlFor="ap-hours" className={labelClass}>About how many hours a month does it take?</label>
-        <select id="ap-hours" name="hours" required defaultValue={answers.hours ?? ''} className={inputClass}>
-          <option value="" disabled>Choose one</option>
-          {HOURS.map((h) => <option key={h} value={h}>{h}</option>)}
-        </select>
-      </div>
+      <fieldset>
+        <legend className={labelClass}>If the free agent works, would you consider paid AI agents for other tasks?</legend>
+        <div className="grid gap-2">
+          {BUDGET_OPTIONS.map((option) => (
+            <label key={option} className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border bg-bg text-[15px] cursor-pointer hover:border-accent has-[:checked]:border-accent has-[:checked]:bg-accent-light transition-colors">
+              <input type="radio" name="budget" value={option} required defaultChecked={answers.budget === option} className="accent-accent" />
+              {option}
+            </label>
+          ))}
+        </div>
+      </fieldset>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
           <label htmlFor="ap-name" className={labelClass}>Name</label>
-          <input id="ap-name" name="name" required autoComplete="name" defaultValue={answers.name} placeholder="Your name" className={inputClass} />
+          <input id="ap-name" name="name" required autoComplete="name" defaultValue={answers.name} className={inputClass} />
         </div>
         <div>
           <label htmlFor="ap-email" className={labelClass}>Work email</label>
@@ -202,14 +119,6 @@ export default function ApplyForm() {
         <div>
           <label htmlFor="ap-company" className={labelClass}>Company</label>
           <input id="ap-company" name="company" required autoComplete="organization" defaultValue={answers.company} className={inputClass} />
-        </div>
-        <div>
-          <label htmlFor="ap-site" className={labelClass}>Website <span className="normal-case tracking-normal font-sans text-text-secondary/60">(optional)</span></label>
-          <input id="ap-site" name="site" autoComplete="url" defaultValue={answers.site} placeholder="yourfirm.com" className={inputClass} />
-        </div>
-        <div>
-          <label htmlFor="ap-phone" className={labelClass}>Phone <span className="normal-case tracking-normal font-sans text-text-secondary/60">(optional)</span></label>
-          <input id="ap-phone" name="phone" type="tel" autoComplete="tel" defaultValue={answers.phone} className={inputClass} />
         </div>
       </div>
 
@@ -221,9 +130,9 @@ export default function ApplyForm() {
       <button
         type="submit"
         disabled={stage === 'sending'}
-        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-mono text-sm font-medium text-white bg-gradient-to-r from-gradient-accent-from to-gradient-accent-to px-6 py-3 rounded-md hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full inline-flex items-center justify-center gap-2 font-mono text-sm font-medium text-white bg-gradient-to-r from-gradient-accent-from to-gradient-accent-to px-6 py-4 rounded-md hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {stage === 'sending' ? 'Sending…' : 'Continue'}
+        {stage === 'sending' ? 'Sending…' : 'Apply for my free AI agent'}
       </button>
     </form>
   )
@@ -231,7 +140,7 @@ export default function ApplyForm() {
 
 function Booking({ answers }: { answers: Answers }) {
   // Answers ride along to Calendly (a1 = the event's first invitee question) so they show up on the booking.
-  const summary = [answers.business, answers.clients && `Clients: ${answers.clients}`, answers.software, `Budget: ${answers.budget}`, `Start: ${answers.timeline}`, `${answers.task} (${answers.hours} hrs/mo)`].filter(Boolean).join(' | ')
+  const summary = [answers.company, `Budget: ${answers.budget}`, answers.task].join(' | ')
   const url = `${CALENDLY_URL}?hide_gdpr_banner=1&name=${encodeURIComponent(answers.name)}&email=${encodeURIComponent(answers.email)}&a1=${encodeURIComponent(summary)}`
 
   useEffect(() => {
