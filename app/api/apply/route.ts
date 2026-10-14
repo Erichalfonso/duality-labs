@@ -20,7 +20,7 @@ const FIELDS = [
   ['phone', 'Phone'],
 ] as const
 
-const REQUIRED = ['task', 'name', 'email', 'company']
+const REQUIRED = ['email']
 
 type Outcome = 'qualified' | 'review' | 'unqualified'
 
@@ -73,7 +73,7 @@ export async function POST(request: Request) {
       from: FROM_EMAIL,
       to: TO_EMAIL,
       reply_to: value('email'),
-      subject: `${SUBJECTS[outcome]}: ${value('name')}, ${value('company')}`,
+      subject: `${SUBJECTS[outcome]}: ${value('email')}`,
       text,
     }),
   })
