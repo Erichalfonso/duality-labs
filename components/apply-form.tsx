@@ -14,13 +14,6 @@ type Answers = Record<string, string>
 type Stage = 'form' | 'sending' | 'booking' | 'thanks'
 type Outcome = 'qualified' | 'review' | 'unqualified'
 
-const BUDGET_OPTIONS = [
-  'Yes, potentially $2,000–$10,000 over the next six months',
-  'Yes, potentially more than $10,000',
-  "Possibly, I'd need to see the results and pricing",
-  "No, I'm only interested in the free agent",
-]
-
 const inputClass =
   'w-full bg-card-bg border border-border rounded-md px-4 py-3 text-[15px] text-text placeholder:text-text-secondary focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors'
 
@@ -95,17 +88,6 @@ export default function ApplyForm() {
         />
       </div>
 
-      <fieldset>
-        <legend className={labelClass}>If the free agent works, would you consider paid AI agents for other tasks?</legend>
-        <div className="grid gap-2">
-          {BUDGET_OPTIONS.map((option) => (
-            <label key={option} className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border bg-bg text-[15px] cursor-pointer hover:border-accent has-[:checked]:border-accent has-[:checked]:bg-accent-light transition-colors">
-              <input type="radio" name="budget" value={option} required defaultChecked={answers.budget === option} className="accent-accent" />
-              {option}
-            </label>
-          ))}
-        </div>
-      </fieldset>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
@@ -127,6 +109,8 @@ export default function ApplyForm() {
 
       {error && <p className="text-sm text-red-600">{error}</p>}
 
+      <p className="text-sm text-text-secondary">Next: pick a time for a 30-minute call. You&apos;ll get a Google Meet link by email.</p>
+
       <button
         type="submit"
         disabled={stage === 'sending'}
@@ -140,7 +124,7 @@ export default function ApplyForm() {
 
 function Booking({ answers }: { answers: Answers }) {
   // Answers ride along to Calendly (a1 = the event's first invitee question) so they show up on the booking.
-  const summary = [answers.company, `Budget: ${answers.budget}`, answers.task].join(' | ')
+  const summary = [answers.company, answers.task].join(' | ')
   const url = `${CALENDLY_URL}?hide_gdpr_banner=1&name=${encodeURIComponent(answers.name)}&email=${encodeURIComponent(answers.email)}&a1=${encodeURIComponent(summary)}`
 
   useEffect(() => {
