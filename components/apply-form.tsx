@@ -109,7 +109,7 @@ export default function ApplyForm() {
 
       {error && <p className="text-sm text-red-600">{error}</p>}
 
-      <p className="text-sm text-text-secondary">Next: pick a time for a 30-minute call. You&apos;ll get a Google Meet link by email.</p>
+      <p className="text-sm text-text-secondary">Next: book a 30-minute call.</p>
 
       <button
         type="submit"
