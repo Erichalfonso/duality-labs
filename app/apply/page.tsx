@@ -24,7 +24,7 @@ export default function ApplyPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-bg to-gradient-to" />
           <div className="w-full max-w-[560px] mx-auto px-4 sm:px-6 relative z-10 text-center">
             <h1 className="text-3xl sm:text-5xl font-medium tracking-tight leading-tight mb-4">
-              We&apos;ll build your first AI agent <span className="text-accent">free.</span>
+              We&apos;ll build your AI agent <span className="text-accent">free.</span>
             </h1>
             <p className="text-base sm:text-lg text-text-secondary mb-8">
               For bookkeeping firms. Pick one repetitive task and we&apos;ll automate it in 2 weeks. No cost, no obligation.
