@@ -1,5 +1,4 @@
 import Nav from '@/components/nav'
-import PageHeader from '@/components/page-header'
 import Footer from '@/components/footer'
 import ApplyForm from '@/components/apply-form'
 import type { Metadata } from 'next'
@@ -12,34 +11,20 @@ export const metadata: Metadata = {
   },
 }
 
-const BULLETS = [
-  'Built around your workflow and the software you already use',
-  'You pick the task: reconciliations, flagging discrepancies, chasing documents',
-  'Limited free builds each month, chosen by fit',
-]
-
 export default function ApplyPage() {
   return (
     <>
       <Nav />
       <main>
-        <PageHeader
-          tag="Free AI agent"
-          title="Get your first AI agent built free"
-          description="Tell us one task your team repeats. If it's a fit, we build an AI agent for it at no cost."
-        />
-
-        <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+        <section className="relative py-16 sm:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-bg to-gradient-to" />
-          <div className="max-w-[720px] mx-auto px-4 sm:px-6 relative z-10">
-            <ul className="mb-8 space-y-3 text-sm sm:text-base text-text-secondary">
-              {BULLETS.map((b) => (
-                <li key={b} className="flex gap-3">
-                  <span className="text-accent">✓</span>
-                  {b}
-                </li>
-              ))}
-            </ul>
+          <div className="max-w-[560px] mx-auto px-4 sm:px-6 relative z-10 text-center">
+            <h1 className="text-3xl sm:text-5xl font-medium tracking-tight leading-tight mb-4">
+              We&apos;ll build your first AI agent <span className="text-accent">free.</span>
+            </h1>
+            <p className="text-base sm:text-lg text-text-secondary mb-8">
+              For bookkeeping firms. Pick one repetitive task and we&apos;ll automate it in 2 weeks. No cost, no obligation.
+            </p>
             <ApplyForm />
           </div>
         </section>

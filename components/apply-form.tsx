@@ -14,17 +14,9 @@ type Answers = Record<string, string>
 type Stage = 'form' | 'sending' | 'booking' | 'thanks'
 type Outcome = 'qualified' | 'review' | 'unqualified'
 
-const BUDGET_OPTIONS = [
-  'Yes, potentially $2,000–$10,000 over the next six months',
-  'Yes, potentially more than $10,000',
-  "Possibly, I'd need to see the results and pricing",
-  "No, I'm only interested in the free agent",
-]
-
 const inputClass =
   'w-full bg-card-bg border border-border rounded-md px-4 py-3 text-[15px] text-text placeholder:text-text-secondary focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors'
 
-const labelClass = 'font-mono text-[10px] uppercase tracking-widest text-text-secondary mb-2 block'
 
 export default function ApplyForm() {
   const [answers, setAnswers] = useState<Answers>({})
@@ -70,7 +62,7 @@ export default function ApplyForm() {
   if (stage === 'thanks') {
     return (
       <div className="bg-card-bg/80 border border-border rounded-2xl p-6 sm:p-10 text-center">
-        <h2 className="text-2xl sm:text-[28px] font-medium tracking-tight mb-3">Thanks, {answers.name?.split(' ')[0]}.</h2>
+        <h2 className="text-2xl sm:text-[28px] font-medium tracking-tight mb-3">Thanks.</h2>
         <p className="text-sm sm:text-base text-text-secondary leading-relaxed max-w-[480px] mx-auto">
           {outcome === 'review'
             ? <>We review every application by hand. If it&apos;s a fit, we&apos;ll email you at <span className="text-text">{answers.email}</span> with next steps and how pricing works for paid AI agents.</>
@@ -81,67 +73,27 @@ export default function ApplyForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} onFocus={onStart} className="bg-card-bg/80 border border-border rounded-2xl p-6 sm:p-8 space-y-5">
-      <div>
-        <label htmlFor="ap-task" className={labelClass}>What task do you want an AI agent for?</label>
-        <textarea
-          id="ap-task"
-          name="task"
-          required
-          rows={2}
-          defaultValue={answers.task}
-          placeholder="e.g. Chasing clients for missing receipts before month-end."
-          className={`${inputClass} resize-none leading-relaxed`}
-        />
-      </div>
-
-      <fieldset>
-        <legend className={labelClass}>If the free agent works, would you consider paid AI agents for other tasks?</legend>
-        <div className="grid gap-2">
-          {BUDGET_OPTIONS.map((option) => (
-            <label key={option} className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border bg-bg text-[15px] cursor-pointer hover:border-accent has-[:checked]:border-accent has-[:checked]:bg-accent-light transition-colors">
-              <input type="radio" name="budget" value={option} required defaultChecked={answers.budget === option} className="accent-accent" />
-              {option}
-            </label>
-          ))}
-        </div>
-      </fieldset>
-
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div>
-          <label htmlFor="ap-name" className={labelClass}>Name</label>
-          <input id="ap-name" name="name" required autoComplete="name" defaultValue={answers.name} className={inputClass} />
-        </div>
-        <div>
-          <label htmlFor="ap-email" className={labelClass}>Work email</label>
-          <input id="ap-email" name="email" type="email" required autoComplete="email" defaultValue={answers.email} placeholder="you@company.com" className={inputClass} />
-        </div>
-        <div>
-          <label htmlFor="ap-company" className={labelClass}>Company</label>
-          <input id="ap-company" name="company" required autoComplete="organization" defaultValue={answers.company} className={inputClass} />
-        </div>
-      </div>
+    <form onSubmit={handleSubmit} onFocus={onStart} className="space-y-3">
+      <input name="email" type="email" required autoComplete="email" aria-label="Email" placeholder="Email" className={`${inputClass} text-center rounded-full py-4`} />
 
       {/* Honeypot, hidden from people */}
       <input name="fax" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
-      {error && <p className="text-sm text-red-600">{error}</p>}
-
       <button
         type="submit"
         disabled={stage === 'sending'}
-        className="w-full inline-flex items-center justify-center gap-2 font-mono text-sm font-medium text-white bg-gradient-to-r from-gradient-accent-from to-gradient-accent-to px-6 py-4 rounded-md hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full font-mono text-sm font-medium text-white bg-gradient-to-r from-gradient-accent-from to-gradient-accent-to px-6 py-4 rounded-full hover:shadow-lg hover:shadow-accent/20 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {stage === 'sending' ? 'Sending…' : 'Apply for my free AI agent'}
+        {stage === 'sending' ? 'Sending…' : 'Get my free AI agent'}
       </button>
+
+      {error && <p className="text-sm text-red-600">{error}</p>}
     </form>
   )
 }
 
 function Booking({ answers }: { answers: Answers }) {
-  // Answers ride along to Calendly (a1 = the event's first invitee question) so they show up on the booking.
-  const summary = [answers.company, `Budget: ${answers.budget}`, answers.task].join(' | ')
-  const url = `${CALENDLY_URL}?hide_gdpr_banner=1&name=${encodeURIComponent(answers.name)}&email=${encodeURIComponent(answers.email)}&a1=${encodeURIComponent(summary)}`
+    const url = `${CALENDLY_URL}?hide_gdpr_banner=1&email=${encodeURIComponent(answers.email)}`
 
   useEffect(() => {
     const script = document.createElement('script')
