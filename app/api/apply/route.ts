@@ -60,7 +60,8 @@ export async function POST(request: Request) {
   const text = [
     SUMMARIES[outcome],
     '',
-    ...FIELDS.map(([key, label]) => `${label}: ${value(key) || '—'}`),
+    // Only fields this applicant actually filled in; the form has changed over time.
+    ...FIELDS.filter(([key]) => value(key)).map(([key, label]) => `${label}: ${value(key)}`),
   ].join('\n')
 
   const res = await fetch('https://api.resend.com/emails', {
@@ -73,7 +74,7 @@ export async function POST(request: Request) {
       from: FROM_EMAIL,
       to: TO_EMAIL,
       reply_to: value('email'),
-      subject: `${SUBJECTS[outcome]}: ${value('email')}`,
+      subject: `${SUBJECTS[outcome]}: ${value('email')} · ${value('phone')}`,
       text,
     }),
   })
