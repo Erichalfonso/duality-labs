@@ -4,6 +4,23 @@ const TO_EMAIL = 'ops@dualitylabs.ai'
 // The sending domain must be verified in Resend.
 const FROM_EMAIL = 'Duality Labs <apply@dualitylabs.ai>'
 
+// Sent to applicants who don't book a call on the page. Replies go to the team inbox.
+const CONFIRMATION_DELAY_MS = 30 * 60 * 1000
+const CONFIRMATION_FROM = 'Erich from Duality Labs <ops@dualitylabs.ai>'
+const CONFIRMATION_TEXT = `Hi,
+
+Thanks for applying for a free AI agent with Duality Labs!
+
+I'd love to learn more about your business and what tasks you're looking to automate.
+
+Feel free to book a quick call at a time that works best for you:
+
+https://calendly.com/dualitylabs/businessaudit
+
+Best,
+Erich
+Duality Labs`
+
 const FIELDS = [
   ['business', 'Business'],
   ['clients', 'Clients'],
@@ -84,5 +101,26 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Could not send' }, { status: 502 })
   }
 
-  return NextResponse.json({ ok: true, outcome, qualified: outcome === 'qualified' })
+  // Scheduled, not sent: if they book on the page, /api/apply/booked cancels it, so only
+  // people who leave without booking get the nudge. A failure is logged, since the
+  // application itself already reached us.
+  const confirmation = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: CONFIRMATION_FROM,
+      to: value('email'),
+      reply_to: TO_EMAIL,
+      subject: 'Thanks for applying for a free AI agent',
+      text: CONFIRMATION_TEXT,
+      scheduled_at: new Date(Date.now() + CONFIRMATION_DELAY_MS).toISOString(),
+    }),
+  }).catch(() => null)
+  if (!confirmation?.ok) console.error('Confirmation email failed', confirmation?.status)
+  const confirmationId = confirmation?.ok ? (await confirmation.json()).id : null
+
+  return NextResponse.json({ ok: true, outcome, qualified: outcome === 'qualified', confirmationId })
 }
