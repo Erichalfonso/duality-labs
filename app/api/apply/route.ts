@@ -20,7 +20,7 @@ const FIELDS = [
   ['phone', 'Phone'],
 ] as const
 
-const REQUIRED = ['email']
+const REQUIRED = ['email', 'phone']
 
 type Outcome = 'qualified' | 'review' | 'unqualified'
 
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
   if (data.fax) return NextResponse.json({ ok: true })
 
   const value = (key: string) => String(data[key] ?? '').trim().slice(0, 2000)
-  if (REQUIRED.some((key) => !value(key)) || !/^\S+@\S+\.\S+$/.test(value('email'))) {
+  if (REQUIRED.some((key) => !value(key)) || !/^\S+@\S+\.\S+$/.test(value('email')) || value('phone').replace(/\D/g, '').length < 10) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
   }
 

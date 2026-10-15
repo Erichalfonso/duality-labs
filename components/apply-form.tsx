@@ -75,6 +75,7 @@ export default function ApplyForm() {
   return (
     <form onSubmit={handleSubmit} onFocus={onStart} className="space-y-3">
       <input name="email" type="email" required autoComplete="email" aria-label="Email" placeholder="Email" className={`${inputClass} text-center rounded-full py-4`} />
+      <input name="phone" type="tel" required autoComplete="tel" aria-label="Phone" placeholder="Phone" pattern="[^0-9]*([0-9][^0-9]*){10,}" title="Please enter a phone number with area code" className={`${inputClass} text-center rounded-full py-4`} />
 
       {/* Honeypot, hidden from people */}
       <input name="fax" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
