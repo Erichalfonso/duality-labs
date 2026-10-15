@@ -53,6 +53,7 @@ export default function ApplyForm() {
 
     const result = await res.json()
     window.fbq?.('track', 'Lead', { content_name: 'Apply form', qualified: result.outcome })
+    setAnswers({ ...payload, confirmationId: result.confirmationId ?? '' })
     setOutcome(result.outcome)
     setStage(result.outcome === 'qualified' ? 'booking' : 'thanks')
   }
@@ -105,6 +106,13 @@ function Booking({ answers }: { answers: Answers }) {
     const onMessage = (e: MessageEvent) => {
       if (e.origin === 'https://calendly.com' && e.data?.event === 'calendly.event_scheduled') {
         window.fbq?.('track', 'Schedule')
+        if (answers.confirmationId) {
+          fetch('/api/apply/booked', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: answers.confirmationId }),
+          }).catch(() => {})
+        }
       }
     }
     window.addEventListener('message', onMessage)
