@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'How Duality Labs collects, uses, and protects information from visitors to dualitylabs.ai and people who contact us.',
+  description: 'How Duality Labs collects, uses, and protects information from website visitors and people who submit our forms, including LinkedIn Lead Gen Forms.',
   alternates: {
     canonical: 'https://www.dualitylabs.ai/privacy',
   },
@@ -15,63 +15,63 @@ const sections = [
   {
     heading: 'Who we are',
     body: [
-      'Duality Labs is a software and AI development agency based in Miami, Florida. This policy explains what information we collect when you visit dualitylabs.ai, fill out one of our forms (including forms on Facebook and Instagram ads), or otherwise contact us, and what we do with it.',
+      'Duality Labs (dualitylabs.ai) is based in Miami, Florida. We build custom AI agents, automations, and integrations for businesses. This policy explains what information we collect through our website, our ads, and lead forms, and what we do with it.',
     ],
   },
   {
-    heading: 'Information you give us',
+    heading: 'What we collect',
     body: [
-      'When you contact us, book a call, or submit a lead form, we collect what you choose to share: typically your name, email address, phone number, company, and your answers to questions about your business (for example, how many clients you serve, what software you use, and what you would like automated).',
-    ],
-  },
-  {
-    heading: 'Information collected automatically',
-    body: [
-      'Our site uses Google Analytics and the Meta Pixel. These tools use cookies and similar technologies to record things like the pages you visit, the links you click, your browser and device type, and your approximate location. We use this to understand how the site is used and to measure and improve our advertising on Meta platforms. Our hosting provider also keeps standard server logs, such as IP addresses and request times.',
+      'Information you give us. When you fill out a form on our website or a lead form on LinkedIn, Facebook, or Instagram, we collect the contact and business details you submit: your name, work email, phone number (if you give it), company name, job title, company size, and your answers to our form questions.',
+      'Information collected automatically. Our site uses Google Analytics, the Meta Pixel, and cookies to record basic usage, such as the pages you visit, the links you click, your browser and device type, and your approximate location. Our hosting provider also keeps standard server logs, such as IP addresses and request times.',
     ],
   },
   {
     heading: 'How we use it',
     body: [
-      'We use your information to respond to you, evaluate whether we are a good fit for your project, schedule and hold calls, deliver work you engage us for, and send follow-up messages related to your inquiry. We also use it to measure how our website and ads perform.',
-      'We do not sell your personal information.',
+      'We use your information to reply to your inquiry or application, review whether you are a fit for our services and free offers, schedule calls, send follow-up emails related to your inquiry, and improve our website and marketing.',
     ],
   },
   {
-    heading: 'Who we share it with',
+    heading: 'Sharing',
     body: [
-      'We share information only with service providers that help us run our business, and only as needed for that purpose: Meta (Facebook and Instagram lead forms and advertising measurement), Google (analytics), Calendly (call scheduling), our email provider, and Vercel (website hosting). We may also disclose information if required by law.',
+      'We do not sell your personal information. We share it only with service providers that help us run our business, such as our CRM, email, scheduling, analytics, and hosting tools, and only as needed for that purpose. We may also disclose information when required by law.',
     ],
   },
   {
-    heading: 'How long we keep it',
+    heading: 'LinkedIn Lead Gen Forms',
     body: [
-      'We keep inquiry and lead information for as long as it is useful for the business relationship, or until you ask us to delete it, unless we need to keep it longer to meet legal or accounting obligations.',
+      'If you submit a LinkedIn Lead Gen Form for one of our ads, LinkedIn shares the information in that form with us, and we handle it under this policy. LinkedIn’s own privacy policy also applies to your use of LinkedIn. The same is true of lead forms on Facebook and Instagram and Meta’s privacy policy.',
     ],
   },
   {
-    heading: 'Your choices',
+    heading: 'Data retention',
     body: [
-      'You can ask us to access, correct, or delete the information we hold about you by emailing ops@dualitylabs.ai. You can opt out of follow-up emails at any time by replying to let us know.',
-      'You can block or delete cookies in your browser settings, opt out of Google Analytics with Google’s browser add-on, and control how Meta uses your activity for ads in your Facebook or Instagram ad preferences.',
+      'We keep your information only as long as we need it for the purposes above, then delete it, unless we must keep it longer to meet a legal obligation.',
     ],
   },
   {
     heading: 'Security',
     body: [
-      'We take reasonable measures to protect the information we collect. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.',
+      'We use reasonable safeguards to protect your information. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.',
+    ],
+  },
+  {
+    heading: 'Your choices',
+    body: [
+      'You can ask us to access, correct, or delete your information by emailing ops@dualitylabs.ai. You can opt out of marketing emails at any time by using the unsubscribe link in the email or by contacting us.',
+      'You can also block or delete cookies in your browser settings, and control how Meta and LinkedIn use your activity for ads in your ad preferences on those platforms.',
     ],
   },
   {
     heading: 'Children',
     body: [
-      'Our services are for businesses. We do not knowingly collect information from anyone under 16.',
+      'Our services are not directed to anyone under 16, and we do not knowingly collect their information.',
     ],
   },
   {
     heading: 'Changes to this policy',
     body: [
-      'If we change this policy, we will update it on this page and revise the effective date below.',
+      'We may update this policy. When we do, we will post the new version on this page with a new effective date.',
     ],
   },
 ]
@@ -110,7 +110,7 @@ export default function PrivacyPage() {
                   <a href="mailto:ops@dualitylabs.ai" className="text-accent hover:underline">ops@dualitylabs.ai</a>.
                 </p>
                 <p className="font-mono text-xs uppercase tracking-widest text-text-secondary">
-                  Effective October 2, 2026
+                  Effective October 18, 2026
                 </p>
               </div>
             </div>
