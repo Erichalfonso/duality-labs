@@ -196,6 +196,9 @@ export default function RealEstatePage() {
           </div>
         </div>
       </section>
+      <footer className="py-6 text-center font-mono text-xs text-text-secondary">
+        © 2026 Duality Labs · <a href="/privacy" className="hover:text-text">Privacy Policy</a>
+      </footer>
     </div>
   )
 }
