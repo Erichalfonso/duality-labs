@@ -95,9 +95,9 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     meta: {
-      title: 'Case study: Autonomous Meta Ads agent for Bid Cap campaigns',
+      title: 'Autonomous Meta Ads Agent: Case Study',
       description:
-        'How we built an autonomous Meta Ads agent that runs every 30 minutes: discovery to find the bid that unlocks delivery, scaling to grow budget on strong ROAS, corrective pullback when ROAS drops, and emergency pause when spend goes sideways. 300+ decisions logged in production.',
+        'An autonomous Meta Ads agent that finds the right bid, scales budget on strong ROAS, and pauses bad spend. 300+ decisions logged in production.',
     },
   },
   {
@@ -147,9 +147,9 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     meta: {
-      title: 'Case study: Operations platform for an NEMT brokerage',
+      title: 'NEMT Operations Platform: Case Study',
       description:
-        'How we built the entire operations platform for a non-emergency medical transportation broker: trip dispatch, provider credentialing, reimbursement workflows, and HIPAA-ready audit trails. 11 modules on one PostgreSQL schema.',
+        'The operations platform for an NEMT broker: dispatch, provider credentialing, reimbursements, and HIPAA-ready audit trails in 11 modules.',
     },
   },
   {
@@ -199,9 +199,9 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     meta: {
-      title: 'Case study: Autonomous music asset pipeline',
+      title: 'Autonomous Music Asset Pipeline: Case Study',
       description:
-        'How we replaced a Zapier copy job, an n8n logger, and a manual studio step with a single autonomous pipeline that ingests every MP4 upload, dedups against the artist’s library, runs pitch-preserving tempo stretch and Freeverb reverb, and logs to Google Sheets, all on a $14/mo VPS.',
+        'One autonomous pipeline that ingests, dedups, tempo-stretches, and logs every MP4 upload, replacing Zapier, n8n, and a manual step on a $14/mo VPS.',
     },
   },
   {
@@ -251,9 +251,9 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     meta: {
-      title: 'Case study: Autonomous trading agent for Discord-driven options signals',
+      title: 'Autonomous Options Trading Agent: Case Study',
       description:
-        'How we built an autonomous trading agent that monitors a Discord alerts feed, applies a strict risk policy, and executes options orders through Alpaca, with 300+ trades run end-to-end with no human in the loop.',
+        'An autonomous agent that reads Discord trade alerts, applies a strict risk policy, and places options orders via Alpaca. 300+ trades, no human in the loop.',
     },
   },
 ]

@@ -32,7 +32,8 @@ export async function generateMetadata(
   }
 
   return {
-    title: `${post.title} - Duality Labs`,
+    // Long post titles skip the brand suffix so search results don't cut them off.
+    title: post.title.length > 48 ? { absolute: post.title } : post.title,
     description: post.description,
     alternates: {
       canonical: `https://www.dualitylabs.ai/blog/${slug}`,

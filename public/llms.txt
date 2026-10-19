@@ -1,13 +1,15 @@
 # Duality Labs
 
-> Custom AI automation and software development agency. Miami, FL.
+> Software engineering studio: custom software, mobile apps, AI integration, and machine learning. Miami, FL.
 
-Duality Labs is a B2B AI and software engineering agency founded by Erich Alfonso and Alejandro Alfonso in Miami, Florida. We build custom AI agents, ML pipelines, LLM fine-tuning workflows, data infrastructure, and production software systems for growing businesses.
+Duality Labs is a software engineering studio founded by Erich Alfonso and Alejandro Alfonso in Miami, Florida. We design and build custom software, mobile apps, AI integrations, and machine learning systems for businesses, from first prototype to production.
 
 ## Services
 
-- AI & Machine Learning: Custom AI agents, LLM fine-tuning, ML pipelines, RAG systems, production ML infrastructure
 - Custom Software Development: Web applications, APIs, internal tools, admin dashboards, MVP development
+- Mobile App Development: iOS and Android apps and the backends behind them
+- AI Integration & Consulting: Custom AI agents, LLM integrations, RAG systems, AI strategy and implementation
+- Machine Learning: Custom models, LLM fine-tuning, ML pipelines, production ML infrastructure
 - Data Infrastructure & Automation: Data pipelines, workflow automation, system integrations, reporting and analytics
 
 ## Work
