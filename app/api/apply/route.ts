@@ -4,14 +4,14 @@ const TO_EMAIL = 'ops@dualitylabs.ai'
 // The sending domain must be verified in Resend.
 const FROM_EMAIL = 'Duality Labs <apply@dualitylabs.ai>'
 
-// Sent to applicants who don't book a call on the page. Replies go to the team inbox.
+// Sent to people who don't book a call on the page. Replies go to the team inbox.
 const CONFIRMATION_DELAY_MS = 30 * 60 * 1000
 const CONFIRMATION_FROM = 'Erich from Duality Labs <ops@dualitylabs.ai>'
 const CONFIRMATION_TEXT = `Hi,
 
-Thanks for applying for a free AI agent with Duality Labs!
+Thanks for reaching out to Duality Labs!
 
-I'd love to learn more about your business and what tasks you're looking to automate.
+I'd love to learn more about your business and what you're looking to build.
 
 Feel free to book a quick call at a time that works best for you:
 
@@ -114,7 +114,7 @@ export async function POST(request: Request) {
       from: CONFIRMATION_FROM,
       to: value('email'),
       reply_to: TO_EMAIL,
-      subject: 'Thanks for applying for a free AI agent',
+      subject: 'Thanks for reaching out to Duality Labs',
       text: CONFIRMATION_TEXT,
       scheduled_at: new Date(Date.now() + CONFIRMATION_DELAY_MS).toISOString(),
     }),

@@ -3,8 +3,8 @@ import ApplyForm from '@/components/apply-form'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Apply for a Free Agent Build',
-  description: 'Apply for a free AI agent build from Duality Labs. Tell us about your business and the task you want automated.',
+  title: 'Start a Project',
+  description: 'Tell Duality Labs what you want to build: custom software, mobile apps, AI integration, or machine learning.',
   alternates: {
     canonical: 'https://www.dualitylabs.ai/apply',
   },
@@ -24,10 +24,10 @@ export default function ApplyPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-bg to-gradient-to" />
           <div className="w-full max-w-[560px] mx-auto px-4 sm:px-6 relative z-10 text-center">
             <h1 className="text-3xl sm:text-5xl font-medium tracking-tight leading-tight mb-4">
-              We&apos;ll build your AI agent <span className="text-accent">free.</span>
+              Tell us what you want to <span className="text-accent">build.</span>
             </h1>
             <p className="text-base sm:text-lg text-text-secondary mb-8">
-              For bookkeeping firms. Pick one repetitive task and we&apos;ll automate it in 2 weeks. No cost, no obligation.
+              Custom software, mobile apps, AI integration, and machine learning. Leave your details and we&apos;ll reach out to set up a call.
             </p>
             <ApplyForm />
           </div>
