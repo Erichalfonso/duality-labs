@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     default: 'Custom AI & Software Development | Duality Labs, Miami',
     template: '%s | Duality Labs',
   },
-  description: 'Duality Labs is a Miami-based AI automation and custom software development agency. We build AI agents, ML pipelines, internal tools, and data infrastructure for growing businesses.',
+  description: 'Duality Labs is a Miami software engineering studio building custom software, mobile apps, AI integrations, and machine learning systems for businesses.',
   keywords: ['custom AI development Miami', 'AI automation agency', 'custom software development', 'AI agents', 'LLM fine-tuning', 'ML pipelines', 'internal tools', 'business automation', 'AI consulting', 'workflow automation', 'data infrastructure'],
   authors: [{ name: 'Duality Labs' }],
   openGraph: {
     title: 'Custom AI & Software Development | Duality Labs, Miami',
-    description: 'Duality Labs is a Miami-based AI automation and custom software development agency. We build AI agents, ML pipelines, internal tools, and data infrastructure for growing businesses.',
+    description: 'Duality Labs is a Miami software engineering studio building custom software, mobile apps, AI integrations, and machine learning systems for businesses.',
     url: 'https://www.dualitylabs.ai',
     siteName: 'Duality Labs',
     locale: 'en_US',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Custom AI & Software Development | Duality Labs, Miami',
-    description: 'Duality Labs is a Miami-based AI automation and custom software development agency. We build AI agents, ML pipelines, internal tools, and data infrastructure for growing businesses.',
+    description: 'Duality Labs is a Miami software engineering studio building custom software, mobile apps, AI integrations, and machine learning systems for businesses.',
   },
 }
 
@@ -54,7 +54,7 @@ const jsonLd = {
     addressCountry: 'US',
   },
   areaServed: { '@type': 'Country', name: 'United States' },
-  serviceType: ['AI Development', 'Machine Learning', 'Custom Software Development', 'Data Infrastructure', 'Workflow Automation'],
+  serviceType: ['Custom Software Development', 'Mobile App Development', 'AI Integration', 'AI Consulting', 'Machine Learning', 'Data Infrastructure'],
   priceRange: '$$',
   sameAs: [
     'https://www.linkedin.com/company/dualitylabs-ai/',

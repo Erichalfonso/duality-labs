@@ -1,0 +1,548 @@
+{
+  "date": "2026-10-19",
+  "base": "https://www.dualitylabs.ai",
+  "score": 79,
+  "page_checks_pct": 83,
+  "site_checks": {
+    "robots_allows_ai_bots": true,
+    "llms_txt": true,
+    "sitemap": true,
+    "security_headers": false,
+    "organization_schema": true,
+    "faq_schema": false,
+    "sitemap_urls_all_200": true
+  },
+  "pages_checked": 19,
+  "failures": {
+    "description_length": [
+      "/",
+      "/services",
+      "/services/custom-software",
+      "/case-studies/marketing-meta-ads-agent",
+      "/case-studies/logistics-nemt-operations-platform",
+      "/case-studies/media-music-asset-pipeline",
+      "/case-studies/finance-options-trading-agent",
+      "/blog/what-is-llm-fine-tuning",
+      "/blog/building-ai-agents"
+    ],
+    "one_h1": [
+      "/services",
+      "/blog/welcome-to-blog"
+    ],
+    "title_length": [
+      "/blog",
+      "/case-studies/marketing-meta-ads-agent",
+      "/case-studies/logistics-nemt-operations-platform",
+      "/case-studies/finance-options-trading-agent",
+      "/blog/how-to-automate-business-with-ai",
+      "/blog/build-vs-buy-ai-solutions",
+      "/blog/what-is-llm-fine-tuning",
+      "/blog/ai-transforming-real-estate",
+      "/blog/building-ai-agents"
+    ],
+    "enough_content": [
+      "/apply",
+      "/blog/welcome-to-blog"
+    ]
+  },
+  "pages": [
+    {
+      "url": "https://www.dualitylabs.ai",
+      "title": "Custom AI & Software Development | Duality Labs, Miami",
+      "title_len": 54,
+      "desc_len": 181,
+      "h1s": 1,
+      "words": 521,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": true,
+        "description_length": false,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/services",
+      "title": "AI, ML & Custom Software Development Services | Duality Labs",
+      "title_len": 60,
+      "desc_len": 173,
+      "h1s": 0,
+      "words": 516,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": true,
+        "description_length": false,
+        "canonical_self": true,
+        "one_h1": false,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/services/ai-ml",
+      "title": "AI & Machine Learning Development Services | Duality Labs",
+      "title_len": 57,
+      "desc_len": 150,
+      "h1s": 1,
+      "words": 770,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Service",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": true,
+        "description_length": true,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/services/custom-software",
+      "title": "Custom Software Development | Miami | Duality Labs",
+      "title_len": 50,
+      "desc_len": 184,
+      "h1s": 1,
+      "words": 862,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Service",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": true,
+        "description_length": false,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/services/data-infrastructure",
+      "title": "Data Infrastructure & Workflow Automation Services | Duality Labs",
+      "title_len": 65,
+      "desc_len": 152,
+      "h1s": 1,
+      "words": 873,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Service",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": true,
+        "description_length": true,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/about",
+      "title": "About Duality Labs | AI Agency, Miami FL | Duality Labs",
+      "title_len": 55,
+      "desc_len": 144,
+      "h1s": 1,
+      "words": 471,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Organization"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": true,
+        "description_length": true,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/blog",
+      "title": "Blog | AI, Automation & Software Engineering Insights | Duality Labs",
+      "title_len": 68,
+      "desc_len": 152,
+      "h1s": 1,
+      "words": 327,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": false,
+        "description_length": true,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/apply",
+      "title": "Start a Project | Duality Labs",
+      "title_len": 30,
+      "desc_len": 108,
+      "h1s": 1,
+      "words": 46,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": true,
+        "description_length": true,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": false
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/privacy",
+      "title": "Privacy Policy | Duality Labs",
+      "title_len": 29,
+      "desc_len": 147,
+      "h1s": 1,
+      "words": 549,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": true,
+        "description_length": true,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/case-studies/marketing-meta-ads-agent",
+      "title": "Case study: Autonomous Meta Ads agent for Bid Cap campaigns | Duality Labs",
+      "title_len": 74,
+      "desc_len": 277,
+      "h1s": 1,
+      "words": 824,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Article",
+        "Organization",
+        "ImageObject",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": false,
+        "description_length": false,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/case-studies/logistics-nemt-operations-platform",
+      "title": "Case study: Operations platform for an NEMT brokerage | Duality Labs",
+      "title_len": 68,
+      "desc_len": 225,
+      "h1s": 1,
+      "words": 684,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Article",
+        "Organization",
+        "ImageObject",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": false,
+        "description_length": false,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/case-studies/media-music-asset-pipeline",
+      "title": "Case study: Autonomous music asset pipeline | Duality Labs",
+      "title_len": 58,
+      "desc_len": 281,
+      "h1s": 1,
+      "words": 761,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Article",
+        "Organization",
+        "ImageObject",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": true,
+        "description_length": false,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/case-studies/finance-options-trading-agent",
+      "title": "Case study: Autonomous trading agent for Discord-driven options signals | Duality Labs",
+      "title_len": 86,
+      "desc_len": 210,
+      "h1s": 1,
+      "words": 667,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Article",
+        "Organization",
+        "ImageObject",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": false,
+        "description_length": false,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/blog/how-to-automate-business-with-ai",
+      "title": "How to Automate Your Business with AI: A Practical Guide - Duality Labs | Duality Labs",
+      "title_len": 86,
+      "desc_len": 148,
+      "h1s": 1,
+      "words": 1411,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Article",
+        "Organization",
+        "ImageObject",
+        "WebPage"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": false,
+        "description_length": true,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/blog/build-vs-buy-ai-solutions",
+      "title": "Build vs Buy AI Solutions: A Decision Framework - Duality Labs | Duality Labs",
+      "title_len": 77,
+      "desc_len": 149,
+      "h1s": 1,
+      "words": 1350,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Article",
+        "Organization",
+        "ImageObject",
+        "WebPage"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": false,
+        "description_length": true,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/blog/what-is-llm-fine-tuning",
+      "title": "What Is LLM Fine-Tuning? A Practical Guide - Duality Labs | Duality Labs",
+      "title_len": 72,
+      "desc_len": 167,
+      "h1s": 1,
+      "words": 1409,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Article",
+        "Organization",
+        "ImageObject",
+        "WebPage"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": false,
+        "description_length": false,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/blog/ai-transforming-real-estate",
+      "title": "How AI Is Transforming Real Estate Investing: What Every Agent Needs to Know - Duality Labs | Duality Labs",
+      "title_len": 106,
+      "desc_len": 158,
+      "h1s": 1,
+      "words": 1495,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Article",
+        "Organization",
+        "ImageObject",
+        "WebPage"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": false,
+        "description_length": true,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/blog/building-ai-agents",
+      "title": "Building AI Agents That Actually Ship Value - Duality Labs | Duality Labs",
+      "title_len": 73,
+      "desc_len": 167,
+      "h1s": 1,
+      "words": 1527,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Article",
+        "Organization",
+        "ImageObject",
+        "WebPage"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": false,
+        "description_length": false,
+        "canonical_self": true,
+        "one_h1": true,
+        "structured_data": true,
+        "enough_content": true
+      }
+    },
+    {
+      "url": "https://www.dualitylabs.ai/blog/welcome-to-blog",
+      "title": "Welcome to the Duality Labs blog - Duality Labs | Duality Labs",
+      "title_len": 62,
+      "desc_len": 110,
+      "h1s": 2,
+      "words": 233,
+      "schema": [
+        "Person",
+        "PostalAddress",
+        "Country",
+        "ContactPoint",
+        "Article",
+        "Organization",
+        "ImageObject",
+        "WebPage"
+      ],
+      "checks": {
+        "loads": true,
+        "title_length": true,
+        "description_length": true,
+        "canonical_self": true,
+        "one_h1": false,
+        "structured_data": true,
+        "enough_content": false
+      }
+    }
+  ]
+}

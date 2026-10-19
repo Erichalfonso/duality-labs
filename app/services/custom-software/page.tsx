@@ -8,7 +8,7 @@ import ServiceCaseStudies from '@/components/service-case-studies'
 
 export const metadata: Metadata = {
   title: 'Custom Software Development | Miami',
-  description: 'Custom web applications, APIs, internal tools, and product engineering. Duality Labs builds production-ready software designed for scale. Based in Miami, serving businesses nationwide.',
+  description: 'Custom web applications, APIs, internal tools, and product engineering. Production-ready software built for scale by a Miami studio.',
   alternates: {
     canonical: 'https://www.dualitylabs.ai/services/custom-software',
   },
