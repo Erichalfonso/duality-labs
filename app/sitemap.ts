@@ -65,12 +65,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/real-estate`,
-      lastModified: SITE_UPDATED,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/apply`,
       lastModified: new Date('2026-10-02'),
       changeFrequency: 'monthly',
