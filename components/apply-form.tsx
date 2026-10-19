@@ -86,7 +86,7 @@ export default function ApplyForm() {
         disabled={stage === 'sending'}
         className="w-full font-mono text-sm font-medium text-white bg-gradient-to-r from-gradient-accent-from to-gradient-accent-to px-6 py-4 rounded-full hover:shadow-lg hover:shadow-accent/20 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {stage === 'sending' ? 'Sending…' : 'Get my free AI agent'}
+        {stage === 'sending' ? 'Sending…' : 'Start a project'}
       </button>
 
       {error && <p className="text-sm text-red-600">{error}</p>}
