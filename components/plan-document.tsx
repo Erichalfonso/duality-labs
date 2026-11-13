@@ -279,6 +279,7 @@ export default function PlanDocument({ doc, link, onCall }: { doc: PlanDoc; link
           ))}
         </div>
         <div className="rm-card"><h3>Building it yourself</h3><p className="rm-p" style={{ margin: 0 }}>{rm.buildYourself}</p></div>
+        <p className="rm-p" style={{ margin: '14px 0 0', fontSize: 14 }}>Want us to build week 1 for you? <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" onClick={onCall} style={{ color: 'var(--blue)', fontWeight: 700 }}>Book a free 15-min call &rarr;</a></p>
         <Foot n={6} />
       </section>
 
