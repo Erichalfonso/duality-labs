@@ -22,7 +22,21 @@ const sections = [
     heading: 'What we collect',
     body: [
       'Information you give us. When you fill out a form on our website or a lead form on LinkedIn, Facebook, or Instagram, we collect the contact and business details you submit: your name, work email, phone number (if you give it), company name, job title, company size, and your answers to our form questions.',
-      'Information collected automatically. Our site uses Google Analytics, the Meta Pixel, and cookies to record basic usage, such as the pages you visit, the links you click, your browser and device type, and your approximate location. Our hosting provider also keeps standard server logs, such as IP addresses and request times.',
+      'Information collected automatically. Our site uses Google Analytics, the Meta Pixel, the LinkedIn Insight Tag, and cookies to record basic usage, such as the pages you visit, the links you click, your browser and device type, and your approximate location. Our hosting provider also keeps standard server logs, such as IP addresses and request times.',
+    ],
+  },
+  {
+    heading: 'Our free AI plan quiz',
+    body: [
+      'When you use our AI plan quiz, we collect your name, work email, phone number, firm name (if you give it), your answers to the quiz questions, and the ad campaign details in the link you came from.',
+      'We use your answers to build your plan, show it to you, email it to you, and prepare for any call you book. Your plan is put together from guides we wrote. Your answers are not sent to an AI model.',
+      'If you request a link to your plan, the plan is stored inside that link. Anyone you share the link with can see the plan.',
+    ],
+  },
+  {
+    heading: 'Calls and text messages',
+    body: [
+      'If you give us your phone number in the quiz, you agree that we may call or text you about your plan and our services, including by automated means. Message and data rates may apply. Consent is not a condition of buying anything. Reply STOP to any text to opt out, or HELP for help. We do not sell or share your phone number for anyone else’s marketing.',
     ],
   },
   {
@@ -58,7 +72,7 @@ const sections = [
   {
     heading: 'Your choices',
     body: [
-      'You can ask us to access, correct, or delete your information by emailing ops@dualitylabs.ai. You can opt out of marketing emails at any time by using the unsubscribe link in the email or by contacting us.',
+      'You can ask us to access, correct, or delete your information by emailing ops@dualitylabs.ai. You can opt out of marketing emails at any time by using the unsubscribe link in the email or by contacting us, and opt out of texts by replying STOP.',
       'You can also block or delete cookies in your browser settings, and control how Meta and LinkedIn use your activity for ads in your ad preferences on those platforms.',
     ],
   },
@@ -110,7 +124,7 @@ export default function PrivacyPage() {
                   <a href="mailto:ops@dualitylabs.ai" className="text-accent hover:underline">ops@dualitylabs.ai</a>.
                 </p>
                 <p className="font-mono text-xs uppercase tracking-widest text-text-secondary">
-                  Effective October 18, 2026
+                  Effective November 12, 2026
                 </p>
               </div>
             </div>
