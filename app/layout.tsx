@@ -78,7 +78,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
         {/* Google Analytics */}
@@ -124,6 +124,24 @@ export default function RootLayout({
             });
           `}
         </Script>
+        {/* LinkedIn Insight Tag: loads once the partner ID from Campaign Manager is set. */}
+        {process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID && (
+          <Script id="linkedin-insight" strategy="afterInteractive">
+            {`
+              _linkedin_partner_id = "${process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID}";
+              window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+              window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+              (function(l) {
+                if (!l) { window.lintrk = function(a,b){window.lintrk.q.push([a,b])}; window.lintrk.q = [] }
+                var s = document.getElementsByTagName("script")[0];
+                var b = document.createElement("script");
+                b.type = "text/javascript"; b.async = true;
+                b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+                s.parentNode.insertBefore(b, s);
+              })(window.lintrk);
+            `}
+          </Script>
+        )}
       </head>
       <body className="bg-bg text-text font-sans">
         <noscript>
