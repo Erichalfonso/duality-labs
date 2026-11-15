@@ -181,7 +181,7 @@ export default function PlanFunnel() {
 
     setSending(false)
     if (!result?.doc) {
-      setError('Something went wrong making your plan. Tap your answer again to retry, or email ops@dualitylabs.ai.')
+      setError('Something went wrong making your roadmap. Tap your answer again to retry, or email ops@dualitylabs.ai.')
       return
     }
     setDoc(result.doc)
@@ -195,17 +195,17 @@ export default function PlanFunnel() {
   const hero = (
     <>
             <h1 className="text-[34px] sm:text-5xl font-extrabold tracking-tight leading-[1.1] mb-3">
-              Get your free personalized AI plan in <span className="bg-[#FFD60A] px-1.5 rounded">60 seconds.</span>
+              Get your free personalized AI roadmap in <span className="bg-[#FFD60A] px-1.5 rounded">60 seconds.</span>
             </h1>
             <p className="text-lg text-[#525252] mb-7">Made just for your firm.</p>
 
             {/* A fanned stack of pages, so the plan reads as a real document they will get. */}
-            <div className="relative mx-auto mb-9 h-[236px] max-w-[340px]" aria-label="Sample plan">
+            <div className="relative mx-auto mb-9 h-[236px] max-w-[340px]" aria-label="Sample roadmap">
               <div className="absolute inset-y-6 left-0 w-[58%] -rotate-6 rounded-lg border border-[#0A0A0A]/15 bg-white shadow-md" />
               <div className="absolute inset-y-6 right-0 w-[58%] rotate-6 rounded-lg border border-[#0A0A0A]/15 bg-white shadow-md" />
               <div className="absolute inset-y-0 left-1/2 w-[78%] -translate-x-1/2 overflow-hidden rounded-lg border border-[#0A0A0A]/20 bg-white text-left shadow-xl">
                 <div className="flex items-center justify-between bg-[#0A0A0A] px-3 py-2 font-mono text-[11px] uppercase tracking-widest text-white">
-                  <span>Your AI plan</span>
+                  <span>Your AI roadmap</span>
                   <span className="rounded bg-[#FFD60A] px-1.5 text-[#0A0A0A]">Sample</span>
                 </div>
                 <ul>
@@ -363,7 +363,7 @@ export default function PlanFunnel() {
         {sending && (
           <div className="py-10 text-center" role="status" aria-live="polite">
             <div className="mx-auto mb-8 h-14 w-14 animate-spin rounded-full border-4 border-[#E5E5E5] border-t-[#0066FF]" aria-hidden />
-            <h1 className="text-[30px] font-extrabold tracking-tight leading-tight mb-8">Building your plan, {answers.firstName}…</h1>
+            <h1 className="text-[30px] font-extrabold tracking-tight leading-tight mb-8">Building your roadmap, {answers.firstName}…</h1>
             <ul className="mx-auto max-w-[300px] space-y-4 text-left">
               {BUILDING_STEPS.map((label, i) => (
                 <li key={label} className={`flex items-center gap-3 text-lg font-bold transition-opacity ${i <= building ? 'opacity-100' : 'opacity-30'}`}>
@@ -379,7 +379,7 @@ export default function PlanFunnel() {
           <div className="text-center">
             {hero}
             <form onSubmit={saveEmail} className="space-y-3">
-              <h2 className="text-2xl mb-4">Where should we <span className="font-extrabold">send your plan?</span></h2>
+              <h2 className="text-2xl mb-4">Where should we <span className="font-extrabold">send your roadmap?</span></h2>
               <input name="email" type="email" required autoFocus defaultValue={email} autoComplete="email" aria-label="Work email" placeholder="Work email" className={inputClass} />
               {/* Honeypot, hidden from people */}
               <input name="fax" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
@@ -416,7 +416,7 @@ export default function PlanFunnel() {
                 <button type="submit" className={primaryClass}>Continue</button>
               </div>
               <p className="text-xs leading-relaxed text-[#737373] pt-1 text-left sm:text-center">
-                By continuing, you agree that Duality Labs may contact you by phone, text or email about your plan, including by automated means. Message and data rates may apply. Reply STOP to opt out of texts. We never sell your information. <Link href="/privacy" className="underline hover:text-[#0A0A0A]">Privacy Policy</Link>
+                By continuing, you agree that Duality Labs may contact you by phone, text or email about your roadmap, including by automated means. Message and data rates may apply. Reply STOP to opt out of texts. We never sell your information. <Link href="/privacy" className="underline hover:text-[#0A0A0A]">Privacy Policy</Link>
               </p>
             </form>
             <button type="button" onClick={() => setStep(GATE)} className={`${backClass} mt-6`}>← Back</button>

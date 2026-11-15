@@ -2,8 +2,8 @@ import PlanFunnel from '@/components/plan-funnel'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Your Free AI Plan',
-  description: 'Answer 6 short questions and get an AI plan made for your accounting or bookkeeping firm.',
+  title: 'Your Free AI Roadmap',
+  description: 'Answer 6 short questions and get an AI roadmap made for your accounting or bookkeeping firm.',
   alternates: {
     canonical: 'https://www.dualitylabs.ai/plan',
   },
