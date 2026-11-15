@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 type Props = { params: Promise<{ token: string }> }
 
 export const metadata: Metadata = {
-  title: 'Your AI Plan',
+  title: 'Your AI Roadmap',
   // Personal links: never indexed, never followed.
   robots: { index: false, follow: false },
 }
