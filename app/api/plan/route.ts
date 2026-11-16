@@ -125,7 +125,8 @@ export async function POST(request: Request) {
   const email = text(data.email, 200)
   const firm = text(data.firm)
   const phone = text(data.phone, 40)
-  const validPhone = phone.replace(/\D/g, '').length >= 10
+  // Phone is optional; if given, it needs an area code.
+  const validPhone = !phone || phone.replace(/\D/g, '').length >= 10
 
   if (data.stage === 'start') return startedAlert(answers, email, phone, firm, data.utm)
 
@@ -142,7 +143,7 @@ export async function POST(request: Request) {
   const lead = [
     `Name: ${answers.firstName} ${answers.lastName}`,
     `Email: ${email}`,
-    `Phone: ${phone}`,
+    `Phone: ${phone || '(not given)'}`,
     ...(firm ? [`Firm: ${firm}`] : []),
     `Firm type: ${answers.firmType}${answers.firmTypeOther ? ` (${answers.firmTypeOther})` : ''}`,
     `Team size: ${answers.headcount}`,
@@ -164,7 +165,7 @@ export async function POST(request: Request) {
     from: FROM_EMAIL,
     to: TO_EMAIL,
     reply_to: email,
-    subject: `New AI plan lead: ${email} · ${phone} · ${answers.tasks[0]} · ${answers.hours} hrs/wk`,
+    subject: `New AI plan lead: ${email}${phone ? ` · ${phone}` : ''} · ${answers.tasks[0]} · ${answers.hours} hrs/wk`,
     text: lead,
   })
   if (!res.ok) {
