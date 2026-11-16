@@ -38,11 +38,10 @@ const BUILDING_STEPS = ['Reading your answers', 'Matching your tools', 'Mapping 
 const QUESTION_COUNT = 7
 const GATE = QUESTION_COUNT + 1
 const RESULT = GATE + 1
-const PHONE = RESULT + 1
 
 const SCREENS: Record<number, string> = {
-  0: '01_name', [GATE]: '02_email', [PHONE]: '03_phone', 1: '04_firm_type', 2: '05_headcount', 3: '06_tasks',
-  4: '07_follow_up', 5: '08_tools', 6: '09_ai_use', 7: '10_hours', [RESULT]: '11_roadmap',
+  0: '01_name', 1: '02_firm_type', 2: '03_headcount', 3: '04_tasks', 4: '05_follow_up', 5: '06_tools',
+  6: '07_ai_use', 7: '08_hours', [GATE]: '09_contact', [RESULT]: '10_roadmap',
 }
 
 const inputClass =
@@ -77,7 +76,6 @@ export default function PlanFunnel() {
   const [email, setEmail] = useState('')
   const [fax, setFax] = useState('')
   const [phone, setPhone] = useState('')
-  const [alerted, setAlerted] = useState('')
   const [building, setBuilding] = useState(0)
 
   useEffect(() => {
@@ -138,50 +136,30 @@ export default function PlanFunnel() {
   const start = (e: React.FormEvent) => {
     e.preventDefault()
     track('start')
-    setStep(GATE)
+    setStep(1)
   }
 
-  // Contact details come before the questions, so a lead is captured even if they stop partway.
-  const saveEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  // Contact details are asked last: by then they have put in the work and want the result.
+  const finish = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>
     setEmail(form.email)
+    setPhone(form.phone ?? '')
     setFax(form.fax ?? '')
-    setStep(PHONE)
-  }
-
-  const savePhone = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const number = String(new FormData(e.currentTarget).get('phone') ?? '')
-    setPhone(number)
-    setStep(1)
-    // Going back and continuing again should not alert ops twice for the same person.
-    const key = `${email}|${number}`
-    if (key === alerted) return
-    setAlerted(key)
-    fetch('/api/plan', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ stage: 'start', firstName: answers.firstName, lastName: answers.lastName, email, phone: number, fax, utm }),
-    }).catch(() => {})
     track('lead')
-  }
-
-  const finish = async (hours: string) => {
-    set({ hours })
     setError('')
     setSending(true)
 
     const res = await fetch('/api/plan', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...answers, hours, email, phone, fax, utm }),
+      body: JSON.stringify({ ...answers, email: form.email, phone: form.phone ?? '', fax: form.fax ?? '', utm }),
     }).catch(() => null)
     const result = res?.ok ? await res.json() : null
 
     setSending(false)
     if (!result?.doc) {
-      setError('Something went wrong making your roadmap. Tap your answer again to retry, or email ops@dualitylabs.ai.')
+      setError('Something went wrong making your roadmap. Tap the button again to retry, or email ops@dualitylabs.ai.')
       return
     }
     setDoc(result.doc)
@@ -191,16 +169,11 @@ export default function PlanFunnel() {
 
   const follow = followUp(answers.tasks)
 
-  // Shown on both the name and email screens, so asking for the email still feels like the landing page.
-  const hero = (
+  // Below the button on the first screen: proof for anyone who scrolls, never in the way of starting.
+  const sample = (
     <>
-            <h1 className="text-[34px] sm:text-5xl font-extrabold tracking-tight leading-[1.1] mb-3">
-              Get your free personalized AI roadmap in <span className="bg-[#FFD60A] px-1.5 rounded">60 seconds.</span>
-            </h1>
-            <p className="text-lg text-[#525252] mb-7">Made just for your firm.</p>
-
-            {/* A fanned stack of pages, so the plan reads as a real document they will get. */}
-            <div className="relative mx-auto mb-9 h-[236px] max-w-[340px]" aria-label="Sample roadmap">
+            {/* A fanned stack of pages, so the roadmap reads as a real document they will get. */}
+            <div className="relative mx-auto mt-10 mb-9 h-[236px] max-w-[340px]" aria-label="Sample roadmap">
               <div className="absolute inset-y-6 left-0 w-[58%] -rotate-6 rounded-lg border border-[#0A0A0A]/15 bg-white shadow-md" />
               <div className="absolute inset-y-6 right-0 w-[58%] rotate-6 rounded-lg border border-[#0A0A0A]/15 bg-white shadow-md" />
               <div className="absolute inset-y-0 left-1/2 w-[78%] -translate-x-1/2 overflow-hidden rounded-lg border border-[#0A0A0A]/20 bg-white text-left shadow-xl">
@@ -236,20 +209,22 @@ export default function PlanFunnel() {
       <main className={`flex-1 w-full ${step === RESULT ? 'max-w-[720px]' : 'max-w-[640px]'} mx-auto px-4 py-8 sm:py-12`}>
         {step === 0 && (
           <div className="text-center">
-            {hero}
+            <p className="font-mono text-xs uppercase tracking-widest text-[#0066FF] mb-2">For owners of accounting &amp; bookkeeping firms</p>
+            <h1 className="text-[28px] sm:text-5xl font-extrabold tracking-tight leading-[1.1] mb-6">
+              Get your free AI roadmap in <span className="bg-[#FFD60A] px-1.5 rounded">60 seconds.</span>
+            </h1>
 
             <form onSubmit={start} className="space-y-3">
-              <h2 className="text-2xl mb-4">What&apos;s your <span className="font-extrabold">name?</span></h2>
-              <div className="grid gap-3 sm:grid-cols-2">
-                <input value={answers.firstName} onChange={(e) => set({ firstName: e.target.value })} required autoComplete="given-name" aria-label="First name" placeholder="First name" className={inputClass} />
-              <input value={answers.lastName} onChange={(e) => set({ lastName: e.target.value })} required autoComplete="family-name" aria-label="Last name" placeholder="Last name" className={inputClass} />
-              </div>
-              <div className="pt-4 sm:mx-auto sm:max-w-[420px]">
+              <h2 className="text-xl mb-3">What&apos;s your <span className="font-extrabold">first name?</span></h2>
+              <input value={answers.firstName} onChange={(e) => set({ firstName: e.target.value })} required autoComplete="given-name" aria-label="First name" placeholder="First name" className={`${inputClass} sm:mx-auto sm:max-w-[420px]`} />
+              <div className="pt-2 sm:mx-auto sm:max-w-[420px]">
                 <button type="submit" className={primaryClass}>Let&apos;s start</button>
               </div>
             </form>
 
-            <ul className="mt-10 space-y-4 text-left">
+            {sample}
+
+            <ul className="space-y-4 text-left">
               {PROOF_POINTS.map((point) => (
                 <li key={point} className="flex items-start gap-3 text-lg font-bold leading-snug">
                   <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0066FF] text-sm text-white">✓</span>
@@ -263,7 +238,7 @@ export default function PlanFunnel() {
         {step >= 1 && step <= QUESTION_COUNT && !sending && (
           <div>
             <div className="flex items-center justify-between mb-3">
-              <button type="button" onClick={() => setStep(step === 1 ? PHONE : step - 1)} className={backClass}>← Back</button>
+              <button type="button" onClick={() => setStep(step - 1)} className={backClass}>← Back</button>
               <span className="font-mono text-sm text-[#525252]">Question {step} of {QUESTION_COUNT}</span>
             </div>
             <div className="h-2 rounded-full bg-[#E5E5E5] mb-8" role="progressbar" aria-valuemin={1} aria-valuemax={QUESTION_COUNT} aria-valuenow={step}>
@@ -350,11 +325,10 @@ export default function PlanFunnel() {
             {step === 7 && (
               <Question title={`How many hours a week go to ${answers.tasks[0] === 'Other' ? 'this task' : answers.tasks[0]?.toLowerCase()}?`}>
                 {HOURS.map((hours) => (
-                  <button key={hours} type="button" className={choiceClass(answers.hours === hours)} onClick={() => finish(hours)}>
+                  <button key={hours} type="button" className={choiceClass(answers.hours === hours)} onClick={() => choose({ hours })}>
                     {hours}
                   </button>
                 ))}
-                {error && <p className="text-sm text-red-600">{error}</p>}
               </Question>
             )}
           </div>
@@ -375,51 +349,34 @@ export default function PlanFunnel() {
           </div>
         )}
 
-        {step === GATE && (
+        {step === GATE && !sending && (
           <div className="text-center">
-            {hero}
-            <form onSubmit={saveEmail} className="space-y-3">
-              <h2 className="text-2xl mb-4">Where should we <span className="font-extrabold">send your roadmap?</span></h2>
+            <p className="font-mono text-sm text-[#22C55E] mb-3">✓ All {QUESTION_COUNT} questions done</p>
+            <form onSubmit={finish} className="space-y-3">
+              <h1 className="text-[28px] sm:text-4xl font-extrabold tracking-tight leading-[1.15] mb-5">Where should we send your roadmap, {answers.firstName}?</h1>
               <input name="email" type="email" required autoFocus defaultValue={email} autoComplete="email" aria-label="Work email" placeholder="Work email" className={inputClass} />
-              {/* Honeypot, hidden from people */}
-              <input name="fax" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
-              <div className="pt-4 sm:mx-auto sm:max-w-[420px]">
-                <button type="submit" className={primaryClass}>Continue</button>
-              </div>
-              <p className="text-sm text-[#737373] pt-1">
-                No spam. <Link href="/privacy" className="underline hover:text-[#0A0A0A]">Privacy Policy</Link>
-              </p>
-            </form>
-            <button type="button" onClick={() => setStep(0)} className={`${backClass} mt-6`}>← Back</button>
-          </div>
-        )}
-
-        {step === PHONE && (
-          <div className="text-center">
-            {hero}
-            <form onSubmit={savePhone} className="space-y-3">
-              <h2 className="text-2xl mb-4">What is your <span className="font-extrabold">phone number?</span></h2>
               <input
                 name="phone"
                 type="tel"
-                required
-                autoFocus
                 defaultValue={phone}
                 autoComplete="tel"
-                aria-label="Phone number"
-                placeholder="Phone number"
+                aria-label="Phone number (optional)"
+                placeholder="Phone (optional)"
                 pattern="[^0-9]*([0-9][^0-9]*){10,}"
                 title="Please enter a phone number with area code"
                 className={inputClass}
               />
-              <div className="pt-4 sm:mx-auto sm:max-w-[420px]">
-                <button type="submit" className={primaryClass}>Continue</button>
+              {/* Honeypot, hidden from people */}
+              <input name="fax" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+              <div className="pt-2 sm:mx-auto sm:max-w-[420px]">
+                <button type="submit" className={primaryClass}>Show my roadmap</button>
               </div>
+              {error && <p className="text-sm text-red-600">{error}</p>}
               <p className="text-xs leading-relaxed text-[#737373] pt-1 text-left sm:text-center">
-                By continuing, you agree that Duality Labs may contact you by phone, text or email about your roadmap, including by automated means. Message and data rates may apply. Reply STOP to opt out of texts. We never sell your information. <Link href="/privacy" className="underline hover:text-[#0A0A0A]">Privacy Policy</Link>
+                By continuing, you agree that Duality Labs may contact you by email, and by phone or text if you give your number, about your roadmap, including by automated means. Message and data rates may apply. Reply STOP to opt out of texts. We never sell your information. <Link href="/privacy" className="underline hover:text-[#0A0A0A]">Privacy Policy</Link>
               </p>
             </form>
-            <button type="button" onClick={() => setStep(GATE)} className={`${backClass} mt-6`}>← Back</button>
+            <button type="button" onClick={() => setStep(QUESTION_COUNT)} className={`${backClass} mt-6`}>← Back</button>
           </div>
         )}
 
